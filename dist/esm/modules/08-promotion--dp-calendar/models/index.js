@@ -1,0 +1,19 @@
+/* tslint:disable */
+/* eslint-disable */
+export * from './ErrParameterValuesIncorrect';
+export * from './PromoItemsList';
+export * from './PromoSuccessResponse';
+export * from './PromoSuccessResponseData';
+export * from './PromoSuccessResponseDataPromotionsInner';
+export * from './PromoSupplierTaskRequest';
+export * from './PromoSupplierTaskRequestData';
+export * from './PromosGetByIDSuccessResponse';
+export * from './PromosGetByIDSuccessResponseData';
+export * from './PromosGetByIDSuccessResponseDataPromotionsInner';
+export * from './PromosGetByIDSuccessResponseDataPromotionsInnerRangingInner';
+export * from './Resp402';
+export * from './ResponsePromoItemsLists';
+export * from './ResponsePromoItemsListsData';
+export * from './UploadSuccessResponse';
+export * from './UploadSuccessResponseData';
+export * from './WbErrorResponse';

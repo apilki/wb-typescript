@@ -1,0 +1,81 @@
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/* tslint:disable */
+/* eslint-disable */
+__exportStar(require("./DeleteV1PinsResponse200"), exports);
+__exportStar(require("./DeleteV1PinsResponse200AllOf2"), exports);
+__exportStar(require("./DomainReviewPinMethod"), exports);
+__exportStar(require("./DomainReviewPinOn"), exports);
+__exportStar(require("./DomainReviewState"), exports);
+__exportStar(require("./GetV1FeedbackResponse200"), exports);
+__exportStar(require("./GetV1FeedbackResponse200Data"), exports);
+__exportStar(require("./GetV1FeedbackResponse200DataAnswer"), exports);
+__exportStar(require("./GetV1FeedbackResponse200DataProductDetails"), exports);
+__exportStar(require("./GetV1FeedbackResponse200DataVideo"), exports);
+__exportStar(require("./GetV1FeedbacksArchiveResponse200"), exports);
+__exportStar(require("./GetV1FeedbacksArchiveResponse200Data"), exports);
+__exportStar(require("./GetV1FeedbacksCountResponse200"), exports);
+__exportStar(require("./GetV1FeedbacksCountUnansweredResponse200"), exports);
+__exportStar(require("./GetV1FeedbacksCountUnansweredResponse200Data"), exports);
+__exportStar(require("./GetV1FeedbacksResponse200"), exports);
+__exportStar(require("./GetV1FeedbacksResponse200Data"), exports);
+__exportStar(require("./GetV1NewFeedbacksQuestionsResponse200"), exports);
+__exportStar(require("./GetV1NewFeedbacksQuestionsResponse200Data"), exports);
+__exportStar(require("./GetV1PinsCountResponse200"), exports);
+__exportStar(require("./GetV1PinsCountResponse200AllOf2"), exports);
+__exportStar(require("./GetV1PinsLimitsResponse200"), exports);
+__exportStar(require("./GetV1PinsResponse200"), exports);
+__exportStar(require("./GetV1PinsResponse200AllOf2"), exports);
+__exportStar(require("./GetV1QuestionResponse200"), exports);
+__exportStar(require("./GetV1QuestionResponse200Data"), exports);
+__exportStar(require("./GetV1QuestionResponse200DataAnswer"), exports);
+__exportStar(require("./GetV1QuestionResponse200DataProductDetails"), exports);
+__exportStar(require("./GetV1QuestionsResponse200"), exports);
+__exportStar(require("./GetV1QuestionsResponse200Data"), exports);
+__exportStar(require("./GetV1QuestionsResponse200DataQuestionsInner"), exports);
+__exportStar(require("./GetV1QuestionsResponse200DataQuestionsInnerAnswer"), exports);
+__exportStar(require("./GetV1QuestionsResponse200DataQuestionsInnerProductDetails"), exports);
+__exportStar(require("./OpenapiPinReviewItem"), exports);
+__exportStar(require("./OpenapiPinReviewItemResult"), exports);
+__exportStar(require("./OpenapiPinReviewItemResultDataInner"), exports);
+__exportStar(require("./OpenapiPinnedReviewItemResult"), exports);
+__exportStar(require("./OpenapiResultErr"), exports);
+__exportStar(require("./OpenapiSellerLimit"), exports);
+__exportStar(require("./OpenapiSellerLimitsResponse"), exports);
+__exportStar(require("./OpenapiSellerLimitsResponseData"), exports);
+__exportStar(require("./OpenapiSellerLimitsResponseDataSubscription"), exports);
+__exportStar(require("./OpenapiSellerLimitsResponseDataTariff"), exports);
+__exportStar(require("./PatchV1FeedbacksAnswerRequest"), exports);
+__exportStar(require("./PatchV1QuestionsRequest"), exports);
+__exportStar(require("./PatchV1QuestionsRequestOneOf1"), exports);
+__exportStar(require("./PatchV1QuestionsRequestOneOf2"), exports);
+__exportStar(require("./PatchV1QuestionsRequestOneOf2Answer"), exports);
+__exportStar(require("./PatchV1QuestionsResponse200"), exports);
+__exportStar(require("./PostV1FeedbacksOrderReturnRequest"), exports);
+__exportStar(require("./PostV1PinsResponse200"), exports);
+__exportStar(require("./Resp401"), exports);
+__exportStar(require("./Resp402"), exports);
+__exportStar(require("./RespondResultErr"), exports);
+__exportStar(require("./RespondSuccessResponse"), exports);
+__exportStar(require("./Response4XX"), exports);
+__exportStar(require("./ResponseFeedbackInner"), exports);
+__exportStar(require("./ResponseFeedbackInnerAnswer"), exports);
+__exportStar(require("./ResponseFeedbackInnerPhotoLinksInner"), exports);
+__exportStar(require("./ResponseFeedbackInnerProductDetails"), exports);
+__exportStar(require("./ResponseFeedbackInnerVideo"), exports);
+__exportStar(require("./ResponseFeedbackQuestionErr"), exports);
+__exportStar(require("./StandardizedFQError"), exports);

@@ -1,0 +1,213 @@
+# release-npm — публикация пакета @apilki в npm из публичного репозитория.
+#
+# Workflow НЕ собирает пакет: он пакует готовый dist, проверяет тарбол и
+# публикует по OIDC (trusted publishing).
+#
+# Два входа:
+#   * push тега vX.Y.Z — боевой выпуск: пак-чек → publish → ожидание тарбола 200
+#     → install-smoke из npmjs (`--prefer-online`) → publish-check (npm view +
+#     dist.integrity + repository.url).
+#   * workflow_dispatch с publish=false — репетиция: пак-чек → install-smoke из
+#     локального тарбола; публикации, ожидания и publish-check нет.
+#
+# Первый выпуск делается разовым granular-токеном (bootstrap):
+# доверенного издателя нельзя завести на несуществующий пакет. После первого
+# выпуска — `npm trust github @apilki/<pkg> --repo apilki/<repo> --file release-npm.yml --env npm-release --allow-publish`,
+# секрет NPM_TOKEN удаляется.
+
+name: release-npm
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'true — реальная публикация; false — репетиция (пак-чек + install-smoke из тарбола)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  id-token: write # OIDC-обмен с npm: trusted publishing
+
+concurrency:
+  group: release-npm-${{ github.ref }}
+  cancel-in-progress: false # версии неперезаписываемы — волну не обрываем
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: npm-release
+    env:
+      # push тега = боевой режим; dispatch по умолчанию — репетиция
+      RELEASE_PUBLISH: ${{ github.event_name == 'push' && 'true' || github.event.inputs.publish }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          # registry-url НЕ задаём: он подставляет пустой NODE_AUTH_TOKEN,
+          # а пустой токен перебивает OIDC-обмен.
+
+      # Версия из манифеста обязана совпадать с тегом: тег — durable-след релиза.
+      - name: Версия == тег
+        run: |
+          set -eu
+          PKG="$(node -p "require('./package.json').version")"
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            TAG="${GITHUB_REF_NAME#v}"
+            echo "тег=$TAG пакет=$PKG"
+            [ "$TAG" = "$PKG" ] || { echo "::error::тег $TAG не равен версии $PKG"; exit 1; }
+          else
+            echo "репетиция: версия пакета $PKG (сверка с тегом не требуется)"
+          fi
+
+      # Пак-чек: в тарболе только dist + манифест/доки, никаких workspace: и dev-полей.
+      - name: Пак-чек тарбола
+        run: |
+          set -eu
+          rm -f ./*.tgz # публикуем/смоуким только СЕГОДНЯШНИЙ тарбол
+          npm pack --json > pack.json
+          node -e '
+            const raw = require("./pack.json");
+            const p = Array.isArray(raw) ? raw[0] : Object.values(raw)[0];
+            const allowed = /^(dist\/|package\.json$|README\.md$|LICENSE$|CHANGELOG\.md$)/;
+            const manifest = JSON.parse(require("fs").readFileSync("package.json", "utf8"));
+            const bad = p.files.map(f => f.path).filter(f => !allowed.test(f));
+            const problems = [];
+            if (bad.length) problems.push("запрещённые пути: " + bad.slice(0, 5).join(", "));
+            if (JSON.stringify(manifest).includes("workspace:")) problems.push("workspace: в зависимостях");
+            if (Object.keys(manifest.scripts || {}).length || Object.keys(manifest.devDependencies || {}).length) problems.push("dev-поля в манифесте");
+            if (manifest.private === true) problems.push("private:true");
+            if (!manifest.repository || !/^https:\/\/github\.com\/apilki\//.test(manifest.repository.url)) {
+              problems.push("repository.url не на github.com/apilki");
+            }
+            // пути манифеста обязаны вести внутрь dist (в тарболе нет src/)
+            const flat = v => typeof v === "string" ? [v] : Array.isArray(v) ? v.flatMap(flat) : v && typeof v === "object" ? Object.values(v).flatMap(flat) : [];
+            for (const field of ["main", "module", "types", "typings", "exports", "bin"]) {
+              for (const raw of flat(manifest[field])) {
+                if (!raw.startsWith(".")) continue;
+                const norm = raw.replace(/^\.\//, "");
+                if (norm === "package.json" || norm.startsWith("dist/")) continue;
+                problems.push(`${field} → ${raw} вне dist`);
+              }
+            }
+            if (problems.length) { console.error(problems.join("\n")); process.exit(1); }
+            console.log(`тарбол чист: ${p.files.length} файлов, ${p.size} байт`);
+          '
+
+      - name: Публикация (OIDC; для первого выпуска — bootstrap-токен)
+        if: env.RELEASE_PUBLISH == 'true'
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -eu
+          TGZ="$(ls -1 ./*.tgz | head -1)"
+          if [ -n "${NPM_TOKEN:-}" ]; then
+            echo "::warning::публикация bootstrap-токеном (доверенного издателя ещё нет)"
+            printf '//registry.npmjs.org/:_authToken=%s\n' "$NPM_TOKEN" > "$HOME/.npmrc"
+            npm publish "$TGZ" --access public
+          else
+            npm publish "$TGZ" --access public --provenance
+          fi
+
+      # Гейт волны: install-smoke только после появления ТАРБОЛА в реестре.
+      # Version-документ отдаётся раньше тарбола; первые минуты 404 — это
+      # обработка публикации, а не провал. Потолок ожидания — 30 минут.
+      - name: Ожидание тарбола в реестре
+        if: env.RELEASE_PUBLISH == 'true'
+        run: |
+          set -eu
+          NAME="$(node -p "require('./package.json').name")"
+          VER="$(node -p "require('./package.json').version")"
+          BARE="${NAME#*/}"
+          URL="https://registry.npmjs.org/${NAME}/-/${BARE}-${VER}.tgz"
+          # Потолок 30 минут: у первого выпуска нового scoped-пакета npm держит
+          # тарбол в очереди обработки дольше, чем 10 мин (замер 2026-11-09:
+          # @apilki/ozon-seller 0.3.0 — 404 больше 10 мин после успешного publish).
+          DEADLINE=$(( $(date +%s) + 1800 ))
+          for i in $(seq 1 60); do
+            CODE="$(curl -s -o /dev/null -w '%{http_code}' -L "$URL" || true)"
+            if [ "$CODE" = "200" ]; then echo "тарбол 200: $URL"; exit 0; fi
+            if [ "$(date +%s)" -ge "$DEADLINE" ]; then
+              echo "::error::тарбол не появился за 30 минут ($CODE): $URL"; exit 1
+            fi
+            echo "попытка $i: тарбол $CODE, ждём 30с"; sleep 30
+          done
+          echo "::error::тарбол не появился: $URL"; exit 1
+
+      # Install-smoke: чистый каталог, отдельный кэш, реальный импорт пакета.
+      # Боевой режим ставит из npmjs (проверяем то, что реально опубликовано),
+      # репетиция — из собранного тарбола (в реестре версии ещё нет).
+      - name: Install-smoke
+        run: |
+          set -eu
+          NAME="$(node -p "require('./package.json').name")"
+          if [ "$RELEASE_PUBLISH" = "true" ]; then
+            SPEC="$(node -p "const p=require('./package.json'); p.name+'@'+p.version")"
+            SOURCE="из npmjs"
+          else
+            SPEC="$(ls -1 "$GITHUB_WORKSPACE"/*.tgz | head -1)"
+            SOURCE="из тарбола"
+          fi
+          SMOKE="$(mktemp -d)"
+          cd "$SMOKE"
+          npm init -y > /dev/null
+          # реестр/CDN отдаёт свежую версию не сразу — шесть попыток (~2 мин)
+          for i in 1 2 3 4 5 6; do
+            if npm install "$SPEC" --cache "$SMOKE/.npm-cache" --prefer-online --no-audit --no-fund; then break; fi
+            [ "$i" = 6 ] && { echo "::error::установка $SPEC не удалась шесть раз"; exit 1; }
+            echo "попытка $i не удалась, ждём 20с"; sleep 20
+          done
+          test -d "node_modules/$NAME" || { echo "::error::пакет не установился"; exit 1; }
+          npm ls --all > /dev/null 2>&1 || { echo "::error::дерево зависимостей битое"; npm ls --all; exit 1; }
+          node --input-type=module -e "
+            const m = await import('$NAME');
+            const keys = Object.keys(m);
+            if (keys.length === 0) { console.error('пустой экспорт'); process.exit(1); }
+            console.log('$SOURCE: импорт ок, экспортов:', keys.length);
+          "
+
+      # Publish-check: версия, целостность и адрес репозитория в реестре.
+      - name: Publish-check
+        if: env.RELEASE_PUBLISH == 'true'
+        run: |
+          set -eu
+          node -e '
+            const { execFileSync } = require("child_process");
+            const local = require("./package.json");
+            // метаданные свежего пакета расходятся по CDN не мгновенно — до трёх попыток
+            const view = (field) => {
+              for (let i = 1; ; i++) {
+                try {
+                  const out = execFileSync("npm", ["view", `${local.name}@${local.version}`, field], { encoding: "utf8" }).trim();
+                  if (out) return out;
+                } catch (err) {
+                  if (i >= 3) throw err;
+                }
+                if (i >= 3) return "";
+                execFileSync("sleep", ["15"]);
+              }
+            };
+            const problems = [];
+            if (view("version") !== local.version) problems.push("версия в реестре не совпала");
+            const integrity = view("dist.integrity");
+            if (!integrity.startsWith("sha512-")) problems.push("dist.integrity пустой или не sha512");
+            const url = view("repository.url");
+            if (!url.includes("github.com/apilki/")) problems.push(`repository.url = ${url}`);
+            if (problems.length) { console.error(problems.join("\n")); process.exit(1); }
+            console.log(`publish-check ок: ${local.name}@${local.version} ${integrity.slice(0, 20)}… → ${url}`);
+          '
+
+      - name: Итог
+        if: always()
+        run: |
+          {
+            echo "### release-npm ${{ github.ref_name }}"
+            echo ""
+            echo "- режим: $RELEASE_PUBLISH"
+            echo "- репо: ${{ github.repository }}"
+            echo "- прогон: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          } >> "$GITHUB_STEP_SUMMARY"
