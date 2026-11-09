@@ -25,7 +25,7 @@ export interface OrderNewDBS {
      */
     salePrice: number | null;
     /**
-     * Список идентификаторов маркировки, доступных для сборочного задания. [Указывать IMEI](./dbs#tag/dbsLabelIdentifiers/operation/postV3DbsOrdersMetaImei) обязательно для [предмета](./item-management#tag/categoriesSubcategoriesAndCharacteristics/operation/getV2ObjectAll) `Смартфоны`, `"subjectId":515`
+     * Список идентификаторов маркировки, доступных для сборочного задания. Указывать IMEI обязательно для предмета `Смартфоны`, `"subjectId":515`
      * @type {Array<string>}
      * @memberof OrderNewDBS
      */
@@ -75,15 +75,15 @@ export interface OrderNewDBS {
     /**
      * Уникальный ID заказа. <br>
      * Примечание: `rid` — это `srid` в ответах методов:
-     *   - [Заявки покупателей на возврат](./customer-communication#tag/buyersReturns/operation/getV1Claims)
-     *   - [Лента заказов](./analytics#tag/orderFeed/operation/postV1OrderFeed)
-     *   - [Заказы](./reports#tag/mainReports/operation/getV1SupplierOrders)
-     *   - [Продажи](./reports#tag/mainReports/operation/getV1SupplierSales)
-     *   - [Отчёт о возвратах и перемещении товаров](./reports#tag/returnsAndItemMovementReport)
-     *   - [Детализации к отчётам реализации по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
-     *   - [Детализации к отчётам реализации за период](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
-     *   - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
-     *   - [Детализации к отчётам об издержках на приём платежей за период](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
+     *   - Заявки покупателей на возврат
+     *   - Лента заказов
+     *   - Заказы
+     *   - Продажи
+     *   - Отчёт о возвратах и перемещении товаров
+     *   - Детализации к отчётам реализации по ID отчётов
+     *   - Детализации к отчётам реализации за период
+     *   - Детализации к отчётам об издержках на приём платежей по ID отчётов
+     *   - Детализации к отчётам об издержках на приём платежей за период
      *
      * @type {any}
      * @memberof OrderNewDBS
@@ -148,7 +148,7 @@ export interface OrderNewDBS {
      * <br>
      * Предоставляется в информационных целях.
      * <br><br>
-     * Используйте значение поля `finalPrice`, только если в ответе метода получения [цен продавца и сумм к оплате](./dbs#tag/dbsAssemblyOrders/operation/postV3DbsOrdersFinalPrice) вернулось `"data": null`. Во всех остальных случаях используйте значение поля `originalFinalPrice` из ответа того же метода
+     * Используйте значение поля `finalPrice`, только если в ответе метода получения цен продавца и сумм к оплате вернулось `"data": null`. Во всех остальных случаях используйте значение поля `originalFinalPrice` из ответа того же метода
      *
      * @type {number}
      * @memberof OrderNewDBS
@@ -159,7 +159,7 @@ export interface OrderNewDBS {
      * <br>
      * Предоставляется в информационных целях.
      * <br><br>
-     * Используйте значение поля `convertedFinalPrice`, только если в ответе метода получения [цен продавца и сумм к оплате](./dbs#tag/dbsAssemblyOrders/operation/postV3DbsOrdersFinalPrice) вернулось `"data": null`. Во всех остальных случаях используйте значение поля `convertedOriginalFinalPrice` из ответа того же метода
+     * Используйте значение поля `convertedFinalPrice`, только если в ответе метода получения цен продавца и сумм к оплате вернулось `"data": null`. Во всех остальных случаях используйте значение поля `convertedOriginalFinalPrice` из ответа того же метода
      *
      * @type {number}
      * @memberof OrderNewDBS

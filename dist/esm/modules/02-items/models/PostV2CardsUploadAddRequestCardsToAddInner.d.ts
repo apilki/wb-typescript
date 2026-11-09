@@ -37,7 +37,7 @@ export interface PostV2CardsUploadAddRequestCardsToAddInner {
      *   - `true` — продавец подтверждает, что на товар нанесён обязательный код маркировки
      *   - `false` — продавец не подтверждает, что на товар нанесён обязательный код маркировки. Передайте в запросе `true`, чтобы подтвердить наличие на товаре обязательного кода маркировки. Карточка товара не пройдёт проверку, если нет подтверждения продавца о том, что обязательный код маркировки нанесён на товар
      *
-     * Чтобы проверить, является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, используйте метод [Список карточек товаров](./item-management#tag/listings/operation/postV2GetCardsList), поле ответа `needKiz`
+     * Чтобы проверить, является ли код маркировки [Честного знака](https://честныйзнак.рф/) обязательным, используйте метод Список карточек товаров, поле ответа `needKiz`
      *
      * @type {boolean}
      * @memberof PostV2CardsUploadAddRequestCardsToAddInner
@@ -88,7 +88,7 @@ export interface PostV2CardsUploadAddRequestCardsToAddInner {
     /**
      * Характеристики товара.
      * <br>
-     * Можно получить методом [Характеристики предмета](./item-management#tag/categoriesSubcategoriesAndCharacteristics/operation/getV2ObjectCharcsSubjectId)
+     * Можно получить методом Характеристики предмета
      *
      * @type {Array<PostV2CardsUpdateRequestInnerCharacteristicsInner>}
      * @memberof PostV2CardsUploadAddRequestCardsToAddInner

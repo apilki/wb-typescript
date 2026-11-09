@@ -16,7 +16,7 @@
  */
 export interface ApiOrderGroupsRequest {
     /**
-     * Список значений `groupId`. Можно получить из [новых](./dbs#tag/dbsAssemblyOrders/operation/getV3DbsOrdersNew) и [завершенных](./dbs#tag/dbsAssemblyOrders/operation/getV3DbsOrders) сборочных заданий
+     * Список значений `groupId`. Можно получить из новых и завершенных сборочных заданий
      * @type {Array<string>}
      * @memberof ApiOrderGroupsRequest
      */

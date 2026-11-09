@@ -45,15 +45,15 @@ export interface ApiNewOrder {
     /**
      * Уникальный ID заказа. <br>
      * Примечание: `rid` — это `srid` в ответах методов:
-     *   - [Заявки покупателей на возврат](./customer-communication#tag/buyersReturns/operation/getV1Claims)
-     *   - [Лента заказов](./analytics#tag/orderFeed/operation/postV1OrderFeed)
-     *   - [Заказы](./reports#tag/mainReports/operation/getV1SupplierOrders)
-     *   - [Продажи](./reports#tag/mainReports/operation/getV1SupplierSales)
-     *   - [Отчет о возвратах и перемещении товаров](./reports#tag/returnsAndItemMovementReport)
-     *   - [Детализации к отчётам реализации по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
-     *   - [Детализации к отчётам реализации за период](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
-     *   - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
-     *   - [Детализации к отчётам об издержках на приём платежей за период](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
+     *   - Заявки покупателей на возврат
+     *   - Лента заказов
+     *   - Заказы
+     *   - Продажи
+     *   - Отчет о возвратах и перемещении товаров
+     *   - Детализации к отчётам реализации по ID отчётов
+     *   - Детализации к отчётам реализации за период
+     *   - Детализации к отчётам об издержках на приём платежей по ID отчётов
+     *   - Детализации к отчётам об издержках на приём платежей за период
      *
      * @type {string}
      * @memberof ApiNewOrder
@@ -137,7 +137,7 @@ export interface ApiNewOrder {
      * <br>
      * Предоставляется в информационных целях.
      * <br><br>
-     * Используйте значение поля `finalPrice`, только если в ответе метода [POST /api/marketplace/v3/click-collect/orders/final-price](./docs/openapi/in-store-pickup#tag/inStorePickupAssemblyOrders/operation/postV3ClickCollectOrdersFinalPrice) вернулось `"data": null`. Во всех остальных случаях используйте значение поля `originalFinalPrice` из ответа указанного метода
+     * Используйте значение поля `finalPrice`, только если в ответе метода POST /api/marketplace/v3/click-collect/orders/final-price вернулось `"data": null`. Во всех остальных случаях используйте значение поля `originalFinalPrice` из ответа указанного метода
      *
      * @type {number}
      * @memberof ApiNewOrder
@@ -154,7 +154,7 @@ export interface ApiNewOrder {
      * <br>
      * Предоставляется в информационных целях.
      * <br><br>
-     *  Используйте значение поля `convertedFinalPrice`, только если в ответе метода [POST /api/marketplace/v3/click-collect/orders/final-price](./docs/openapi/in-store-pickup#tag/inStorePickupAssemblyOrders/operation/postV3ClickCollectOrdersFinalPrice) вернулось `"data": null`. Во всех остальных случаях используйте значение поля `convertedOriginalFinalPrice` из ответа того же метода
+     *  Используйте значение поля `convertedFinalPrice`, только если в ответе метода POST /api/marketplace/v3/click-collect/orders/final-price вернулось `"data": null`. Во всех остальных случаях используйте значение поля `convertedOriginalFinalPrice` из ответа того же метода
      *
      * @type {number}
      * @memberof ApiNewOrder

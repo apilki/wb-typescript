@@ -28,7 +28,7 @@ export interface GetListDataDocumentsInner {
      */
     name?: string;
     /**
-     * Название [категории документов](./documents-and-accounting#tag/documents/operation/getV1DocumentsCategories) из поля ответа `title`
+     * Название категории документов из поля ответа `title`
      * @type {string}
      * @memberof GetListDataDocumentsInner
      */

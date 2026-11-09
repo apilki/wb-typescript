@@ -54,7 +54,7 @@ export interface GetV2ObjectCharcsSubjectIdResponse200DataInner {
      */
     unitName?: string;
     /**
-     * Максимальное количество значений, которое можно присвоить характеристике при [создании](./item-management#tag/listingItems) или [редактировании](./item-management#tag/listings/operation/postV2CardsUpdate) карточек товаров.
+     * Максимальное количество значений, которое можно присвоить характеристике при создании или редактировании карточек товаров.
      * <br>
      * Используется только для характеристик с `"charcType":1` — массив строк.
      * <br>
@@ -73,7 +73,7 @@ export interface GetV2ObjectCharcsSubjectIdResponse200DataInner {
      */
     popular?: boolean;
     /**
-     * Тип данных характеристики, который необходимо использовать при [создании](./item-management#tag/listingItems) или [редактировании](./item-management#tag/listings/operation/postV2CardsUpdate) карточек товаров:
+     * Тип данных характеристики, который необходимо использовать при создании или редактировании карточек товаров:
      *   -  `1` — массив строк
      *   -  `4` — число (целое либо с десятичной дробью)
      *   -  `0` — характеристика не используется
@@ -101,7 +101,7 @@ export interface GetV2ObjectCharcsSubjectIdResponse200DataInner {
      */
     isVariable?: boolean;
     /**
-     * Как передать характеристику в запросах на [cоздание](./item-management#tag/listingItems/operation/postV2CardsUpload), [создание с присоединением](./item-management#tag/listingItems/operation/postV2CardsUploadAdd) и [редактирование](./item-management#tag/listings/operation/postV2CardsUpdate) карточек товара:
+     * Как передать характеристику в запросах на cоздание, создание с присоединением и редактирование карточек товара:
      *   -  `true` — в соответствующем параметре запроса
      *   -  `false` — внутри массива `characteristics`
      *

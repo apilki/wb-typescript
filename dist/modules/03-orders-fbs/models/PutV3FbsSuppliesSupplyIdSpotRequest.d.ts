@@ -28,7 +28,7 @@ export interface PutV3FbsSuppliesSupplyIdSpotRequest {
      */
     carrierTaxNumber: string;
     /**
-     * Код страны перевозчика по [ОКСМ](./orders-fbs#tag/fbsSupplies/operation/getV3FbsDictionariesCountriesOksm)
+     * Код страны перевозчика по ОКСМ
      * @type {string}
      * @memberof PutV3FbsSuppliesSupplyIdSpotRequest
      */

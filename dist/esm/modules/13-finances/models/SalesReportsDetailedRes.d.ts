@@ -590,7 +590,7 @@ export interface SalesReportsDetailedRes {
      */
     orderUid: string;
     /**
-     * ID заказа.<br>В ответах методов сборочных заданий [FBS](./orders-fbs#tag/fbsAssemblyOrders), [DBW](./orders-dbw#tag/dbwAssemblyOrders), [DBS](./dbs#tag/dbsAssemblyOrders) и [Самовывоз](./in-store-pickup#tag/inStorePickupAssemblyOrders) `srid` равен `rid`
+     * ID заказа.<br>В ответах методов сборочных заданий FBS, DBW, DBS и Самовывоз `srid` равен `rid`
      *
      * @type {string}
      * @memberof SalesReportsDetailedRes

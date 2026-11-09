@@ -28,7 +28,7 @@ export interface ModelFile {
      */
     date?: string;
     /**
-     * ID файла. [Получить файл](./customer-communication#tag/buyersChat/operation/getV1SellerDownloadId)
+     * ID файла. Получить файл
      * @type {string}
      * @memberof ModelFile
      */

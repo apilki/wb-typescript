@@ -16,13 +16,13 @@
  */
 export interface GetCategoriesDataCategoriesInner {
     /**
-     * ID категории документа из параметра [запроса](./documents-and-accounting#tag/documents/operation/getV1DocumentsList) `category`
+     * ID категории документа из параметра запроса `category`
      * @type {string}
      * @memberof GetCategoriesDataCategoriesInner
      */
     name?: string;
     /**
-     * Название категории документа из поля [ответа](./documents-and-accounting#tag/documents/operation/getV1DocumentsList) `category`
+     * Название категории документа из поля ответа `category`
      * @type {string}
      * @memberof GetCategoriesDataCategoriesInner
      */

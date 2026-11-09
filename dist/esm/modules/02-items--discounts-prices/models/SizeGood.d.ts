@@ -22,7 +22,7 @@ export interface SizeGood {
      */
     nmID?: number;
     /**
-     * ID размера. Можно получить с помощью метода [Получение списка товаров по артикулам](./item-management#tag/pricesAndDiscounts/operation/getV2ListGoodsFilter), поле `sizeID`. В методах Контента это поле `chrtID`
+     * ID размера. Можно получить с помощью метода Получение списка товаров по артикулам, поле `sizeID`. В методах Контента это поле `chrtID`
      * @type {number}
      * @memberof SizeGood
      */

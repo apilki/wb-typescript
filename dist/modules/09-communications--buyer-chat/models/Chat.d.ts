@@ -24,7 +24,7 @@ export interface Chat {
      */
     chatID?: string;
     /**
-     * Подпись чата. Требуется при [отправке сообщения](./customer-communication#tag/buyersChat/operation/postV1SellerMessage)
+     * Подпись чата. Требуется при отправке сообщения
      *
      * @type {string}
      * @memberof Chat

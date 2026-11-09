@@ -16,7 +16,7 @@
  */
 export interface ModelsOptionsResultModelResultInnerWarehousesInner {
     /**
-     * ID склада. По нему можно получить [информацию о складе](./orders-fbw#tag/informationForFormingSupplies/operation/getV1Warehouses)
+     * ID склада. По нему можно получить информацию о складе
      * @type {number}
      * @memberof ModelsOptionsResultModelResultInnerWarehousesInner
      */

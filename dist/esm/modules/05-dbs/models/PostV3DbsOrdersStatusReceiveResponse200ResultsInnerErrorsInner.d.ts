@@ -24,7 +24,7 @@ export interface PostV3DbsOrdersStatusReceiveResponse200ResultsInnerErrorsInner 
     /**
      * - `NotFound` — сборочное задание не найдено
      * - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
-     * - `SGTINIsNotFilled` — обязательный [код маркировки](./dbs#tag/dbsLabelIdentifiers/operation/postV3DbsOrdersMetaSgtin) не указан
+     * - `SGTINIsNotFilled` — обязательный код маркировки не указан
      *
      * @type {string}
      * @memberof PostV3DbsOrdersStatusReceiveResponse200ResultsInnerErrorsInner

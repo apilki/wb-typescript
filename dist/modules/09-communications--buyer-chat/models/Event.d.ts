@@ -77,7 +77,7 @@ export interface Event {
      */
     addTime?: string;
     /**
-     * Подпись чата. Доступна только при `"isNewChat": true`. Требуется при [отправке сообщения](./customer-communication#tag/buyersChat/operation/postV1SellerMessage)
+     * Подпись чата. Доступна только при `"isNewChat": true`. Требуется при отправке сообщения
      *
      * @type {string}
      * @memberof Event

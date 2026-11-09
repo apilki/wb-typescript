@@ -45,7 +45,7 @@ export interface ModelsGoodInSupply {
     /**
      * Код ТНВЭД.
      * <br>
-     * Если `"needKiz":true`, а `"tnved":null`, нужно заполнить характеристику товара **ТН ВЭД** в [личном кабинете](https://seller.wildberries.ru/new-goods) или по [API](./item-management#tag/listings/operation/postV2CardsUpdate)
+     * Если `"needKiz":true`, а `"tnved":null`, нужно заполнить характеристику товара **ТН ВЭД** в [личном кабинете](https://seller.wildberries.ru/new-goods) или по API
      *
      * @type {string}
      * @memberof ModelsGoodInSupply

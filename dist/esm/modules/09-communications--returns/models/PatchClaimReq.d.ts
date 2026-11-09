@@ -22,7 +22,7 @@ export interface PatchClaimReq {
      */
     id: string;
     /**
-     * Действие с заявкой.<br>Используйте одно из значений массива `actions` — ответа [метода получения заявок](./customer-communication#tag/buyersReturns/operation/getV1Claims)
+     * Действие с заявкой.<br>Используйте одно из значений массива `actions` — ответа метода получения заявок
      * @type {string}
      * @memberof PatchClaimReq
      */

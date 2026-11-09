@@ -22,7 +22,7 @@ export interface PostV2SeacatSaveAdRequest {
      */
     name: string;
     /**
-     * Карточки товаров для кампании. Доступные карточки товаров можно получить с помощью метода [Карточки товаров для кампаний](./promotion#tag/creatingCampaigns/operation/postV2SupplierNms). Максимум 50 товаров (`nm`)
+     * Карточки товаров для кампании. Доступные карточки товаров можно получить с помощью метода Карточки товаров для кампаний. Максимум 50 товаров (`nm`)
      *
      * @type {Array<number>}
      * @memberof PostV2SeacatSaveAdRequest

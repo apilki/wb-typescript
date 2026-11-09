@@ -22,7 +22,7 @@ export interface GetV1SellerInfoResponse200 {
      */
     name?: string;
     /**
-     * Уникальный ID продавца на Wildberries, [находящийся в публичном поле токена](./api-information#tag/authorization/Kak-ustroen-token)
+     * Уникальный ID продавца на Wildberries, находящийся в публичном поле токена
      * @type {string}
      * @memberof GetV1SellerInfoResponse200
      */

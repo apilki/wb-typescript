@@ -17,12 +17,12 @@
 export interface DbsApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner {
     /**
      * Идентификатор маркировки:
-     *   - `imei` — [IMEI](./dbs#tag/dbsLabelIdentifiers/operation/postV3DbsOrdersMetaImei)
-     *   - `uin` — [УИН](./dbs#tag/dbsLabelIdentifiers/operation/postV3DbsOrdersMetaUin)
-     *   - `gtin` — [GTIN](./dbs#tag/dbsLabelIdentifiers/operation/postV3DbsOrdersMetaGtin)
-     *   - `sgtin` — [код маркировки](./dbs#tag/dbsLabelIdentifiers/operation/postV3DbsOrdersMetaSgtin)
-     *   - `customsDeclaration` — [номер ДТ](./dbs#tag/dbsLabelIdentifiers/operation/postV3DbsOrdersMetaCustomsDeclaration)
-     *   - `originCountryCode` — [числовой код страны происхождения](./dbs#tag/dbsLabelIdentifiers/operation/postV3DbsOrdersMetaCustomsDeclaration) из [Общероссийского классификатора стран мира](https://esnsi.gosuslugi.ru/classifiers/16269) post)
+     *   - `imei` — IMEI
+     *   - `uin` — УИН
+     *   - `gtin` — GTIN
+     *   - `sgtin` — код маркировки
+     *   - `customsDeclaration` — номер ДТ
+     *   - `originCountryCode` — числовой код страны происхождения из [Общероссийского классификатора стран мира](https://esnsi.gosuslugi.ru/classifiers/16269) post)
      *
      * @type {string}
      * @memberof DbsApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner

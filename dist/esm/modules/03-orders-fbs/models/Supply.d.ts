@@ -115,7 +115,7 @@ export interface Supply {
      */
     shippingDt?: string | null;
     /**
-     * ID пункта отгрузки. Можно получить в методе получения [пунктов отгрузки поставок](./orders-fbs#tag/fbsSupplies/operation/getV3FbsShippingPoints)
+     * ID пункта отгрузки. Можно получить в методе получения пунктов отгрузки поставок
      * @type {number}
      * @memberof Supply
      */
@@ -137,7 +137,7 @@ export interface Supply {
     waybillUuid?: string | null;
     /**
      * Доступен ли СПОТ для этой поставки:
-     *   - `true` — да. Используйте метод [получения данных СПОТ](./orders-fbs#tag/fbsSupplies/operation/postV3FbsSuppliesSpotList)
+     *   - `true` — да. Используйте метод получения данных СПОТ
      *   - `false` — нет
      *
      * @type {boolean}

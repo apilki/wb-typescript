@@ -17,12 +17,12 @@
 export interface InStorePickupApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner {
     /**
      * Идентификатор маркировки:
-     *   - `imei` — [IMEI](./in-store-pickup#tag/inStorePickupLabelIdentifiers/operation/postV3ClickCollectOrdersMetaImei)
-     *   - `uin` — [УИН](./in-store-pickup#tag/inStorePickupLabelIdentifiers/operation/postV3ClickCollectOrdersMetaUin)
-     *   - `gtin` — [GTIN](./in-store-pickup#tag/inStorePickupLabelIdentifiers/operation/postV3ClickCollectOrdersMetaGtin)
-     *   - `sgtin` — [код маркировки](./in-store-pickup#tag/inStorePickupLabelIdentifiers/operation/postV3ClickCollectOrdersMetaSgtin)
-     *   - `customsDeclaration` — [номер ДТ](./in-store-pickup#tag/inStorePickupLabelIdentifiers/operation/postV3ClickCollectOrdersMetaCustomsDeclaration)
-     *   - `originCountryCode` — [числовой код страны происхождения товара](./in-store-pickup#tag/inStorePickupLabelIdentifiers/operation/postV3ClickCollectOrdersMetaCustomsDeclaration) из [Общероссийского классификатора стран мира](https://esnsi.gosuslugi.ru/classifiers/16269)
+     *   - `imei` — IMEI
+     *   - `uin` — УИН
+     *   - `gtin` — GTIN
+     *   - `sgtin` — код маркировки
+     *   - `customsDeclaration` — номер ДТ
+     *   - `originCountryCode` — числовой код страны происхождения товара из [Общероссийского классификатора стран мира](https://esnsi.gosuslugi.ru/classifiers/16269)
      *
      * @type {string}
      * @memberof InStorePickupApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner

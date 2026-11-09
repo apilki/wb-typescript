@@ -22,7 +22,7 @@ export interface UpdateSupplyShippingMethod {
      */
     shippingDt: string;
     /**
-     * ID пункта отгрузки. Можно получить с помощью [отдельного метода](./orders-fbs#tag/fbsSupplies/operation/getV3FbsShippingPoints)
+     * ID пункта отгрузки. Можно получить с помощью отдельного метода
      * @type {number}
      * @memberof UpdateSupplyShippingMethod
      */

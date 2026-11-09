@@ -22,7 +22,7 @@ export interface PostV3WarehousesRequest {
      */
     name: string;
     /**
-     * ID [склада WB](./item-management#tag/sellerWarehouses/operation/getV3Offices).<br>Нельзя привязывать склад WB, который уже используется
+     * ID склада WB.<br>Нельзя привязывать склад WB, который уже используется
      * @type {number}
      * @memberof PostV3WarehousesRequest
      */

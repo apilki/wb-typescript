@@ -36,22 +36,22 @@ export interface Listing {
     /**
      * Уникальный ID заказа. <br>
      * Примечание: `rid` — это `srid` в ответах методов:
-     *   - [Заявки покупателей на возврат](./customer-communication#tag/buyersReturns/operation/getV1Claims)
-     *   - [Лента заказов](./analytics#tag/orderFeed/operation/postV1OrderFeed)
-     *   - [Заказы](./reports#tag/mainReports/operation/getV1SupplierOrders)
-     *   - [Продажи](./reports#tag/mainReports/operation/getV1SupplierSales)
-     *   - [Отчёт о возвратах и перемещении товаров](./reports#tag/returnsAndItemMovementReport)
-     *   - [Детализации к отчётам реализации по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
-     *   - [Детализации к отчётам реализации за период](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
-     *   - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
-     *   - [Детализации к отчётам об издержках на приём платежей за период](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
+     *   - Заявки покупателей на возврат
+     *   - Лента заказов
+     *   - Заказы
+     *   - Продажи
+     *   - Отчёт о возвратах и перемещении товаров
+     *   - Детализации к отчётам реализации по ID отчётов
+     *   - Детализации к отчётам реализации за период
+     *   - Детализации к отчётам об издержках на приём платежей по ID отчётов
+     *   - Детализации к отчётам об издержках на приём платежей за период
      *
      * @type {string}
      * @memberof Listing
      */
     rid?: string;
     /**
-     * Размер товара, соответствует `wbSize` в [карточке товара](./item-management#tag/listings/operation/postV2GetCardsList)
+     * Размер товара, соответствует `wbSize` в карточке товара
      * @type {string}
      * @memberof Listing
      */

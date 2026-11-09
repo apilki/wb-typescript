@@ -18,7 +18,7 @@ export interface SupplySpotDataResponseSuppliesInnerSpot {
     /**
      * Статус СПОТ:
      *   - `pending` — ожидается результат формирования ДОПП — документа о предстоящей поставке
-     *   - `completed` — ДОПП успешно сформирован. Можно [получить QR-код](./orders-fbs#tag/fbsSupplies/operation/getV3FbsSuppliesSupplyIdStickersSpot)
+     *   - `completed` — ДОПП успешно сформирован. Можно получить QR-код
      *   - `failed` — ошибка формирования ДОПП. Подробнее в поле `errorCode`
      *
      * @type {string}
@@ -38,7 +38,7 @@ export interface SupplySpotDataResponseSuppliesInnerSpot {
      */
     carrierTaxNumber: string;
     /**
-     * Код страны перевозчика по [ОКСМ](./orders-fbs#tag/fbsSupplies/operation/getV3FbsDictionariesCountriesOksm)
+     * Код страны перевозчика по ОКСМ
      * @type {string}
      * @memberof SupplySpotDataResponseSuppliesInnerSpot
      */
@@ -56,7 +56,7 @@ export interface SupplySpotDataResponseSuppliesInnerSpot {
      */
     trailerRegistrationNumber?: string;
     /**
-     * Код ошибки от сервиса формирования ДОПП — документа о предстоящей поставке. Возвращается при `"status": "failed"`. Чтобы исправить ошибку, проверьте данные СПОТ и [добавьте их в поставку](./orders-fbs#tag/fbsSupplies/operation/getV3FbsSuppliesSupplyIdSpot) ещё раз
+     * Код ошибки от сервиса формирования ДОПП — документа о предстоящей поставке. Возвращается при `"status": "failed"`. Чтобы исправить ошибку, проверьте данные СПОТ и добавьте их в поставку ещё раз
      *
      * @type {string}
      * @memberof SupplySpotDataResponseSuppliesInnerSpot

@@ -22,7 +22,7 @@ export interface ItemsItem {
      */
     nmID: number;
     /**
-     * Цена. Валюту можно получить с помощью методов [Получить товары с ценами](./item-management#tag/pricesAndDiscounts/operation/getV2ListGoodsFilter) и [Получить товары с ценами по артикулам](./item-management#tag/pricesAndDiscounts/operation/postV2ListGoodsFilter), поле `currencyIsoCode4217`
+     * Цена. Валюту можно получить с помощью методов Получить товары с ценами и Получить товары с ценами по артикулам, поле `currencyIsoCode4217`
      * @type {number}
      * @memberof ItemsItem
      */

@@ -26,7 +26,7 @@ export interface PostV2CardsUpdateRequestInnerDocumentsItemsInner {
     id?: string;
     /**
      * Тип документа. <br>
-     * Типы документов, которые вы можете добавить для товара, указаны в [характеристиках предмета](./item-management#tag/categoriesSubcategoriesAndCharacteristics/operation/getV2ObjectCharcsSubjectId) — поле `charcID`. <br>
+     * Типы документов, которые вы можете добавить для товара, указаны в характеристиках предмета — поле `charcID`. <br>
      * Возможные типы документов:
      *   - `1` — Сертификат соответствия. Можно указать для `charcID`: 15001136, 15001137, 15001138
      *   - `2` — Декларация о соответствии. Можно указать для `charcID`: 15001135, 15001137, 15001138
