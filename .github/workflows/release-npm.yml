@@ -73,7 +73,7 @@ jobs:
           node -e '
             const raw = require("./pack.json");
             const p = Array.isArray(raw) ? raw[0] : Object.values(raw)[0];
-            const allowed = /^(dist\/|package\.json$|README\.md$|LICENSE$|CHANGELOG\.md$)/;
+            const allowed = /^(dist\/|package\.json$|README\.md$|LICENSE$|NOTICE$|CHANGELOG\.md$)/;
             const manifest = JSON.parse(require("fs").readFileSync("package.json", "utf8"));
             const bad = p.files.map(f => f.path).filter(f => !allowed.test(f));
             const problems = [];
