@@ -19,9 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Атрибуция: клиент сгенерирован из публичных OpenAPI-описаний Wildberries API
-(dev.wildberries.ru). Описания API и документация принадлежат ООО «Вайлдберриз»
-и в этот пакет не входят; их использование регулируется условиями вендора.
