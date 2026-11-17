@@ -21,7 +21,7 @@ export interface PostV3SuppliesSupplyIdTrbxStickersResponse200 {
      * @type {Array<TrbxStickers>}
      * @memberof PostV3SuppliesSupplyIdTrbxStickersResponse200
      */
-    stickers?: Array<TrbxStickers>;
+    stickers?: Array<TrbxStickers> | null;
 }
 /**
  * Check if a given object implements the PostV3SuppliesSupplyIdTrbxStickersResponse200 interface.

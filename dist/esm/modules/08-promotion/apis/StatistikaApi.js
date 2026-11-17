@@ -12,11 +12,58 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { FullStatsItemFromJSON, V0GetNormQueryStatsRequestToJSON, V0GetNormQueryStatsResponseFromJSON, V1GetNormQueryStatsRequestToJSON, V1GetNormQueryStatsResponseFromJSON, } from '../models/index';
+import { FullStatsItemFromJSON, V0GetNormQueryStatsRequestToJSON, V0GetNormQueryStatsResponseFromJSON, V0PositionsResponseFromJSON, V1GetNormQueryStatsRequestToJSON, V1GetNormQueryStatsResponseFromJSON, V4FullStatsResponseFromJSON, } from '../models/index';
 /**
  *
  */
 export class StatistikaApi extends runtime.BaseAPI {
+    /**
+     * Метод возвращает медианные позиции карточек товаров в поисковой выдаче и распределение показов по фиксированным диапазонам позиций.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 10 запросов | 6 сек | 1 запрос | | Сервисный | 1 мин | 10 запросов | 6 сек | 1 запрос | </div>
+     * Позиции карточек товаров в поисковой выдаче
+     */
+    async getV0PositionsRaw(requestParameters, initOverrides) {
+        if (requestParameters['advertIds'] == null) {
+            throw new runtime.RequiredError('advertIds', 'Required parameter "advertIds" was null or undefined when calling getV0Positions().');
+        }
+        if (requestParameters['beginDate'] == null) {
+            throw new runtime.RequiredError('beginDate', 'Required parameter "beginDate" was null or undefined when calling getV0Positions().');
+        }
+        if (requestParameters['endDate'] == null) {
+            throw new runtime.RequiredError('endDate', 'Required parameter "endDate" was null or undefined when calling getV0Positions().');
+        }
+        const queryParameters = {};
+        if (requestParameters['advertIds'] != null) {
+            queryParameters['advertIds'] = requestParameters['advertIds'].join(runtime.COLLECTION_FORMATS["csv"]);
+        }
+        if (requestParameters['nmIds'] != null) {
+            queryParameters['nmIds'] = requestParameters['nmIds'].join(runtime.COLLECTION_FORMATS["csv"]);
+        }
+        if (requestParameters['beginDate'] != null) {
+            queryParameters['beginDate'] = requestParameters['beginDate'].toISOString().substring(0, 10);
+        }
+        if (requestParameters['endDate'] != null) {
+            queryParameters['endDate'] = requestParameters['endDate'].toISOString().substring(0, 10);
+        }
+        const headerParameters = {};
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+        const response = await this.request({
+            path: `/api/advert/v0/positions`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => V0PositionsResponseFromJSON(jsonValue));
+    }
+    /**
+     * Метод возвращает медианные позиции карточек товаров в поисковой выдаче и распределение показов по фиксированным диапазонам позиций.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 10 запросов | 6 сек | 1 запрос | | Сервисный | 1 мин | 10 запросов | 6 сек | 1 запрос | </div>
+     * Позиции карточек товаров в поисковой выдаче
+     */
+    async getV0Positions(advertIds, beginDate, endDate, nmIds, initOverrides) {
+        const response = await this.getV0PositionsRaw({ advertIds: advertIds, beginDate: beginDate, endDate: endDate, nmIds: nmIds }, initOverrides);
+        return await response.value();
+    }
     /**
      * Метод формирует статистику для кампаний независимо от типа. <br><br> Максимальный период в запросе — 31 день. <br><br> Для кампаний в статусах `7`, `9` и `11`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Сервисный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div>
      * Статистика кампаний
@@ -59,6 +106,50 @@ export class StatistikaApi extends runtime.BaseAPI {
      */
     async getV3Fullstats(ids, beginDate, endDate, initOverrides) {
         const response = await this.getV3FullstatsRaw({ ids: ids, beginDate: beginDate, endDate: endDate }, initOverrides);
+        return await response.value();
+    }
+    /**
+     * Метод формирует статистику кампаний в плоском формате (без вложенной иерархии) с разделением по зонам показов и типам конверсии. <br><br> Максимальный период в запросе — 31 день. <br><br> Для кампаний в статусах `7`, `9` и `11`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Сервисный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div>
+     * Плоская статистика кампаний
+     */
+    async getV4FullstatsRaw(requestParameters, initOverrides) {
+        if (requestParameters['advertIds'] == null) {
+            throw new runtime.RequiredError('advertIds', 'Required parameter "advertIds" was null or undefined when calling getV4Fullstats().');
+        }
+        if (requestParameters['beginDate'] == null) {
+            throw new runtime.RequiredError('beginDate', 'Required parameter "beginDate" was null or undefined when calling getV4Fullstats().');
+        }
+        if (requestParameters['endDate'] == null) {
+            throw new runtime.RequiredError('endDate', 'Required parameter "endDate" was null or undefined when calling getV4Fullstats().');
+        }
+        const queryParameters = {};
+        if (requestParameters['advertIds'] != null) {
+            queryParameters['advertIds'] = requestParameters['advertIds'].join(runtime.COLLECTION_FORMATS["csv"]);
+        }
+        if (requestParameters['beginDate'] != null) {
+            queryParameters['beginDate'] = requestParameters['beginDate'].toISOString().substring(0, 10);
+        }
+        if (requestParameters['endDate'] != null) {
+            queryParameters['endDate'] = requestParameters['endDate'].toISOString().substring(0, 10);
+        }
+        const headerParameters = {};
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+        const response = await this.request({
+            path: `/api/advert/v4/fullstats`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => V4FullStatsResponseFromJSON(jsonValue));
+    }
+    /**
+     * Метод формирует статистику кампаний в плоском формате (без вложенной иерархии) с разделением по зонам показов и типам конверсии. <br><br> Максимальный период в запросе — 31 день. <br><br> Для кампаний в статусах `7`, `9` и `11`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Сервисный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div>
+     * Плоская статистика кампаний
+     */
+    async getV4Fullstats(advertIds, beginDate, endDate, initOverrides) {
+        const response = await this.getV4FullstatsRaw({ advertIds: advertIds, beginDate: beginDate, endDate: endDate }, initOverrides);
         return await response.value();
     }
     /**

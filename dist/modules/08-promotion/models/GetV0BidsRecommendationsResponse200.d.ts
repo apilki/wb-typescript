@@ -9,14 +9,65 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { V0BidsRecommendationsCpcResponse2 } from './V0BidsRecommendationsCpcResponse2';
-import type { V0BidsRecommendationsCpmResponse1 } from './V0BidsRecommendationsCpmResponse1';
+import type { V0BidRecommendationNormQuery } from './V0BidRecommendationNormQuery';
+import type { V0BidRecommendationBase } from './V0BidRecommendationBase';
+import type { V0BidRecommendationCPCLevels } from './V0BidRecommendationCPCLevels';
 /**
- * @type GetV0BidsRecommendationsResponse200
  *
  * @export
+ * @interface GetV0BidsRecommendationsResponse200
  */
-export type GetV0BidsRecommendationsResponse200 = V0BidsRecommendationsCpcResponse2 | V0BidsRecommendationsCpmResponse1;
+export interface GetV0BidsRecommendationsResponse200 {
+    /**
+     * ID кампании
+     * @type {number}
+     * @memberof GetV0BidsRecommendationsResponse200
+     */
+    advertId?: number;
+    /**
+     *
+     * @type {V0BidRecommendationBase}
+     * @memberof GetV0BidsRecommendationsResponse200
+     */
+    base?: V0BidRecommendationBase;
+    /**
+     * Артикул WB
+     * @type {number}
+     * @memberof GetV0BidsRecommendationsResponse200
+     */
+    nmId?: number;
+    /**
+     * Рекомендуемые ставки для поисковых кластеров
+     * @type {Array<V0BidRecommendationNormQuery>}
+     * @memberof GetV0BidsRecommendationsResponse200
+     */
+    normQueries?: Array<V0BidRecommendationNormQuery>;
+    /**
+     * Тип оплаты:
+     *   - `cpc` — за клики
+     *
+     * @type {string}
+     * @memberof GetV0BidsRecommendationsResponse200
+     */
+    paymentType?: GetV0BidsRecommendationsResponse200PaymentTypeEnum;
+    /**
+     * Рекомендуемые ставки для карточек товаров
+     * @type {Array<V0BidRecommendationCPCLevels>}
+     * @memberof GetV0BidsRecommendationsResponse200
+     */
+    levels?: Array<V0BidRecommendationCPCLevels>;
+}
+/**
+ * @export
+ */
+export declare const GetV0BidsRecommendationsResponse200PaymentTypeEnum: {
+    readonly cpc: "cpc";
+};
+export type GetV0BidsRecommendationsResponse200PaymentTypeEnum = typeof GetV0BidsRecommendationsResponse200PaymentTypeEnum[keyof typeof GetV0BidsRecommendationsResponse200PaymentTypeEnum];
+/**
+ * Check if a given object implements the GetV0BidsRecommendationsResponse200 interface.
+ */
+export declare function instanceOfGetV0BidsRecommendationsResponse200(value: object): value is GetV0BidsRecommendationsResponse200;
 export declare function GetV0BidsRecommendationsResponse200FromJSON(json: any): GetV0BidsRecommendationsResponse200;
 export declare function GetV0BidsRecommendationsResponse200FromJSONTyped(json: any, ignoreDiscriminator: boolean): GetV0BidsRecommendationsResponse200;
 export declare function GetV0BidsRecommendationsResponse200ToJSON(value?: GetV0BidsRecommendationsResponse200 | null): any;

@@ -41,7 +41,8 @@ exports.AccessInnerCodeEnum = {
     pretrialClaims: 'pretrialClaims',
     sellersChat: 'sellersChat',
     brandzone: 'brandzone',
-    brandzoneSubscribe: 'brandzoneSubscribe'
+    brandzoneSubscribe: 'brandzoneSubscribe',
+    reportRating: 'reportRating'
 };
 /**
  * Check if a given object implements the AccessInner interface.

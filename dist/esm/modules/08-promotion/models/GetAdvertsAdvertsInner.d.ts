@@ -9,10 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { Timestamps } from './Timestamps';
 import type { AdvertNMsSettings } from './AdvertNMsSettings';
 import type { GetAdvertsAdvertsInnerRestrictions } from './GetAdvertsAdvertsInnerRestrictions';
 import type { AdvertSettings } from './AdvertSettings';
+import type { TimestampsV2 } from './TimestampsV2';
 /**
  *
  * @export
@@ -73,10 +73,10 @@ export interface GetAdvertsAdvertsInner {
     status: GetAdvertsAdvertsInnerStatusEnum;
     /**
      *
-     * @type {Timestamps}
+     * @type {TimestampsV2}
      * @memberof GetAdvertsAdvertsInner
      */
-    timestamps: Timestamps;
+    timestamps: TimestampsV2;
 }
 /**
  * @export

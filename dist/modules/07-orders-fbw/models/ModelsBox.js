@@ -3,7 +3,7 @@
 /* eslint-disable */
 /**
  * Поставки FBW
- * <div class=\"description_important\">   Узнать больше о поставках FBW можно в <a href=\"https://seller.wildberries.ru/instructions/subcategory/5a8e1202-0865-45b7-acae-5d0afc7add56?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  <div class=\"api-block\">  В разделе описаны методы получения:   - [информации для формирования поставок](/openapi/orders-fbw#tag/informationForFormingSupplies)   - [информации о поставках](/openapi/orders-fbw#tag/suppliesInformation)  </div>
+ * <div class=\"description_important\">   Узнать больше о поставках FBW можно в <a href=\"https://seller.wildberries.ru/instructions/subcategory/5a8e1202-0865-45b7-acae-5d0afc7add56?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  <div class=\"api-block\">  С помощью методов этого раздела вы можете:   - получить [информацию для формирования поставок](/openapi/orders-fbw#tag/informationForFormingSupplies)   - получить [информацию о поставках](/openapi/orders-fbw#tag/suppliesInformation)   - управлять [черновиками поставок](/openapi/orders-fbw#tag/supplyDrafts)  </div>
  *
  * The version of the OpenAPI document: ordersfbw
  *
@@ -22,6 +22,12 @@ const ModelsGoodInBox_1 = require("./ModelsGoodInBox");
  * Check if a given object implements the ModelsBox interface.
  */
 function instanceOfModelsBox(value) {
+    if (!('packageCode' in value) || value['packageCode'] === undefined)
+        return false;
+    if (!('quantity' in value) || value['quantity'] === undefined)
+        return false;
+    if (!('barcodes' in value) || value['barcodes'] === undefined)
+        return false;
     return true;
 }
 function ModelsBoxFromJSON(json) {
@@ -32,9 +38,10 @@ function ModelsBoxFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'packageCode': json['packageCode'] == null ? undefined : json['packageCode'],
-        'quantity': json['quantity'] == null ? undefined : json['quantity'],
-        'barcodes': json['barcodes'] == null ? undefined : (json['barcodes'].map(ModelsGoodInBox_1.ModelsGoodInBoxFromJSON)),
+        'packageCode': json['packageCode'],
+        'packageId': json['packageId'] == null ? undefined : json['packageId'],
+        'quantity': json['quantity'],
+        'barcodes': (json['barcodes'].map(ModelsGoodInBox_1.ModelsGoodInBoxFromJSON)),
     };
 }
 function ModelsBoxToJSON(value) {
@@ -43,7 +50,8 @@ function ModelsBoxToJSON(value) {
     }
     return {
         'packageCode': value['packageCode'],
+        'packageId': value['packageId'],
         'quantity': value['quantity'],
-        'barcodes': value['barcodes'] == null ? undefined : (value['barcodes'].map(ModelsGoodInBox_1.ModelsGoodInBoxToJSON)),
+        'barcodes': (value['barcodes'].map(ModelsGoodInBox_1.ModelsGoodInBoxToJSON)),
     };
 }

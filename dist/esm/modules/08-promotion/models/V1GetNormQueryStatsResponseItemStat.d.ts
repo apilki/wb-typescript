@@ -37,7 +37,7 @@ export interface V1GetNormQueryStatsResponseItemStat {
      */
     clicks?: number;
     /**
-     * Количество добавлений товаров в корзину
+     * Сколько раз товар добавили в корзину
      * @type {number}
      * @memberof V1GetNormQueryStatsResponseItemStat
      */
@@ -49,7 +49,7 @@ export interface V1GetNormQueryStatsResponseItemStat {
      */
     orders?: number;
     /**
-     * CTR (click-through rate) — отношение числа кликов к количеству показов в процентах.
+     * Кликабельность — отношение числа кликов к количеству показов, %.
      *
      * Для кампаний с типом оплаты `cpc` — за клики — значение будет `null`
      *

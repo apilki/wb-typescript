@@ -11,10 +11,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { TimestampsFromJSON, TimestampsToJSON, } from './Timestamps';
 import { AdvertNMsSettingsFromJSON, AdvertNMsSettingsToJSON, } from './AdvertNMsSettings';
 import { GetAdvertsAdvertsInnerRestrictionsFromJSON, GetAdvertsAdvertsInnerRestrictionsToJSON, } from './GetAdvertsAdvertsInnerRestrictions';
 import { AdvertSettingsFromJSON, AdvertSettingsToJSON, } from './AdvertSettings';
+import { TimestampsV2FromJSON, TimestampsV2ToJSON, } from './TimestampsV2';
 /**
  * @export
  */
@@ -61,7 +61,7 @@ export function GetAdvertsAdvertsInnerFromJSONTyped(json, ignoreDiscriminator) {
         'settings': AdvertSettingsFromJSON(json['settings']),
         'restrictions': GetAdvertsAdvertsInnerRestrictionsFromJSON(json['restrictions']),
         'status': json['status'],
-        'timestamps': TimestampsFromJSON(json['timestamps']),
+        'timestamps': TimestampsV2FromJSON(json['timestamps']),
     };
 }
 export function GetAdvertsAdvertsInnerToJSON(value) {
@@ -76,6 +76,6 @@ export function GetAdvertsAdvertsInnerToJSON(value) {
         'settings': AdvertSettingsToJSON(value['settings']),
         'restrictions': GetAdvertsAdvertsInnerRestrictionsToJSON(value['restrictions']),
         'status': value['status'],
-        'timestamps': TimestampsToJSON(value['timestamps']),
+        'timestamps': TimestampsV2ToJSON(value['timestamps']),
     };
 }

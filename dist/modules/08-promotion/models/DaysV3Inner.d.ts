@@ -23,13 +23,13 @@ export interface DaysV3Inner {
      */
     apps: Array<DaysV3InnerAppsInner>;
     /**
-     * Количество добавлений товаров в корзину
+     * Сколько раз товар добавили в корзину
      * @type {number}
      * @memberof DaysV3Inner
      */
     atbs: number;
     /**
-     * Отмены, шт.
+     * Количество отмен
      * @type {number}
      * @memberof DaysV3Inner
      */
@@ -59,7 +59,7 @@ export interface DaysV3Inner {
      */
     cr: number;
     /**
-     * CTR (click-through rate) — отношение числа кликов к количеству показов в процентах
+     * Кликабельность — отношение числа кликов к количеству показов, %
      * @type {number}
      * @memberof DaysV3Inner
      */

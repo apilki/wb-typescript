@@ -49,8 +49,6 @@ __exportStar(require("./SuccessGoodsLabelingResponse"), exports);
 __exportStar(require("./SuccessGoodsLabelingResponseReportInner"), exports);
 __exportStar(require("./SuccessParentsResponse"), exports);
 __exportStar(require("./SuccessParentsResponseDataInner"), exports);
-__exportStar(require("./SuccessRegionSaleResponse"), exports);
-__exportStar(require("./SuccessRegionSaleResponseReportInner"), exports);
 __exportStar(require("./SuccessSubstIncorAttachResponse"), exports);
 __exportStar(require("./SuccessSubstIncorAttachResponseData"), exports);
 __exportStar(require("./SuccessSubstIncorAttachResponseDataReportsInner"), exports);

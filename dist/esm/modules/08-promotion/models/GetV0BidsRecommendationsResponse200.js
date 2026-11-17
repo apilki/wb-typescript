@@ -11,8 +11,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { instanceOfV0BidsRecommendationsCpcResponse2, V0BidsRecommendationsCpcResponse2FromJSONTyped, V0BidsRecommendationsCpcResponse2ToJSON, } from './V0BidsRecommendationsCpcResponse2';
-import { instanceOfV0BidsRecommendationsCpmResponse1, V0BidsRecommendationsCpmResponse1FromJSONTyped, V0BidsRecommendationsCpmResponse1ToJSON, } from './V0BidsRecommendationsCpmResponse1';
+import { V0BidRecommendationNormQueryFromJSON, V0BidRecommendationNormQueryToJSON, } from './V0BidRecommendationNormQuery';
+import { V0BidRecommendationBaseFromJSON, V0BidRecommendationBaseToJSON, } from './V0BidRecommendationBase';
+import { V0BidRecommendationCPCLevelsFromJSON, V0BidRecommendationCPCLevelsToJSON, } from './V0BidRecommendationCPCLevels';
+/**
+ * @export
+ */
+export const GetV0BidsRecommendationsResponse200PaymentTypeEnum = {
+    cpc: 'cpc'
+};
+/**
+ * Check if a given object implements the GetV0BidsRecommendationsResponse200 interface.
+ */
+export function instanceOfGetV0BidsRecommendationsResponse200(value) {
+    return true;
+}
 export function GetV0BidsRecommendationsResponse200FromJSON(json) {
     return GetV0BidsRecommendationsResponse200FromJSONTyped(json, false);
 }
@@ -20,23 +33,25 @@ export function GetV0BidsRecommendationsResponse200FromJSONTyped(json, ignoreDis
     if (json == null) {
         return json;
     }
-    if (instanceOfV0BidsRecommendationsCpcResponse2(json)) {
-        return V0BidsRecommendationsCpcResponse2FromJSONTyped(json, true);
-    }
-    if (instanceOfV0BidsRecommendationsCpmResponse1(json)) {
-        return V0BidsRecommendationsCpmResponse1FromJSONTyped(json, true);
-    }
-    return {};
+    return {
+        'advertId': json['advertId'] == null ? undefined : json['advertId'],
+        'base': json['base'] == null ? undefined : V0BidRecommendationBaseFromJSON(json['base']),
+        'nmId': json['nmId'] == null ? undefined : json['nmId'],
+        'normQueries': json['normQueries'] == null ? undefined : (json['normQueries'].map(V0BidRecommendationNormQueryFromJSON)),
+        'paymentType': json['paymentType'] == null ? undefined : json['paymentType'],
+        'levels': json['levels'] == null ? undefined : (json['levels'].map(V0BidRecommendationCPCLevelsFromJSON)),
+    };
 }
 export function GetV0BidsRecommendationsResponse200ToJSON(value) {
     if (value == null) {
         return value;
     }
-    if (instanceOfV0BidsRecommendationsCpcResponse2(value)) {
-        return V0BidsRecommendationsCpcResponse2ToJSON(value);
-    }
-    if (instanceOfV0BidsRecommendationsCpmResponse1(value)) {
-        return V0BidsRecommendationsCpmResponse1ToJSON(value);
-    }
-    return {};
+    return {
+        'advertId': value['advertId'],
+        'base': V0BidRecommendationBaseToJSON(value['base']),
+        'nmId': value['nmId'],
+        'normQueries': value['normQueries'] == null ? undefined : (value['normQueries'].map(V0BidRecommendationNormQueryToJSON)),
+        'paymentType': value['paymentType'],
+        'levels': value['levels'] == null ? undefined : (value['levels'].map(V0BidRecommendationCPCLevelsToJSON)),
+    };
 }

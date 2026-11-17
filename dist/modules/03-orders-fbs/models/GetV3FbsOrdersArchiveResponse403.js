@@ -13,11 +13,31 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.instanceOfGetV3FbsOrdersArchiveResponse403 = instanceOfGetV3FbsOrdersArchiveResponse403;
 exports.GetV3FbsOrdersArchiveResponse403FromJSON = GetV3FbsOrdersArchiveResponse403FromJSON;
 exports.GetV3FbsOrdersArchiveResponse403FromJSONTyped = GetV3FbsOrdersArchiveResponse403FromJSONTyped;
 exports.GetV3FbsOrdersArchiveResponse403ToJSON = GetV3FbsOrdersArchiveResponse403ToJSON;
-const ArhiveOrderError400_1 = require("./ArhiveOrderError400");
-const Response4XX_1 = require("./Response4XX");
+const ArhiveOrderError400ErrorsInner_1 = require("./ArhiveOrderError400ErrorsInner");
+/**
+ * Check if a given object implements the GetV3FbsOrdersArchiveResponse403 interface.
+ */
+function instanceOfGetV3FbsOrdersArchiveResponse403(value) {
+    if (!('detail' in value) || value['detail'] === undefined)
+        return false;
+    if (!('origin' in value) || value['origin'] === undefined)
+        return false;
+    if (!('requestId' in value) || value['requestId'] === undefined)
+        return false;
+    if (!('status' in value) || value['status'] === undefined)
+        return false;
+    if (!('title' in value) || value['title'] === undefined)
+        return false;
+    if (!('statusText' in value) || value['statusText'] === undefined)
+        return false;
+    if (!('timestamp' in value) || value['timestamp'] === undefined)
+        return false;
+    return true;
+}
 function GetV3FbsOrdersArchiveResponse403FromJSON(json) {
     return GetV3FbsOrdersArchiveResponse403FromJSONTyped(json, false);
 }
@@ -25,23 +45,31 @@ function GetV3FbsOrdersArchiveResponse403FromJSONTyped(json, ignoreDiscriminator
     if (json == null) {
         return json;
     }
-    if ((0, ArhiveOrderError400_1.instanceOfArhiveOrderError400)(json)) {
-        return (0, ArhiveOrderError400_1.ArhiveOrderError400FromJSONTyped)(json, true);
-    }
-    if ((0, Response4XX_1.instanceOfResponse4XX)(json)) {
-        return (0, Response4XX_1.Response4XXFromJSONTyped)(json, true);
-    }
-    return {};
+    return {
+        'code': json['code'] == null ? undefined : json['code'],
+        'detail': json['detail'],
+        'errors': json['errors'] == null ? undefined : (json['errors'].map(ArhiveOrderError400ErrorsInner_1.ArhiveOrderError400ErrorsInnerFromJSON)),
+        'origin': json['origin'],
+        'requestId': json['requestId'],
+        'status': json['status'],
+        'title': json['title'],
+        'statusText': json['statusText'],
+        'timestamp': (new Date(json['timestamp'])),
+    };
 }
 function GetV3FbsOrdersArchiveResponse403ToJSON(value) {
     if (value == null) {
         return value;
     }
-    if ((0, ArhiveOrderError400_1.instanceOfArhiveOrderError400)(value)) {
-        return (0, ArhiveOrderError400_1.ArhiveOrderError400ToJSON)(value);
-    }
-    if ((0, Response4XX_1.instanceOfResponse4XX)(value)) {
-        return (0, Response4XX_1.Response4XXToJSON)(value);
-    }
-    return {};
+    return {
+        'code': value['code'],
+        'detail': value['detail'],
+        'errors': value['errors'] == null ? undefined : (value['errors'].map(ArhiveOrderError400ErrorsInner_1.ArhiveOrderError400ErrorsInnerToJSON)),
+        'origin': value['origin'],
+        'requestId': value['requestId'],
+        'status': value['status'],
+        'title': value['title'],
+        'statusText': value['statusText'],
+        'timestamp': ((value['timestamp']).toISOString()),
+    };
 }

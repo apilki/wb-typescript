@@ -59,7 +59,7 @@ export interface ApiOrder {
      * <br>
      * Предоставляется в информационных целях.
      * <br><br>
-     * Используйте значение поля `finalPrice`, только если в ответе метода POST /api/marketplace/v3/click-collect/orders/final-price вернулось `"data": null`. Во всех остальных случаях используйте значение поля `originalFinalPrice` из ответа указанного метода
+     * Используйте значение поля `finalPrice`, только если в ответе метода получения цены продавца и суммы к оплате вернулось `"data": null`. Во всех остальных случаях используйте значение поля `originalFinalPrice` из ответа указанного метода
      *
      * @type {number}
      * @memberof ApiOrder
@@ -76,7 +76,7 @@ export interface ApiOrder {
      * <br>
      * Предоставляется в информационных целях.
      * <br><br>
-     *  Используйте значение поля `convertedFinalPrice`, только если в ответе метода POST /api/marketplace/v3/click-collect/orders/final-price вернулось `"data": null`. Во всех остальных случаях используйте значение поля `convertedOriginalFinalPrice` из ответа того же метода
+     *  Используйте значение поля `convertedFinalPrice`, только если в ответе метода получения цены продавца и суммы к оплате вернулось `"data": null`. Во всех остальных случаях используйте значение поля `convertedOriginalFinalPrice` из ответа того же метода
      *
      * @type {number}
      * @memberof ApiOrder

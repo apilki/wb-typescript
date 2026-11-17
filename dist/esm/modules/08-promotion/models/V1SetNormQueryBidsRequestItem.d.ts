@@ -35,7 +35,7 @@ export interface V1SetNormQueryBidsRequestItem {
     normQuery: string;
     /**
      * Ставка в разменных единицах — 0,01 от базовой валюты [профиля продавца](https://cmp.wildberries.ru/campaigns/finances).
-     * Допустимый шаг ставки указан в ответе метода GET /api/advert/v1/config
+     * Допустимый шаг ставки указан в ответе метода получения конфигурационных значений продвижения
      *
      * @type {number}
      * @memberof V1SetNormQueryBidsRequestItem

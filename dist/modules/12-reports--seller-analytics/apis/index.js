@@ -23,5 +23,4 @@ __exportStar(require("./OtchetOVozvratahIPeremescheniiTovarovApi"), exports);
 __exportStar(require("./OtchetObOstatkahNaSkladahApi"), exports);
 __exportStar(require("./OtchetyObUderzhaniyahApi"), exports);
 __exportStar(require("./PlatnoeHranenieApi"), exports);
-__exportStar(require("./ProdazhiPoRegionamApi"), exports);
 __exportStar(require("./ZablokirovannyeKartochkiApi"), exports);

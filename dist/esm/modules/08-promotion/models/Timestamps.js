@@ -21,7 +21,7 @@ export function instanceOfTimestamps(value) {
         return false;
     if (!('started' in value) || value['started'] === undefined)
         return false;
-    if (!('deleted' in value) || value['deleted'] === undefined)
+    if (!('ended' in value) || value['ended'] === undefined)
         return false;
     return true;
 }
@@ -36,7 +36,7 @@ export function TimestampsFromJSONTyped(json, ignoreDiscriminator) {
         'created': (new Date(json['created'])),
         'updated': (new Date(json['updated'])),
         'started': (json['started'] == null ? null : new Date(json['started'])),
-        'deleted': (new Date(json['deleted'])),
+        'ended': (json['ended'] == null ? null : new Date(json['ended'])),
     };
 }
 export function TimestampsToJSON(value) {
@@ -47,6 +47,6 @@ export function TimestampsToJSON(value) {
         'created': ((value['created']).toISOString()),
         'updated': ((value['updated']).toISOString()),
         'started': (value['started'] == null ? null : value['started'].toISOString()),
-        'deleted': ((value['deleted']).toISOString()),
+        'ended': (value['ended'] == null ? null : value['ended'].toISOString()),
     };
 }

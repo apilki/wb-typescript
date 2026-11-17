@@ -9,14 +9,72 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { ArhiveOrderError400 } from './ArhiveOrderError400';
-import type { Response4XX } from './Response4XX';
+import type { ArhiveOrderError400ErrorsInner } from './ArhiveOrderError400ErrorsInner';
 /**
- * @type GetV3FbsOrdersArchiveResponse403
  *
  * @export
+ * @interface GetV3FbsOrdersArchiveResponse403
  */
-export type GetV3FbsOrdersArchiveResponse403 = ArhiveOrderError400 | Response4XX;
+export interface GetV3FbsOrdersArchiveResponse403 {
+    /**
+     * Внутренний код ошибки
+     * @type {string}
+     * @memberof GetV3FbsOrdersArchiveResponse403
+     */
+    code?: string;
+    /**
+     * Детали ошибки
+     * @type {string}
+     * @memberof GetV3FbsOrdersArchiveResponse403
+     */
+    detail: string;
+    /**
+     * Информация об ошибке
+     * @type {Array<ArhiveOrderError400ErrorsInner>}
+     * @memberof GetV3FbsOrdersArchiveResponse403
+     */
+    errors?: Array<ArhiveOrderError400ErrorsInner>;
+    /**
+     * ID внутреннего сервиса WB
+     * @type {string}
+     * @memberof GetV3FbsOrdersArchiveResponse403
+     */
+    origin: string;
+    /**
+     * ID запроса
+     * @type {string}
+     * @memberof GetV3FbsOrdersArchiveResponse403
+     */
+    requestId: string;
+    /**
+     * HTTP статус-код
+     * @type {number}
+     * @memberof GetV3FbsOrdersArchiveResponse403
+     */
+    status: number;
+    /**
+     * Заголовок ошибки
+     * @type {string}
+     * @memberof GetV3FbsOrdersArchiveResponse403
+     */
+    title: string;
+    /**
+     * Расшифровка HTTP статус-кода
+     * @type {string}
+     * @memberof GetV3FbsOrdersArchiveResponse403
+     */
+    statusText: string;
+    /**
+     * Дата и время запроса
+     * @type {Date}
+     * @memberof GetV3FbsOrdersArchiveResponse403
+     */
+    timestamp: Date;
+}
+/**
+ * Check if a given object implements the GetV3FbsOrdersArchiveResponse403 interface.
+ */
+export declare function instanceOfGetV3FbsOrdersArchiveResponse403(value: object): value is GetV3FbsOrdersArchiveResponse403;
 export declare function GetV3FbsOrdersArchiveResponse403FromJSON(json: any): GetV3FbsOrdersArchiveResponse403;
 export declare function GetV3FbsOrdersArchiveResponse403FromJSONTyped(json: any, ignoreDiscriminator: boolean): GetV3FbsOrdersArchiveResponse403;
 export declare function GetV3FbsOrdersArchiveResponse403ToJSON(value?: GetV3FbsOrdersArchiveResponse403 | null): any;

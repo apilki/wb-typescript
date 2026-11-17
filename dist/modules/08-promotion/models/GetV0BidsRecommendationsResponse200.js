@@ -13,11 +13,26 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GetV0BidsRecommendationsResponse200PaymentTypeEnum = void 0;
+exports.instanceOfGetV0BidsRecommendationsResponse200 = instanceOfGetV0BidsRecommendationsResponse200;
 exports.GetV0BidsRecommendationsResponse200FromJSON = GetV0BidsRecommendationsResponse200FromJSON;
 exports.GetV0BidsRecommendationsResponse200FromJSONTyped = GetV0BidsRecommendationsResponse200FromJSONTyped;
 exports.GetV0BidsRecommendationsResponse200ToJSON = GetV0BidsRecommendationsResponse200ToJSON;
-const V0BidsRecommendationsCpcResponse2_1 = require("./V0BidsRecommendationsCpcResponse2");
-const V0BidsRecommendationsCpmResponse1_1 = require("./V0BidsRecommendationsCpmResponse1");
+const V0BidRecommendationNormQuery_1 = require("./V0BidRecommendationNormQuery");
+const V0BidRecommendationBase_1 = require("./V0BidRecommendationBase");
+const V0BidRecommendationCPCLevels_1 = require("./V0BidRecommendationCPCLevels");
+/**
+ * @export
+ */
+exports.GetV0BidsRecommendationsResponse200PaymentTypeEnum = {
+    cpc: 'cpc'
+};
+/**
+ * Check if a given object implements the GetV0BidsRecommendationsResponse200 interface.
+ */
+function instanceOfGetV0BidsRecommendationsResponse200(value) {
+    return true;
+}
 function GetV0BidsRecommendationsResponse200FromJSON(json) {
     return GetV0BidsRecommendationsResponse200FromJSONTyped(json, false);
 }
@@ -25,23 +40,25 @@ function GetV0BidsRecommendationsResponse200FromJSONTyped(json, ignoreDiscrimina
     if (json == null) {
         return json;
     }
-    if ((0, V0BidsRecommendationsCpcResponse2_1.instanceOfV0BidsRecommendationsCpcResponse2)(json)) {
-        return (0, V0BidsRecommendationsCpcResponse2_1.V0BidsRecommendationsCpcResponse2FromJSONTyped)(json, true);
-    }
-    if ((0, V0BidsRecommendationsCpmResponse1_1.instanceOfV0BidsRecommendationsCpmResponse1)(json)) {
-        return (0, V0BidsRecommendationsCpmResponse1_1.V0BidsRecommendationsCpmResponse1FromJSONTyped)(json, true);
-    }
-    return {};
+    return {
+        'advertId': json['advertId'] == null ? undefined : json['advertId'],
+        'base': json['base'] == null ? undefined : (0, V0BidRecommendationBase_1.V0BidRecommendationBaseFromJSON)(json['base']),
+        'nmId': json['nmId'] == null ? undefined : json['nmId'],
+        'normQueries': json['normQueries'] == null ? undefined : (json['normQueries'].map(V0BidRecommendationNormQuery_1.V0BidRecommendationNormQueryFromJSON)),
+        'paymentType': json['paymentType'] == null ? undefined : json['paymentType'],
+        'levels': json['levels'] == null ? undefined : (json['levels'].map(V0BidRecommendationCPCLevels_1.V0BidRecommendationCPCLevelsFromJSON)),
+    };
 }
 function GetV0BidsRecommendationsResponse200ToJSON(value) {
     if (value == null) {
         return value;
     }
-    if ((0, V0BidsRecommendationsCpcResponse2_1.instanceOfV0BidsRecommendationsCpcResponse2)(value)) {
-        return (0, V0BidsRecommendationsCpcResponse2_1.V0BidsRecommendationsCpcResponse2ToJSON)(value);
-    }
-    if ((0, V0BidsRecommendationsCpmResponse1_1.instanceOfV0BidsRecommendationsCpmResponse1)(value)) {
-        return (0, V0BidsRecommendationsCpmResponse1_1.V0BidsRecommendationsCpmResponse1ToJSON)(value);
-    }
-    return {};
+    return {
+        'advertId': value['advertId'],
+        'base': (0, V0BidRecommendationBase_1.V0BidRecommendationBaseToJSON)(value['base']),
+        'nmId': value['nmId'],
+        'normQueries': value['normQueries'] == null ? undefined : (value['normQueries'].map(V0BidRecommendationNormQuery_1.V0BidRecommendationNormQueryToJSON)),
+        'paymentType': value['paymentType'],
+        'levels': value['levels'] == null ? undefined : (value['levels'].map(V0BidRecommendationCPCLevels_1.V0BidRecommendationCPCLevelsToJSON)),
+    };
 }

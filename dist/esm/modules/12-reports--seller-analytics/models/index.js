@@ -33,8 +33,6 @@ export * from './SuccessGoodsLabelingResponse';
 export * from './SuccessGoodsLabelingResponseReportInner';
 export * from './SuccessParentsResponse';
 export * from './SuccessParentsResponseDataInner';
-export * from './SuccessRegionSaleResponse';
-export * from './SuccessRegionSaleResponseReportInner';
 export * from './SuccessSubstIncorAttachResponse';
 export * from './SuccessSubstIncorAttachResponseData';
 export * from './SuccessSubstIncorAttachResponseDataReportsInner';

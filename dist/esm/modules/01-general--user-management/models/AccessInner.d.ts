@@ -37,6 +37,7 @@ export interface AccessInner {
      * * `sellersChat` — Чат с покупателями
      * * `brandzone` — Бренд-зона. Публикация изменений
      * * `brandzoneSubscribe` — Управление подпиской бренд-зоны
+     * * `reportRating` — Отчёт [Оценка товара](https://seller.wildberries.ru/content-ratings)
      *
      * @type {string}
      * @memberof AccessInner
@@ -75,6 +76,7 @@ export declare const AccessInnerCodeEnum: {
     readonly sellersChat: "sellersChat";
     readonly brandzone: "brandzone";
     readonly brandzoneSubscribe: "brandzoneSubscribe";
+    readonly reportRating: "reportRating";
 };
 export type AccessInnerCodeEnum = typeof AccessInnerCodeEnum[keyof typeof AccessInnerCodeEnum];
 /**

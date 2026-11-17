@@ -1,6 +1,6 @@
 /**
  * Поставки FBW
- * <div class=\"description_important\">   Узнать больше о поставках FBW можно в <a href=\"https://seller.wildberries.ru/instructions/subcategory/5a8e1202-0865-45b7-acae-5d0afc7add56?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  <div class=\"api-block\">  В разделе описаны методы получения:   - [информации для формирования поставок](/openapi/orders-fbw#tag/informationForFormingSupplies)   - [информации о поставках](/openapi/orders-fbw#tag/suppliesInformation)  </div>
+ * <div class=\"description_important\">   Узнать больше о поставках FBW можно в <a href=\"https://seller.wildberries.ru/instructions/subcategory/5a8e1202-0865-45b7-acae-5d0afc7add56?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  <div class=\"api-block\">  С помощью методов этого раздела вы можете:   - получить [информацию для формирования поставок](/openapi/orders-fbw#tag/informationForFormingSupplies)   - получить [информацию о поставках](/openapi/orders-fbw#tag/suppliesInformation)   - управлять [черновиками поставок](/openapi/orders-fbw#tag/supplyDrafts)  </div>
  *
  * The version of the OpenAPI document: ordersfbw
  *
@@ -17,23 +17,29 @@ import type { ModelsGoodInBox } from './ModelsGoodInBox';
  */
 export interface ModelsBox {
     /**
-     * Штрих-код упаковки
+     * Закодированное значение стикера упаковки
      * @type {string}
      * @memberof ModelsBox
      */
-    packageCode?: string;
+    packageCode: string;
+    /**
+     * ID стикера упаковки
+     * @type {string}
+     * @memberof ModelsBox
+     */
+    packageId?: string;
     /**
      * Суммарное количество товара в упаковке, шт
      * @type {number}
      * @memberof ModelsBox
      */
-    quantity?: number;
+    quantity: number;
     /**
      * Список упакованных товаров
      * @type {Array<ModelsGoodInBox>}
      * @memberof ModelsBox
      */
-    barcodes?: Array<ModelsGoodInBox>;
+    barcodes: Array<ModelsGoodInBox>;
 }
 /**
  * Check if a given object implements the ModelsBox interface.

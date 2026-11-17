@@ -10,9 +10,20 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { FullStatsItem, V0GetNormQueryStatsRequest, V0GetNormQueryStatsResponse, V1GetNormQueryStatsRequest, V1GetNormQueryStatsResponse } from '../models/index';
+import type { FullStatsItem, V0GetNormQueryStatsRequest, V0GetNormQueryStatsResponse, V0PositionsResponse, V1GetNormQueryStatsRequest, V1GetNormQueryStatsResponse, V4FullStatsResponse } from '../models/index';
+export interface StatistikaApiGetV0PositionsRequest {
+    advertIds: Array<number>;
+    beginDate: Date;
+    endDate: Date;
+    nmIds?: Array<number>;
+}
 export interface StatistikaApiGetV3FullstatsRequest {
     ids: string;
+    beginDate: Date;
+    endDate: Date;
+}
+export interface StatistikaApiGetV4FullstatsRequest {
+    advertIds: Array<number>;
     beginDate: Date;
     endDate: Date;
 }
@@ -27,6 +38,16 @@ export interface StatistikaApiPostV1NormqueryStatsRequest {
  */
 export declare class StatistikaApi extends runtime.BaseAPI {
     /**
+     * Метод возвращает медианные позиции карточек товаров в поисковой выдаче и распределение показов по фиксированным диапазонам позиций.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 10 запросов | 6 сек | 1 запрос | | Сервисный | 1 мин | 10 запросов | 6 сек | 1 запрос | </div>
+     * Позиции карточек товаров в поисковой выдаче
+     */
+    getV0PositionsRaw(requestParameters: StatistikaApiGetV0PositionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V0PositionsResponse>>;
+    /**
+     * Метод возвращает медианные позиции карточек товаров в поисковой выдаче и распределение показов по фиксированным диапазонам позиций.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 10 запросов | 6 сек | 1 запрос | | Сервисный | 1 мин | 10 запросов | 6 сек | 1 запрос | </div>
+     * Позиции карточек товаров в поисковой выдаче
+     */
+    getV0Positions(advertIds: Array<number>, beginDate: Date, endDate: Date, nmIds?: Array<number>, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V0PositionsResponse>;
+    /**
      * Метод формирует статистику для кампаний независимо от типа. <br><br> Максимальный период в запросе — 31 день. <br><br> Для кампаний в статусах `7`, `9` и `11`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Сервисный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div>
      * Статистика кампаний
      */
@@ -36,6 +57,16 @@ export declare class StatistikaApi extends runtime.BaseAPI {
      * Статистика кампаний
      */
     getV3Fullstats(ids: string, beginDate: Date, endDate: Date, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<FullStatsItem>>;
+    /**
+     * Метод формирует статистику кампаний в плоском формате (без вложенной иерархии) с разделением по зонам показов и типам конверсии. <br><br> Максимальный период в запросе — 31 день. <br><br> Для кампаний в статусах `7`, `9` и `11`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Сервисный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div>
+     * Плоская статистика кампаний
+     */
+    getV4FullstatsRaw(requestParameters: StatistikaApiGetV4FullstatsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V4FullStatsResponse>>;
+    /**
+     * Метод формирует статистику кампаний в плоском формате (без вложенной иерархии) с разделением по зонам показов и типам конверсии. <br><br> Максимальный период в запросе — 31 день. <br><br> Для кампаний в статусах `7`, `9` и `11`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Сервисный | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 1 запрос | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div>
+     * Плоская статистика кампаний
+     */
+    getV4Fullstats(advertIds: Array<number>, beginDate: Date, endDate: Date, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V4FullStatsResponse>;
     /**
      * Метод формирует статистику по поисковым кластерам за указанный период.<br> Можно использовать для кампаний с моделями оплаты `cpm` — за показы и `cpc` — за клики.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 10 запросов | 6 сек | 20 запросов | | Сервисный | 1 мин | 10 запросов | 6 сек | 20 запросов | | Базовый с секретом | 1 мин | 10 запросов | 6 сек | 20 запросов | | Базовый | 1 ч | 5 запросов | 12 мин | 1 запрос | </div>
      * Статистика поисковых кластеров

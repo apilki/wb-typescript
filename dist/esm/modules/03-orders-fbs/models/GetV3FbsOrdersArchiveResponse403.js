@@ -11,8 +11,27 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { instanceOfArhiveOrderError400, ArhiveOrderError400FromJSONTyped, ArhiveOrderError400ToJSON, } from './ArhiveOrderError400';
-import { instanceOfResponse4XX, Response4XXFromJSONTyped, Response4XXToJSON, } from './Response4XX';
+import { ArhiveOrderError400ErrorsInnerFromJSON, ArhiveOrderError400ErrorsInnerToJSON, } from './ArhiveOrderError400ErrorsInner';
+/**
+ * Check if a given object implements the GetV3FbsOrdersArchiveResponse403 interface.
+ */
+export function instanceOfGetV3FbsOrdersArchiveResponse403(value) {
+    if (!('detail' in value) || value['detail'] === undefined)
+        return false;
+    if (!('origin' in value) || value['origin'] === undefined)
+        return false;
+    if (!('requestId' in value) || value['requestId'] === undefined)
+        return false;
+    if (!('status' in value) || value['status'] === undefined)
+        return false;
+    if (!('title' in value) || value['title'] === undefined)
+        return false;
+    if (!('statusText' in value) || value['statusText'] === undefined)
+        return false;
+    if (!('timestamp' in value) || value['timestamp'] === undefined)
+        return false;
+    return true;
+}
 export function GetV3FbsOrdersArchiveResponse403FromJSON(json) {
     return GetV3FbsOrdersArchiveResponse403FromJSONTyped(json, false);
 }
@@ -20,23 +39,31 @@ export function GetV3FbsOrdersArchiveResponse403FromJSONTyped(json, ignoreDiscri
     if (json == null) {
         return json;
     }
-    if (instanceOfArhiveOrderError400(json)) {
-        return ArhiveOrderError400FromJSONTyped(json, true);
-    }
-    if (instanceOfResponse4XX(json)) {
-        return Response4XXFromJSONTyped(json, true);
-    }
-    return {};
+    return {
+        'code': json['code'] == null ? undefined : json['code'],
+        'detail': json['detail'],
+        'errors': json['errors'] == null ? undefined : (json['errors'].map(ArhiveOrderError400ErrorsInnerFromJSON)),
+        'origin': json['origin'],
+        'requestId': json['requestId'],
+        'status': json['status'],
+        'title': json['title'],
+        'statusText': json['statusText'],
+        'timestamp': (new Date(json['timestamp'])),
+    };
 }
 export function GetV3FbsOrdersArchiveResponse403ToJSON(value) {
     if (value == null) {
         return value;
     }
-    if (instanceOfArhiveOrderError400(value)) {
-        return ArhiveOrderError400ToJSON(value);
-    }
-    if (instanceOfResponse4XX(value)) {
-        return Response4XXToJSON(value);
-    }
-    return {};
+    return {
+        'code': value['code'],
+        'detail': value['detail'],
+        'errors': value['errors'] == null ? undefined : (value['errors'].map(ArhiveOrderError400ErrorsInnerToJSON)),
+        'origin': value['origin'],
+        'requestId': value['requestId'],
+        'status': value['status'],
+        'title': value['title'],
+        'statusText': value['statusText'],
+        'timestamp': ((value['timestamp']).toISOString()),
+    };
 }

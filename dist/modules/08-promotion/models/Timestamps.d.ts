@@ -34,11 +34,11 @@ export interface Timestamps {
      */
     started: Date | null;
     /**
-     * Время удаления кампании. Если кампания не удалена, время указывается в будущем
+     * Время завершения кампании
      * @type {Date}
      * @memberof Timestamps
      */
-    deleted: Date;
+    ended: Date | null;
 }
 /**
  * Check if a given object implements the Timestamps interface.

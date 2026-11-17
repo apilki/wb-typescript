@@ -94,7 +94,7 @@ export interface StatsBlok1 {
      */
     subject_name?: string;
     /**
-     * Количество добавлений товаров в корзину
+     * Сколько раз товар добавили в корзину
      * @type {number}
      * @memberof StatsBlok1
      */

@@ -18,10 +18,10 @@ exports.instanceOfGetAdvertsAdvertsInner = instanceOfGetAdvertsAdvertsInner;
 exports.GetAdvertsAdvertsInnerFromJSON = GetAdvertsAdvertsInnerFromJSON;
 exports.GetAdvertsAdvertsInnerFromJSONTyped = GetAdvertsAdvertsInnerFromJSONTyped;
 exports.GetAdvertsAdvertsInnerToJSON = GetAdvertsAdvertsInnerToJSON;
-const Timestamps_1 = require("./Timestamps");
 const AdvertNMsSettings_1 = require("./AdvertNMsSettings");
 const GetAdvertsAdvertsInnerRestrictions_1 = require("./GetAdvertsAdvertsInnerRestrictions");
 const AdvertSettings_1 = require("./AdvertSettings");
+const TimestampsV2_1 = require("./TimestampsV2");
 /**
  * @export
  */
@@ -68,7 +68,7 @@ function GetAdvertsAdvertsInnerFromJSONTyped(json, ignoreDiscriminator) {
         'settings': (0, AdvertSettings_1.AdvertSettingsFromJSON)(json['settings']),
         'restrictions': (0, GetAdvertsAdvertsInnerRestrictions_1.GetAdvertsAdvertsInnerRestrictionsFromJSON)(json['restrictions']),
         'status': json['status'],
-        'timestamps': (0, Timestamps_1.TimestampsFromJSON)(json['timestamps']),
+        'timestamps': (0, TimestampsV2_1.TimestampsV2FromJSON)(json['timestamps']),
     };
 }
 function GetAdvertsAdvertsInnerToJSON(value) {
@@ -83,6 +83,6 @@ function GetAdvertsAdvertsInnerToJSON(value) {
         'settings': (0, AdvertSettings_1.AdvertSettingsToJSON)(value['settings']),
         'restrictions': (0, GetAdvertsAdvertsInnerRestrictions_1.GetAdvertsAdvertsInnerRestrictionsToJSON)(value['restrictions']),
         'status': value['status'],
-        'timestamps': (0, Timestamps_1.TimestampsToJSON)(value['timestamps']),
+        'timestamps': (0, TimestampsV2_1.TimestampsV2ToJSON)(value['timestamps']),
     };
 }
