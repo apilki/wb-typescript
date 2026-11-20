@@ -41,7 +41,8 @@ exports.PostV3OrdersStatusResponse200OrdersInnerWbStatusEnum = {
     ready_for_pickup: 'ready_for_pickup',
     postponed_delivery: 'postponed_delivery',
     accepted_by_carrier: 'accepted_by_carrier',
-    sent_to_carrier: 'sent_to_carrier'
+    sent_to_carrier: 'sent_to_carrier',
+    delivering_by_carrier: 'delivering_by_carrier'
 };
 /**
  * Check if a given object implements the PostV3OrdersStatusResponse200OrdersInner interface.

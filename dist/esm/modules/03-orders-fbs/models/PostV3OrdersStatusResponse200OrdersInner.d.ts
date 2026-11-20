@@ -82,6 +82,7 @@ export declare const PostV3OrdersStatusResponse200OrdersInnerWbStatusEnum: {
     readonly postponed_delivery: "postponed_delivery";
     readonly accepted_by_carrier: "accepted_by_carrier";
     readonly sent_to_carrier: "sent_to_carrier";
+    readonly delivering_by_carrier: "delivering_by_carrier";
 };
 export type PostV3OrdersStatusResponse200OrdersInnerWbStatusEnum = typeof PostV3OrdersStatusResponse200OrdersInnerWbStatusEnum[keyof typeof PostV3OrdersStatusResponse200OrdersInnerWbStatusEnum];
 /**

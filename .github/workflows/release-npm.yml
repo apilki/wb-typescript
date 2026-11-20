@@ -115,7 +115,7 @@ jobs:
 
       # Гейт волны: install-smoke только после появления ТАРБОЛА в реестре.
       # Version-документ отдаётся раньше тарбола; первые минуты 404 — это
-      # обработка публикации, а не провал. Потолок ожидания — 30 минут.
+      # обработка публикации, а не провал. Потолок ожидания — 12 минут (держать меньше замка расписания sched ~30 мин и меньше потолка рельсы: иначе переигровка слота).
       - name: Ожидание тарбола в реестре
         if: env.RELEASE_PUBLISH == 'true'
         run: |
@@ -124,15 +124,15 @@ jobs:
           VER="$(node -p "require('./package.json').version")"
           BARE="${NAME#*/}"
           URL="https://registry.npmjs.org/${NAME}/-/${BARE}-${VER}.tgz"
-          # Потолок 30 минут: у первого выпуска нового scoped-пакета npm держит
+          # Потолок 12 минут: у первого выпуска нового scoped-пакета npm держит
           # тарбол в очереди обработки дольше, чем 10 мин (замер 2026-11-09:
           # @apilki/ozon-seller 0.3.0 — 404 больше 10 мин после успешного publish).
-          DEADLINE=$(( $(date +%s) + 1800 ))
-          for i in $(seq 1 60); do
+          DEADLINE=$(( $(date +%s) + 720 ))
+          for i in $(seq 1 24); do
             CODE="$(curl -s -o /dev/null -w '%{http_code}' -L "$URL" || true)"
             if [ "$CODE" = "200" ]; then echo "тарбол 200: $URL"; exit 0; fi
             if [ "$(date +%s)" -ge "$DEADLINE" ]; then
-              echo "::error::тарбол не появился за 30 минут ($CODE): $URL"; exit 1
+              echo "::error::тарбол не появился за 12 минут ($CODE): $URL"; exit 1
             fi
             echo "попытка $i: тарбол $CODE, ждём 30с"; sleep 30
           done
