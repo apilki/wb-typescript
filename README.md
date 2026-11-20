@@ -88,6 +88,14 @@ const sandbox = new general.ProverkaPodklyucheniyaKWbApiApi(config, { sandbox: t
   современном браузере.
 - **Совместимость** — TypeScript 5+, `"moduleResolution": "bundler"` или `"node16"`.
 
+## Postman-коллекция
+
+Готовая Postman Collection v2.1 (306 запросов — все операции спецификации, по
+модулям API) — отдельный репозиторий
+[apilki/wb-postman](https://github.com/apilki/wb-postman)
+(`postman/collection.json`). Заполните переменную коллекции `apiKey` — ваш токен
+WB API.
+
 ## Лицензия
 
 MIT (см. `LICENSE`). Официальная документация и описания API принадлежат правообладателю
