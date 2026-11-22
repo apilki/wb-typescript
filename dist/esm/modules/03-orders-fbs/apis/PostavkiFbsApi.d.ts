@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CountriesOKSMList, DeleteV3SuppliesSupplyIdTrbxRequest, GetV3SuppliesResponse200, GetV3SuppliesSupplyIdBarcodeResponse200, GetV3SuppliesSupplyIdTrbxResponse200, PatchV3FbsSuppliesShippingMethodRequest, PatchV3FbsSuppliesSupplyIdOrdersTransferRequest, PatchV3SuppliesSupplyIdOrdersRequest, PostV3FbsSuppliesSpotListRequest, PostV3SuppliesRequest, PostV3SuppliesResponse201, PostV3SuppliesSupplyIdTrbxRequest, PostV3SuppliesSupplyIdTrbxResponse201, PostV3SuppliesSupplyIdTrbxStickersResponse200, PutV3FbsSuppliesSupplyIdSpotRequest, ShippingPointsResponse, Supply, SupplyShippingPointsResponse, SupplySpotDataResponse, SupplySpotQRCode, UpdateSuppliesShippingMethodResponse, V3SupplyOrderIDsAPI, V3TransferOrdersToAssemblyResponse } from '../models/index';
+import type { DeleteV3SuppliesSupplyIdTrbxRequest, GetV3SuppliesResponse200, GetV3SuppliesSupplyIdBarcodeResponse200, GetV3SuppliesSupplyIdTrbxResponse200, PatchV3FbsSuppliesShippingMethodRequest, PatchV3FbsSuppliesSupplyIdOrdersTransferRequest, PatchV3SuppliesSupplyIdOrdersRequest, PostV3SuppliesRequest, PostV3SuppliesResponse201, PostV3SuppliesSupplyIdTrbxRequest, PostV3SuppliesSupplyIdTrbxResponse201, PostV3SuppliesSupplyIdTrbxStickersResponse200, Supply, SupplyShippingPointsResponse, UpdateSuppliesShippingMethodResponse, V3SupplyOrderIDsAPI, V3TransferOrdersToAssemblyResponse } from '../models/index';
 export interface PostavkiFbsApiDeleteV3SuppliesSupplyIdRequest {
     supplyId: string;
 }
@@ -18,18 +18,11 @@ export interface PostavkiFbsApiDeleteV3SuppliesSupplyIdTrbxOperationRequest {
     supplyId: string;
     deleteV3SuppliesSupplyIdTrbxRequest?: DeleteV3SuppliesSupplyIdTrbxRequest;
 }
-export interface PostavkiFbsApiGetV3FbsShippingPointsRequest {
-    city: string;
-    cargoType: GetV3FbsShippingPointsCargoTypeEnum;
-}
 export interface PostavkiFbsApiGetV3FbsSuppliesSupplyIdShippingPointsRequest {
     supplyId: string;
     city: string;
     officeType: string;
     shippingDt?: string;
-}
-export interface PostavkiFbsApiGetV3FbsSuppliesSupplyIdStickersSpotRequest {
-    supplyId: string;
 }
 export interface PostavkiFbsApiGetV3SuppliesRequest {
     limit: number;
@@ -62,9 +55,6 @@ export interface PostavkiFbsApiPatchV3SuppliesSupplyIdOrdersOperationRequest {
     supplyId: string;
     patchV3SuppliesSupplyIdOrdersRequest: PatchV3SuppliesSupplyIdOrdersRequest;
 }
-export interface PostavkiFbsApiPostV3FbsSuppliesSpotListOperationRequest {
-    postV3FbsSuppliesSpotListRequest: PostV3FbsSuppliesSpotListRequest;
-}
 export interface PostavkiFbsApiPostV3SuppliesOperationRequest {
     postV3SuppliesRequest: PostV3SuppliesRequest;
 }
@@ -76,10 +66,6 @@ export interface PostavkiFbsApiPostV3SuppliesSupplyIdTrbxStickersRequest {
     supplyId: string;
     type: string;
     deleteV3SuppliesSupplyIdTrbxRequest?: DeleteV3SuppliesSupplyIdTrbxRequest;
-}
-export interface PostavkiFbsApiPutV3FbsSuppliesSupplyIdSpotOperationRequest {
-    supplyId: string;
-    putV3FbsSuppliesSupplyIdSpotRequest: PutV3FbsSuppliesSupplyIdSpotRequest;
 }
 /**
  *
@@ -106,28 +92,6 @@ export declare class PostavkiFbsApi extends runtime.BaseAPI {
      */
     deleteV3SuppliesSupplyIdTrbx(supplyId: string, deleteV3SuppliesSupplyIdTrbxRequest?: DeleteV3SuppliesSupplyIdTrbxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Метод возвращает список стран ОКСМ — Общероссийского классификатора стран мира — с полными названиями и кодами.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить список стран ОКСМ
-     */
-    getV3FbsDictionariesCountriesOksmRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CountriesOKSMList>>;
-    /**
-     * Метод возвращает список стран ОКСМ — Общероссийского классификатора стран мира — с полными названиями и кодами.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить список стран ОКСМ
-     */
-    getV3FbsDictionariesCountriesOksm(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CountriesOKSMList>;
-    /**
-     * Метод будет отключен [20 ноября](https://dev.wildberries.ru/release-notes?id=585).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить список пунктов отгрузки поставок
-     * @deprecated
-     */
-    getV3FbsShippingPointsRaw(requestParameters: PostavkiFbsApiGetV3FbsShippingPointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ShippingPointsResponse>>;
-    /**
-     * Метод будет отключен [20 ноября](https://dev.wildberries.ru/release-notes?id=585).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить список пунктов отгрузки поставок
-     * @deprecated
-     */
-    getV3FbsShippingPoints(city: string, cargoType: GetV3FbsShippingPointsCargoTypeEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ShippingPointsResponse>;
-    /**
      * Метод возвращает доступные пункты отгрузки для указанной поставки.  Используйте данные этого метода, чтобы устанавливать [параметры отгрузки поставок](/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
      * Получить список пунктов отгрузки поставки
      */
@@ -137,16 +101,6 @@ export declare class PostavkiFbsApi extends runtime.BaseAPI {
      * Получить список пунктов отгрузки поставки
      */
     getV3FbsSuppliesSupplyIdShippingPoints(supplyId: string, city: string, officeType: string, shippingDt?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SupplyShippingPointsResponse>;
-    /**
-     * Метод возвращает сформированный QR-код СПОТ для поставки в формате PNG, кодировка base64.  Вы можете получить QR-код, когда в методе [получения данных СПОТ](/openapi/orders-fbs#tag/fbsSupplies/operation/postV3FbsSuppliesSpotList) будет признак `\"status\":\"completed\"`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить QR-код СПОТ
-     */
-    getV3FbsSuppliesSupplyIdStickersSpotRaw(requestParameters: PostavkiFbsApiGetV3FbsSuppliesSupplyIdStickersSpotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SupplySpotQRCode>>;
-    /**
-     * Метод возвращает сформированный QR-код СПОТ для поставки в формате PNG, кодировка base64.  Вы можете получить QR-код, когда в методе [получения данных СПОТ](/openapi/orders-fbs#tag/fbsSupplies/operation/postV3FbsSuppliesSpotList) будет признак `\"status\":\"completed\"`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить QR-код СПОТ
-     */
-    getV3FbsSuppliesSupplyIdStickersSpot(supplyId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SupplySpotQRCode>;
     /**
      * Метод возвращает список [поставок](/openapi/orders-fbs#tag/fbsSupplies/operation/getV3SuppliesSupplyId).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов.  <hr>  В <a href=\'/sandbox\'>песочнице</a> — максимум 1 запрос в секунду суммарно для всех методов <strong>Маркетплейса</strong>.  </div>
      * Получить список поставок
@@ -238,16 +192,6 @@ export declare class PostavkiFbsApi extends runtime.BaseAPI {
      */
     patchV3SuppliesSupplyIdOrders(supplyId: string, patchV3SuppliesSupplyIdOrdersRequest: PatchV3SuppliesSupplyIdOrdersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Метод возвращает данные СПОТ для списка поставок.<br><br>  Вы можете получить данные СПОТ, только если выполняются все условия:   - поставка находится на этапе доставки   - продавец зарегистрирован в любой стране ЕАЭС кроме РФ   - склад назначения находится в РФ  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить данные СПОТ для списка поставок
-     */
-    postV3FbsSuppliesSpotListRaw(requestParameters: PostavkiFbsApiPostV3FbsSuppliesSpotListOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SupplySpotDataResponse>>;
-    /**
-     * Метод возвращает данные СПОТ для списка поставок.<br><br>  Вы можете получить данные СПОТ, только если выполняются все условия:   - поставка находится на этапе доставки   - продавец зарегистрирован в любой стране ЕАЭС кроме РФ   - склад назначения находится в РФ  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить данные СПОТ для списка поставок
-     */
-    postV3FbsSuppliesSpotList(postV3FbsSuppliesSpotListRequest: PostV3FbsSuppliesSpotListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SupplySpotDataResponse>;
-    /**
      * Метод создаёт новую [поставку](/openapi/orders-fbs#tag/fbsSupplies/operation/getV3SuppliesSupplyId).  Ограничения: - Только для [сборочных заданий](/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по модели FBS. - При добавлении в поставку все передаваемые сборочные задания в [статусе](/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/postV3OrdersStatus) `new` будут автоматически переведены в статус `confirm` — на сборке. - Если вы переведёте сборочное задание в статус `cancel` — отмена продавцом, прикрепленное сборочное задание автоматически удалится из поставки. - Поставку можно собрать только из сборочных заданий (заказов) одного габаритного типа `cargoType`. Новая поставка не обладает габаритным признаком, она приобретает габаритный признак первого заказа, добавленного в поставку.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов.  <hr>  В <a href=\'/sandbox\'>песочнице</a> — максимум 1 запрос в секунду суммарно для всех методов <strong>Маркетплейса</strong>.  </div>
      * Создать новую поставку
      */
@@ -277,26 +221,7 @@ export declare class PostavkiFbsApi extends runtime.BaseAPI {
      * Получить стикеры грузомест поставки
      */
     postV3SuppliesSupplyIdTrbxStickers(supplyId: string, type: string, deleteV3SuppliesSupplyIdTrbxRequest?: DeleteV3SuppliesSupplyIdTrbxRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PostV3SuppliesSupplyIdTrbxStickersResponse200>;
-    /**
-     * Метод добавляет данные СПОТ в поставку.<br><br>  СПОТ можно добавить только в [поставку](/openapi/orders-fbs#tag/fbsSupplies/operation/getV3SuppliesSupplyId) с признаком `\"spotAvailable\":true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Добавить данные СПОТ в поставку
-     */
-    putV3FbsSuppliesSupplyIdSpotRaw(requestParameters: PostavkiFbsApiPutV3FbsSuppliesSupplyIdSpotOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
-    /**
-     * Метод добавляет данные СПОТ в поставку.<br><br>  СПОТ можно добавить только в [поставку](/openapi/orders-fbs#tag/fbsSupplies/operation/getV3SuppliesSupplyId) с признаком `\"spotAvailable\":true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Добавить данные СПОТ в поставку
-     */
-    putV3FbsSuppliesSupplyIdSpot(supplyId: string, putV3FbsSuppliesSupplyIdSpotRequest: PutV3FbsSuppliesSupplyIdSpotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }
-/**
- * @export
- */
-export declare const GetV3FbsShippingPointsCargoTypeEnum: {
-    readonly V_1: 1;
-    readonly V_2: 2;
-    readonly V_3: 3;
-};
-export type GetV3FbsShippingPointsCargoTypeEnum = typeof GetV3FbsShippingPointsCargoTypeEnum[keyof typeof GetV3FbsShippingPointsCargoTypeEnum];
 /**
  * @export
  */

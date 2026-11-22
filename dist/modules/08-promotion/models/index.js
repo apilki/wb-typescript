@@ -34,7 +34,6 @@ __exportStar(require("./GetAdvertsAdvertsInnerRestrictions"), exports);
 __exportStar(require("./GetV0BidsRecommendationsResponse200"), exports);
 __exportStar(require("./GetV1BalanceResponse200"), exports);
 __exportStar(require("./GetV1BalanceResponse200CashbacksInner"), exports);
-__exportStar(require("./GetV1BudgetResponse200"), exports);
 __exportStar(require("./GetV1PaymentsResponse200Inner"), exports);
 __exportStar(require("./GetV1PromotionCountResponse200"), exports);
 __exportStar(require("./GetV1PromotionCountResponse200AdvertsInner"), exports);

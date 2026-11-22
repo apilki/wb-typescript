@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { GetV1BalanceResponse200FromJSON, GetV1BudgetResponse200FromJSON, GetV1PaymentsResponse200InnerFromJSON, GetV1UpdResponse200InnerFromJSON, PostV1BudgetDepositRequestToJSON, ResponseWithReturnFromJSON, V2BudgetRequestToJSON, V2BudgetResponseFromJSON, } from '../models/index';
+import { GetV1BalanceResponse200FromJSON, GetV1PaymentsResponse200InnerFromJSON, GetV1UpdResponse200InnerFromJSON, PostV1BudgetDepositRequestToJSON, ResponseWithReturnFromJSON, V2BudgetRequestToJSON, V2BudgetResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -41,40 +41,6 @@ export class FinansyApi extends runtime.BaseAPI {
      */
     async getV1Balance(initOverrides) {
         const response = await this.getV1BalanceRaw(initOverrides);
-        return await response.value();
-    }
-    /**
-     * Метод будет отключен [16 ноября](/release-notes?id=582).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 4 запроса | 250 мс | 4 запроса | | Сервисный | 1 сек | 4 запроса | 250 мс | 4 запроса | | Базовый с секретом | 1 сек | 4 запроса | 250 мс | 4 запроса | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div>
-     * Бюджет кампании
-     * @deprecated
-     */
-    async getV1BudgetRaw(requestParameters, initOverrides) {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling getV1Budget().');
-        }
-        const queryParameters = {};
-        if (requestParameters['id'] != null) {
-            queryParameters['id'] = requestParameters['id'];
-        }
-        const headerParameters = {};
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-        const response = await this.request({
-            path: `/adv/v1/budget`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => GetV1BudgetResponse200FromJSON(jsonValue));
-    }
-    /**
-     * Метод будет отключен [16 ноября](/release-notes?id=582).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 4 запроса | 250 мс | 4 запроса | | Сервисный | 1 сек | 4 запроса | 250 мс | 4 запроса | | Базовый с секретом | 1 сек | 4 запроса | 250 мс | 4 запроса | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div>
-     * Бюджет кампании
-     * @deprecated
-     */
-    async getV1Budget(id, initOverrides) {
-        const response = await this.getV1BudgetRaw({ id: id }, initOverrides);
         return await response.value();
     }
     /**

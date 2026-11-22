@@ -1,6 +1,6 @@
 # @apilki/wb — JavaScript/TypeScript client
 
-**Version: 0.5.2 · API as of 2026-11-20**
+**Version: 0.6.0 · API as of 2026-11-21**
 
 A **curated generated TypeScript client** for the Wildberries Seller API — generated from the official API specification, then brought to production quality: full coverage, always fresh, zero dependencies.
 
@@ -90,11 +90,10 @@ const sandbox = new general.ProverkaPodklyucheniyaKWbApiApi(config, { sandbox: t
 
 ## Postman-коллекция
 
-Готовая Postman Collection v2.1 (306 запросов — все операции спецификации, по
-модулям API) — отдельный репозиторий
-[apilki/wb-postman](https://github.com/apilki/wb-postman)
-(`postman/collection.json`). Заполните переменную коллекции `apiKey` — ваш токен
-WB API.
+Готовая Postman Collection v2.1 (306 запросов — все операции спецификации, по модулям API) —
+отдельный репозиторий [apilki/wb-postman](https://github.com/apilki/wb-postman)
+(`postman/collection.json`). Заполните переменную коллекции `apiKey` — ваш токен WB API.
+Обновляется пайплайном при каждой смене API.
 
 ## Лицензия
 

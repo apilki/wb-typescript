@@ -18,7 +18,6 @@ export * from './GetAdvertsAdvertsInnerRestrictions';
 export * from './GetV0BidsRecommendationsResponse200';
 export * from './GetV1BalanceResponse200';
 export * from './GetV1BalanceResponse200CashbacksInner';
-export * from './GetV1BudgetResponse200';
 export * from './GetV1PaymentsResponse200Inner';
 export * from './GetV1PromotionCountResponse200';
 export * from './GetV1PromotionCountResponse200AdvertsInner';
