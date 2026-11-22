@@ -10,10 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { GetV1BalanceResponse200, GetV1BudgetResponse200, GetV1PaymentsResponse200Inner, GetV1UpdResponse200Inner, PostV1BudgetDepositRequest, ResponseWithReturn, V2BudgetRequest, V2BudgetResponse } from '../models/index';
-export interface FinansyApiGetV1BudgetRequest {
-    id: number;
-}
+import type { GetV1BalanceResponse200, GetV1PaymentsResponse200Inner, GetV1UpdResponse200Inner, PostV1BudgetDepositRequest, ResponseWithReturn, V2BudgetRequest, V2BudgetResponse } from '../models/index';
 export interface FinansyApiGetV1PaymentsRequest {
     from?: Date;
     to?: Date;
@@ -43,18 +40,6 @@ export declare class FinansyApi extends runtime.BaseAPI {
      * Баланс
      */
     getV1Balance(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetV1BalanceResponse200>;
-    /**
-     * Метод будет отключен [16 ноября](/release-notes?id=582).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 4 запроса | 250 мс | 4 запроса | | Сервисный | 1 сек | 4 запроса | 250 мс | 4 запроса | | Базовый с секретом | 1 сек | 4 запроса | 250 мс | 4 запроса | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div>
-     * Бюджет кампании
-     * @deprecated
-     */
-    getV1BudgetRaw(requestParameters: FinansyApiGetV1BudgetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetV1BudgetResponse200>>;
-    /**
-     * Метод будет отключен [16 ноября](/release-notes?id=582).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 4 запроса | 250 мс | 4 запроса | | Сервисный | 1 сек | 4 запроса | 250 мс | 4 запроса | | Базовый с секретом | 1 сек | 4 запроса | 250 мс | 4 запроса | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div>
-     * Бюджет кампании
-     * @deprecated
-     */
-    getV1Budget(id: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetV1BudgetResponse200>;
     /**
      * Метод возвращает историю пополнений счёта **WB Продвижение** за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Сервисный | 1 сек | 1 запрос | 1 сек | 5 запросов | | Базовый с секретом | 1 сек | 1 запрос | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div>
      * Получение истории пополнений счёта

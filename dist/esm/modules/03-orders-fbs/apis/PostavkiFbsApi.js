@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CountriesOKSMListFromJSON, DeleteV3SuppliesSupplyIdTrbxRequestToJSON, GetV3SuppliesResponse200FromJSON, GetV3SuppliesSupplyIdBarcodeResponse200FromJSON, GetV3SuppliesSupplyIdTrbxResponse200FromJSON, PatchV3FbsSuppliesShippingMethodRequestToJSON, PatchV3FbsSuppliesSupplyIdOrdersTransferRequestToJSON, PatchV3SuppliesSupplyIdOrdersRequestToJSON, PostV3FbsSuppliesSpotListRequestToJSON, PostV3SuppliesRequestToJSON, PostV3SuppliesResponse201FromJSON, PostV3SuppliesSupplyIdTrbxRequestToJSON, PostV3SuppliesSupplyIdTrbxResponse201FromJSON, PostV3SuppliesSupplyIdTrbxStickersResponse200FromJSON, PutV3FbsSuppliesSupplyIdSpotRequestToJSON, ShippingPointsResponseFromJSON, SupplyFromJSON, SupplyShippingPointsResponseFromJSON, SupplySpotDataResponseFromJSON, SupplySpotQRCodeFromJSON, UpdateSuppliesShippingMethodResponseFromJSON, V3SupplyOrderIDsAPIFromJSON, V3TransferOrdersToAssemblyResponseFromJSON, } from '../models/index';
+import { DeleteV3SuppliesSupplyIdTrbxRequestToJSON, GetV3SuppliesResponse200FromJSON, GetV3SuppliesSupplyIdBarcodeResponse200FromJSON, GetV3SuppliesSupplyIdTrbxResponse200FromJSON, PatchV3FbsSuppliesShippingMethodRequestToJSON, PatchV3FbsSuppliesSupplyIdOrdersTransferRequestToJSON, PatchV3SuppliesSupplyIdOrdersRequestToJSON, PostV3SuppliesRequestToJSON, PostV3SuppliesResponse201FromJSON, PostV3SuppliesSupplyIdTrbxRequestToJSON, PostV3SuppliesSupplyIdTrbxResponse201FromJSON, PostV3SuppliesSupplyIdTrbxStickersResponse200FromJSON, SupplyFromJSON, SupplyShippingPointsResponseFromJSON, UpdateSuppliesShippingMethodResponseFromJSON, V3SupplyOrderIDsAPIFromJSON, V3TransferOrdersToAssemblyResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -76,72 +76,6 @@ export class PostavkiFbsApi extends runtime.BaseAPI {
         await this.deleteV3SuppliesSupplyIdTrbxRaw({ supplyId: supplyId, deleteV3SuppliesSupplyIdTrbxRequest: deleteV3SuppliesSupplyIdTrbxRequest }, initOverrides);
     }
     /**
-     * Метод возвращает список стран ОКСМ — Общероссийского классификатора стран мира — с полными названиями и кодами.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить список стран ОКСМ
-     */
-    async getV3FbsDictionariesCountriesOksmRaw(initOverrides) {
-        const queryParameters = {};
-        const headerParameters = {};
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-        const response = await this.request({
-            path: `/api/marketplace/v3/fbs/dictionaries/countries/oksm`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => CountriesOKSMListFromJSON(jsonValue));
-    }
-    /**
-     * Метод возвращает список стран ОКСМ — Общероссийского классификатора стран мира — с полными названиями и кодами.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить список стран ОКСМ
-     */
-    async getV3FbsDictionariesCountriesOksm(initOverrides) {
-        const response = await this.getV3FbsDictionariesCountriesOksmRaw(initOverrides);
-        return await response.value();
-    }
-    /**
-     * Метод будет отключен [20 ноября](https://dev.wildberries.ru/release-notes?id=585).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить список пунктов отгрузки поставок
-     * @deprecated
-     */
-    async getV3FbsShippingPointsRaw(requestParameters, initOverrides) {
-        if (requestParameters['city'] == null) {
-            throw new runtime.RequiredError('city', 'Required parameter "city" was null or undefined when calling getV3FbsShippingPoints().');
-        }
-        if (requestParameters['cargoType'] == null) {
-            throw new runtime.RequiredError('cargoType', 'Required parameter "cargoType" was null or undefined when calling getV3FbsShippingPoints().');
-        }
-        const queryParameters = {};
-        if (requestParameters['city'] != null) {
-            queryParameters['city'] = requestParameters['city'];
-        }
-        if (requestParameters['cargoType'] != null) {
-            queryParameters['cargoType'] = requestParameters['cargoType'];
-        }
-        const headerParameters = {};
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-        const response = await this.request({
-            path: `/api/marketplace/v3/fbs/shipping-points`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ShippingPointsResponseFromJSON(jsonValue));
-    }
-    /**
-     * Метод будет отключен [20 ноября](https://dev.wildberries.ru/release-notes?id=585).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить список пунктов отгрузки поставок
-     * @deprecated
-     */
-    async getV3FbsShippingPoints(city, cargoType, initOverrides) {
-        const response = await this.getV3FbsShippingPointsRaw({ city: city, cargoType: cargoType }, initOverrides);
-        return await response.value();
-    }
-    /**
      * Метод возвращает доступные пункты отгрузки для указанной поставки.  Используйте данные этого метода, чтобы устанавливать [параметры отгрузки поставок](/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
      * Получить список пунктов отгрузки поставки
      */
@@ -183,35 +117,6 @@ export class PostavkiFbsApi extends runtime.BaseAPI {
      */
     async getV3FbsSuppliesSupplyIdShippingPoints(supplyId, city, officeType, shippingDt, initOverrides) {
         const response = await this.getV3FbsSuppliesSupplyIdShippingPointsRaw({ supplyId: supplyId, city: city, officeType: officeType, shippingDt: shippingDt }, initOverrides);
-        return await response.value();
-    }
-    /**
-     * Метод возвращает сформированный QR-код СПОТ для поставки в формате PNG, кодировка base64.  Вы можете получить QR-код, когда в методе [получения данных СПОТ](/openapi/orders-fbs#tag/fbsSupplies/operation/postV3FbsSuppliesSpotList) будет признак `\"status\":\"completed\"`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить QR-код СПОТ
-     */
-    async getV3FbsSuppliesSupplyIdStickersSpotRaw(requestParameters, initOverrides) {
-        if (requestParameters['supplyId'] == null) {
-            throw new runtime.RequiredError('supplyId', 'Required parameter "supplyId" was null or undefined when calling getV3FbsSuppliesSupplyIdStickersSpot().');
-        }
-        const queryParameters = {};
-        const headerParameters = {};
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-        const response = await this.request({
-            path: `/api/marketplace/v3/fbs/supplies/{supplyId}/stickers/spot`.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId']))),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => SupplySpotQRCodeFromJSON(jsonValue));
-    }
-    /**
-     * Метод возвращает сформированный QR-код СПОТ для поставки в формате PNG, кодировка base64.  Вы можете получить QR-код, когда в методе [получения данных СПОТ](/openapi/orders-fbs#tag/fbsSupplies/operation/postV3FbsSuppliesSpotList) будет признак `\"status\":\"completed\"`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить QR-код СПОТ
-     */
-    async getV3FbsSuppliesSupplyIdStickersSpot(supplyId, initOverrides) {
-        const response = await this.getV3FbsSuppliesSupplyIdStickersSpotRaw({ supplyId: supplyId }, initOverrides);
         return await response.value();
     }
     /**
@@ -501,37 +406,6 @@ export class PostavkiFbsApi extends runtime.BaseAPI {
         await this.patchV3SuppliesSupplyIdOrdersRaw({ supplyId: supplyId, patchV3SuppliesSupplyIdOrdersRequest: patchV3SuppliesSupplyIdOrdersRequest }, initOverrides);
     }
     /**
-     * Метод возвращает данные СПОТ для списка поставок.<br><br>  Вы можете получить данные СПОТ, только если выполняются все условия:   - поставка находится на этапе доставки   - продавец зарегистрирован в любой стране ЕАЭС кроме РФ   - склад назначения находится в РФ  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить данные СПОТ для списка поставок
-     */
-    async postV3FbsSuppliesSpotListRaw(requestParameters, initOverrides) {
-        if (requestParameters['postV3FbsSuppliesSpotListRequest'] == null) {
-            throw new runtime.RequiredError('postV3FbsSuppliesSpotListRequest', 'Required parameter "postV3FbsSuppliesSpotListRequest" was null or undefined when calling postV3FbsSuppliesSpotList().');
-        }
-        const queryParameters = {};
-        const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-        const response = await this.request({
-            path: `/api/marketplace/v3/fbs/supplies/spot/list`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: PostV3FbsSuppliesSpotListRequestToJSON(requestParameters['postV3FbsSuppliesSpotListRequest']),
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => SupplySpotDataResponseFromJSON(jsonValue));
-    }
-    /**
-     * Метод возвращает данные СПОТ для списка поставок.<br><br>  Вы можете получить данные СПОТ, только если выполняются все условия:   - поставка находится на этапе доставки   - продавец зарегистрирован в любой стране ЕАЭС кроме РФ   - склад назначения находится в РФ  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Получить данные СПОТ для списка поставок
-     */
-    async postV3FbsSuppliesSpotList(postV3FbsSuppliesSpotListRequest, initOverrides) {
-        const response = await this.postV3FbsSuppliesSpotListRaw({ postV3FbsSuppliesSpotListRequest: postV3FbsSuppliesSpotListRequest }, initOverrides);
-        return await response.value();
-    }
-    /**
      * Метод создаёт новую [поставку](/openapi/orders-fbs#tag/fbsSupplies/operation/getV3SuppliesSupplyId).  Ограничения: - Только для [сборочных заданий](/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/getV3Orders) по модели FBS. - При добавлении в поставку все передаваемые сборочные задания в [статусе](/openapi/orders-fbs#tag/fbsAssemblyOrders/operation/postV3OrdersStatus) `new` будут автоматически переведены в статус `confirm` — на сборке. - Если вы переведёте сборочное задание в статус `cancel` — отмена продавцом, прикрепленное сборочное задание автоматически удалится из поставки. - Поставку можно собрать только из сборочных заданий (заказов) одного габаритного типа `cargoType`. Новая поставка не обладает габаритным признаком, она приобретает габаритный признак первого заказа, добавленного в поставку.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов.  <hr>  В <a href=\'/sandbox\'>песочнице</a> — максимум 1 запрос в секунду суммарно для всех методов <strong>Маркетплейса</strong>.  </div>
      * Создать новую поставку
      */
@@ -630,48 +504,7 @@ export class PostavkiFbsApi extends runtime.BaseAPI {
         const response = await this.postV3SuppliesSupplyIdTrbxStickersRaw({ supplyId: supplyId, type: type, deleteV3SuppliesSupplyIdTrbxRequest: deleteV3SuppliesSupplyIdTrbxRequest }, initOverrides);
         return await response.value();
     }
-    /**
-     * Метод добавляет данные СПОТ в поставку.<br><br>  СПОТ можно добавить только в [поставку](/openapi/orders-fbs#tag/fbsSupplies/operation/getV3SuppliesSupplyId) с признаком `\"spotAvailable\":true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Добавить данные СПОТ в поставку
-     */
-    async putV3FbsSuppliesSupplyIdSpotRaw(requestParameters, initOverrides) {
-        if (requestParameters['supplyId'] == null) {
-            throw new runtime.RequiredError('supplyId', 'Required parameter "supplyId" was null or undefined when calling putV3FbsSuppliesSupplyIdSpot().');
-        }
-        if (requestParameters['putV3FbsSuppliesSupplyIdSpotRequest'] == null) {
-            throw new runtime.RequiredError('putV3FbsSuppliesSupplyIdSpotRequest', 'Required parameter "putV3FbsSuppliesSupplyIdSpotRequest" was null or undefined when calling putV3FbsSuppliesSupplyIdSpot().');
-        }
-        const queryParameters = {};
-        const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-        const response = await this.request({
-            path: `/api/marketplace/v3/fbs/supplies/{supplyId}/spot`.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId']))),
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: PutV3FbsSuppliesSupplyIdSpotRequestToJSON(requestParameters['putV3FbsSuppliesSupplyIdSpotRequest']),
-        }, initOverrides);
-        return new runtime.VoidApiResponse(response);
-    }
-    /**
-     * Метод добавляет данные СПОТ в поставку.<br><br>  СПОТ можно добавить только в [поставку](/openapi/orders-fbs#tag/fbsSupplies/operation/getV3SuppliesSupplyId) с признаком `\"spotAvailable\":true`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
-     * Добавить данные СПОТ в поставку
-     */
-    async putV3FbsSuppliesSupplyIdSpot(supplyId, putV3FbsSuppliesSupplyIdSpotRequest, initOverrides) {
-        await this.putV3FbsSuppliesSupplyIdSpotRaw({ supplyId: supplyId, putV3FbsSuppliesSupplyIdSpotRequest: putV3FbsSuppliesSupplyIdSpotRequest }, initOverrides);
-    }
 }
-/**
- * @export
- */
-export const GetV3FbsShippingPointsCargoTypeEnum = {
-    V_1: 1,
-    V_2: 2,
-    V_3: 3
-};
 /**
  * @export
  */

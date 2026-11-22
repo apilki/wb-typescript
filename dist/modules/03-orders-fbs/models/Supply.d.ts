@@ -137,7 +137,7 @@ export interface Supply {
     waybillUuid?: string | null;
     /**
      * Доступен ли СПОТ для этой поставки:
-     *   - `true` — да. Используйте метод получения данных СПОТ
+     *   - `true` — да
      *   - `false` — нет
      *
      * @type {boolean}
