@@ -16,6 +16,8 @@ import { SuccessBrandShareResponseReportInnerFromJSON, SuccessBrandShareResponse
  * Check if a given object implements the SuccessBrandShareResponse interface.
  */
 export function instanceOfSuccessBrandShareResponse(value) {
+    if (!('report' in value) || value['report'] === undefined)
+        return false;
     return true;
 }
 export function SuccessBrandShareResponseFromJSON(json) {
@@ -26,7 +28,7 @@ export function SuccessBrandShareResponseFromJSONTyped(json, ignoreDiscriminator
         return json;
     }
     return {
-        'report': json['report'] == null ? undefined : (json['report'].map(SuccessBrandShareResponseReportInnerFromJSON)),
+        'report': (json['report'].map(SuccessBrandShareResponseReportInnerFromJSON)),
     };
 }
 export function SuccessBrandShareResponseToJSON(value) {
@@ -34,6 +36,6 @@ export function SuccessBrandShareResponseToJSON(value) {
         return value;
     }
     return {
-        'report': value['report'] == null ? undefined : (value['report'].map(SuccessBrandShareResponseReportInnerToJSON)),
+        'report': (value['report'].map(SuccessBrandShareResponseReportInnerToJSON)),
     };
 }

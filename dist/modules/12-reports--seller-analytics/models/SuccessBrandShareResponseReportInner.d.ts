@@ -20,25 +20,25 @@ export interface SuccessBrandShareResponseReportInner {
      * @type {string}
      * @memberof SuccessBrandShareResponseReportInner
      */
-    applyDate?: string;
+    applyDate: string;
     /**
      * Рейтинг бренда в родительской категории
      * @type {number}
      * @memberof SuccessBrandShareResponseReportInner
      */
-    brandRating?: number;
+    brandRating: number;
     /**
      * Доля от продаж в родительской категории — цена, %
      * @type {number}
      * @memberof SuccessBrandShareResponseReportInner
      */
-    pricePercent?: number;
+    pricePercent: number;
     /**
      * Доля от продаж в родительской категории — количество, %
      * @type {number}
      * @memberof SuccessBrandShareResponseReportInner
      */
-    qtyPercent?: number;
+    qtyPercent: number;
 }
 /**
  * Check if a given object implements the SuccessBrandShareResponseReportInner interface.

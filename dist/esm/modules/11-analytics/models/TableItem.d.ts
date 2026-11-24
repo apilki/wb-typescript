@@ -46,7 +46,7 @@ export interface TableItem {
      * @type {string}
      * @memberof TableItem
      */
-    subjectName?: string;
+    subjectName: string;
     /**
      * Бренд
      * @type {string}
@@ -66,13 +66,11 @@ export interface TableItem {
      */
     isAdvertised: boolean;
     /**
-     * Искали ли товар по подменному артикулу.<br>
-     * Поле будет в ответе при наличии в запросе `includeSubstitutedSKUs` и/или `includeSearchTexts`
-     *
+     * Искали ли товар по подменному артикулу
      * @type {boolean}
      * @memberof TableItem
      */
-    isSubstitutedSKU?: boolean;
+    isSubstitutedSKU: boolean;
     /**
      * Есть ли рейтинг у карточки товара
      * @type {boolean}

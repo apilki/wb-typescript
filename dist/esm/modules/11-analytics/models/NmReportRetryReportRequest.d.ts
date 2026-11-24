@@ -20,7 +20,7 @@ export interface NmReportRetryReportRequest {
      * @type {string}
      * @memberof NmReportRetryReportRequest
      */
-    downloadId?: string;
+    downloadId: string;
 }
 /**
  * Check if a given object implements the NmReportRetryReportRequest interface.

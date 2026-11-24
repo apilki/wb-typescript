@@ -16,143 +16,143 @@
  */
 export interface ResponsePaidStorageInner {
     /**
-     * Дата, за которую был расчёт или перерасчёт
+     * Дата расчёта или перерасчёта
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    date?: string;
+    date: string;
     /**
      * Коэффициент логистики и хранения. [На данный момент](/release-notes?id=570) может быть только `0`
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    logWarehouseCoef?: number;
+    logWarehouseCoef: number;
     /**
      * ID склада. [На данный момент](/release-notes?id=570) может быть только `0`
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    officeId?: number;
+    officeId: number;
     /**
      * Название склада. [На данный момент](/release-notes?id=570) может быть только `Склад WB РФ`
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    warehouse?: string;
+    warehouse: string;
     /**
      * Коэффициент хранения
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    warehouseCoef?: number;
+    warehouseCoef: number;
     /**
      * ID поставки
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    giId?: number;
+    giId: number;
     /**
      * ID размера для этого артикула WB
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    chrtId?: number;
+    chrtId: number;
     /**
      * Размер (`techSize` в карточке товара)
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    size?: string;
+    size: string;
     /**
      * Баркод
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    barcode?: string;
+    barcode: string;
     /**
      * Предмет
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    subject?: string;
+    subject: string;
     /**
      * Бренд
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    brand?: string;
+    brand: string;
     /**
      * Артикул продавца
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    vendorCode?: string;
+    vendorCode: string;
     /**
      * Артикул WB
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    nmId?: number;
+    nmId: number;
     /**
      * Объём товара
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    volume?: number;
+    volume: number;
     /**
      * Способ расчёта
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    calcType?: string;
+    calcType: string;
     /**
      * Сумма хранения
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    warehousePrice?: number;
+    warehousePrice: number;
     /**
      * Количество единиц товара (штук), подлежащих тарифицированию за расчётные сутки
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    barcodesCount?: number;
+    barcodesCount: number;
     /**
      * Код паллетоместа. [На данный момент](/release-notes?id=570) может быть только `0`
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    palletPlaceCode?: number;
+    palletPlaceCode: number;
     /**
      * Количество паллет
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    palletCount?: number;
+    palletCount: number;
     /**
      * Если был перерасчёт, это дата первоначального расчёта. Если перерасчёта не было, совпадает с `date`
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    originalDate?: string;
+    originalDate: string;
     /**
      * Скидка программы лояльности, ₽
      * @type {number}
      * @memberof ResponsePaidStorageInner
      */
-    loyaltyDiscount?: number;
+    loyaltyDiscount: number;
     /**
      * Дата фиксации тарифа
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    tariffFixDate?: string;
+    tariffFixDate: string;
     /**
      * Дата понижения тарифа
      * @type {string}
      * @memberof ResponsePaidStorageInner
      */
-    tariffLowerDate?: string;
+    tariffLowerDate: string;
 }
 /**
  * Check if a given object implements the ResponsePaidStorageInner interface.

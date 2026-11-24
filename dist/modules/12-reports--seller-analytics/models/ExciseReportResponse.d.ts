@@ -21,7 +21,7 @@ export interface ExciseReportResponse {
      * @type {ModelsExciseReportResponse}
      * @memberof ExciseReportResponse
      */
-    response?: ModelsExciseReportResponse;
+    response: ModelsExciseReportResponse;
 }
 /**
  * Check if a given object implements the ExciseReportResponse interface.

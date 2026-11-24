@@ -21,7 +21,7 @@ export interface SuccessTaskResponse {
      * @type {Array<SuccessTaskResponseDetailsInner>}
      * @memberof SuccessTaskResponse
      */
-    details?: Array<SuccessTaskResponseDetailsInner>;
+    details: Array<SuccessTaskResponseDetailsInner>;
 }
 /**
  * Check if a given object implements the SuccessTaskResponse interface.

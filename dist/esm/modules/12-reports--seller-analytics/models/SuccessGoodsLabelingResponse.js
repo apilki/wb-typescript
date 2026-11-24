@@ -16,6 +16,8 @@ import { SuccessGoodsLabelingResponseReportInnerFromJSON, SuccessGoodsLabelingRe
  * Check if a given object implements the SuccessGoodsLabelingResponse interface.
  */
 export function instanceOfSuccessGoodsLabelingResponse(value) {
+    if (!('report' in value) || value['report'] === undefined)
+        return false;
     return true;
 }
 export function SuccessGoodsLabelingResponseFromJSON(json) {
@@ -26,7 +28,7 @@ export function SuccessGoodsLabelingResponseFromJSONTyped(json, ignoreDiscrimina
         return json;
     }
     return {
-        'report': json['report'] == null ? undefined : (json['report'].map(SuccessGoodsLabelingResponseReportInnerFromJSON)),
+        'report': (json['report'].map(SuccessGoodsLabelingResponseReportInnerFromJSON)),
     };
 }
 export function SuccessGoodsLabelingResponseToJSON(value) {
@@ -34,6 +36,6 @@ export function SuccessGoodsLabelingResponseToJSON(value) {
         return value;
     }
     return {
-        'report': value['report'] == null ? undefined : (value['report'].map(SuccessGoodsLabelingResponseReportInnerToJSON)),
+        'report': (value['report'].map(SuccessGoodsLabelingResponseReportInnerToJSON)),
     };
 }

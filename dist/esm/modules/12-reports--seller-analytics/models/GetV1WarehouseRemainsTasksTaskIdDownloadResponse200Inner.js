@@ -16,6 +16,8 @@ import { GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner
  * Check if a given object implements the GetV1WarehouseRemainsTasksTaskIdDownloadResponse200Inner interface.
  */
 export function instanceOfGetV1WarehouseRemainsTasksTaskIdDownloadResponse200Inner(value) {
+    if (!('warehouses' in value) || value['warehouses'] === undefined)
+        return false;
     return true;
 }
 export function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerFromJSON(json) {
@@ -33,7 +35,7 @@ export function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerFromJSON
         'barcode': json['barcode'] == null ? undefined : json['barcode'],
         'techSize': json['techSize'] == null ? undefined : json['techSize'],
         'volume': json['volume'] == null ? undefined : json['volume'],
-        'warehouses': json['warehouses'] == null ? undefined : (json['warehouses'].map(GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInnerFromJSON)),
+        'warehouses': (json['warehouses'].map(GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInnerFromJSON)),
     };
 }
 export function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerToJSON(value) {
@@ -48,6 +50,6 @@ export function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerToJSON(v
         'barcode': value['barcode'],
         'techSize': value['techSize'],
         'volume': value['volume'],
-        'warehouses': value['warehouses'] == null ? undefined : (value['warehouses'].map(GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInnerToJSON)),
+        'warehouses': (value['warehouses'].map(GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInnerToJSON)),
     };
 }

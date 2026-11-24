@@ -1,6 +1,6 @@
 # @apilki/wb — JavaScript/TypeScript client
 
-**Version: 0.7.0 · API as of 2026-11-24**
+**Version: 0.8.0 · API as of 2026-11-24**
 
 A **curated generated TypeScript client** for the Wildberries Seller API — generated from the official API specification, then brought to production quality: full coverage, always fresh, zero dependencies.
 

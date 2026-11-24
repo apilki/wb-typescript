@@ -31,16 +31,16 @@ function ModelsExciseReportResponseDataInnerFromJSONTyped(json, ignoreDiscrimina
         return json;
     }
     return {
-        'name': json['name'] == null ? undefined : json['name'],
-        'price': json['price'] == null ? undefined : json['price'],
+        'barcode': json['barcode'] == null ? undefined : json['barcode'],
         'currency_name_short': json['currency_name_short'] == null ? undefined : json['currency_name_short'],
         'excise_short': json['excise_short'] == null ? undefined : json['excise_short'],
-        'barcode': json['barcode'] == null ? undefined : json['barcode'],
+        'fiscal_doc_number': json['fiscal_doc_number'] == null ? undefined : json['fiscal_doc_number'],
+        'fiscal_drive_number': json['fiscal_drive_number'] == null ? undefined : json['fiscal_drive_number'],
+        'fiscal_dt': json['fiscal_dt'] == null ? undefined : json['fiscal_dt'],
+        'name': json['name'] == null ? undefined : json['name'],
         'nm_id': json['nm_id'] == null ? undefined : json['nm_id'],
         'operation_type_id': json['operation_type_id'] == null ? undefined : json['operation_type_id'],
-        'fiscal_doc_number': json['fiscal_doc_number'] == null ? undefined : json['fiscal_doc_number'],
-        'fiscal_dt': json['fiscal_dt'] == null ? undefined : json['fiscal_dt'],
-        'fiscal_drive_number': json['fiscal_drive_number'] == null ? undefined : json['fiscal_drive_number'],
+        'price': json['price'] == null ? undefined : json['price'],
         'rid': json['rid'] == null ? undefined : json['rid'],
         'srid': json['srid'] == null ? undefined : json['srid'],
     };
@@ -50,16 +50,16 @@ function ModelsExciseReportResponseDataInnerToJSON(value) {
         return value;
     }
     return {
-        'name': value['name'],
-        'price': value['price'],
+        'barcode': value['barcode'],
         'currency_name_short': value['currency_name_short'],
         'excise_short': value['excise_short'],
-        'barcode': value['barcode'],
+        'fiscal_doc_number': value['fiscal_doc_number'],
+        'fiscal_drive_number': value['fiscal_drive_number'],
+        'fiscal_dt': value['fiscal_dt'],
+        'name': value['name'],
         'nm_id': value['nm_id'],
         'operation_type_id': value['operation_type_id'],
-        'fiscal_doc_number': value['fiscal_doc_number'],
-        'fiscal_dt': value['fiscal_dt'],
-        'fiscal_drive_number': value['fiscal_drive_number'],
+        'price': value['price'],
         'rid': value['rid'],
         'srid': value['srid'],
     };

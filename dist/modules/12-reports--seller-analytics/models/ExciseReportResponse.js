@@ -22,6 +22,8 @@ const ModelsExciseReportResponse_1 = require("./ModelsExciseReportResponse");
  * Check if a given object implements the ExciseReportResponse interface.
  */
 function instanceOfExciseReportResponse(value) {
+    if (!('response' in value) || value['response'] === undefined)
+        return false;
     return true;
 }
 function ExciseReportResponseFromJSON(json) {
@@ -32,7 +34,7 @@ function ExciseReportResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'response': json['response'] == null ? undefined : (0, ModelsExciseReportResponse_1.ModelsExciseReportResponseFromJSON)(json['response']),
+        'response': (0, ModelsExciseReportResponse_1.ModelsExciseReportResponseFromJSON)(json['response']),
     };
 }
 function ExciseReportResponseToJSON(value) {

@@ -15,6 +15,52 @@
  * Check if a given object implements the ResponsePaidStorageInner interface.
  */
 export function instanceOfResponsePaidStorageInner(value) {
+    if (!('date' in value) || value['date'] === undefined)
+        return false;
+    if (!('logWarehouseCoef' in value) || value['logWarehouseCoef'] === undefined)
+        return false;
+    if (!('officeId' in value) || value['officeId'] === undefined)
+        return false;
+    if (!('warehouse' in value) || value['warehouse'] === undefined)
+        return false;
+    if (!('warehouseCoef' in value) || value['warehouseCoef'] === undefined)
+        return false;
+    if (!('giId' in value) || value['giId'] === undefined)
+        return false;
+    if (!('chrtId' in value) || value['chrtId'] === undefined)
+        return false;
+    if (!('size' in value) || value['size'] === undefined)
+        return false;
+    if (!('barcode' in value) || value['barcode'] === undefined)
+        return false;
+    if (!('subject' in value) || value['subject'] === undefined)
+        return false;
+    if (!('brand' in value) || value['brand'] === undefined)
+        return false;
+    if (!('vendorCode' in value) || value['vendorCode'] === undefined)
+        return false;
+    if (!('nmId' in value) || value['nmId'] === undefined)
+        return false;
+    if (!('volume' in value) || value['volume'] === undefined)
+        return false;
+    if (!('calcType' in value) || value['calcType'] === undefined)
+        return false;
+    if (!('warehousePrice' in value) || value['warehousePrice'] === undefined)
+        return false;
+    if (!('barcodesCount' in value) || value['barcodesCount'] === undefined)
+        return false;
+    if (!('palletPlaceCode' in value) || value['palletPlaceCode'] === undefined)
+        return false;
+    if (!('palletCount' in value) || value['palletCount'] === undefined)
+        return false;
+    if (!('originalDate' in value) || value['originalDate'] === undefined)
+        return false;
+    if (!('loyaltyDiscount' in value) || value['loyaltyDiscount'] === undefined)
+        return false;
+    if (!('tariffFixDate' in value) || value['tariffFixDate'] === undefined)
+        return false;
+    if (!('tariffLowerDate' in value) || value['tariffLowerDate'] === undefined)
+        return false;
     return true;
 }
 export function ResponsePaidStorageInnerFromJSON(json) {
@@ -25,29 +71,29 @@ export function ResponsePaidStorageInnerFromJSONTyped(json, ignoreDiscriminator)
         return json;
     }
     return {
-        'date': json['date'] == null ? undefined : json['date'],
-        'logWarehouseCoef': json['logWarehouseCoef'] == null ? undefined : json['logWarehouseCoef'],
-        'officeId': json['officeId'] == null ? undefined : json['officeId'],
-        'warehouse': json['warehouse'] == null ? undefined : json['warehouse'],
-        'warehouseCoef': json['warehouseCoef'] == null ? undefined : json['warehouseCoef'],
-        'giId': json['giId'] == null ? undefined : json['giId'],
-        'chrtId': json['chrtId'] == null ? undefined : json['chrtId'],
-        'size': json['size'] == null ? undefined : json['size'],
-        'barcode': json['barcode'] == null ? undefined : json['barcode'],
-        'subject': json['subject'] == null ? undefined : json['subject'],
-        'brand': json['brand'] == null ? undefined : json['brand'],
-        'vendorCode': json['vendorCode'] == null ? undefined : json['vendorCode'],
-        'nmId': json['nmId'] == null ? undefined : json['nmId'],
-        'volume': json['volume'] == null ? undefined : json['volume'],
-        'calcType': json['calcType'] == null ? undefined : json['calcType'],
-        'warehousePrice': json['warehousePrice'] == null ? undefined : json['warehousePrice'],
-        'barcodesCount': json['barcodesCount'] == null ? undefined : json['barcodesCount'],
-        'palletPlaceCode': json['palletPlaceCode'] == null ? undefined : json['palletPlaceCode'],
-        'palletCount': json['palletCount'] == null ? undefined : json['palletCount'],
-        'originalDate': json['originalDate'] == null ? undefined : json['originalDate'],
-        'loyaltyDiscount': json['loyaltyDiscount'] == null ? undefined : json['loyaltyDiscount'],
-        'tariffFixDate': json['tariffFixDate'] == null ? undefined : json['tariffFixDate'],
-        'tariffLowerDate': json['tariffLowerDate'] == null ? undefined : json['tariffLowerDate'],
+        'date': json['date'],
+        'logWarehouseCoef': json['logWarehouseCoef'],
+        'officeId': json['officeId'],
+        'warehouse': json['warehouse'],
+        'warehouseCoef': json['warehouseCoef'],
+        'giId': json['giId'],
+        'chrtId': json['chrtId'],
+        'size': json['size'],
+        'barcode': json['barcode'],
+        'subject': json['subject'],
+        'brand': json['brand'],
+        'vendorCode': json['vendorCode'],
+        'nmId': json['nmId'],
+        'volume': json['volume'],
+        'calcType': json['calcType'],
+        'warehousePrice': json['warehousePrice'],
+        'barcodesCount': json['barcodesCount'],
+        'palletPlaceCode': json['palletPlaceCode'],
+        'palletCount': json['palletCount'],
+        'originalDate': json['originalDate'],
+        'loyaltyDiscount': json['loyaltyDiscount'],
+        'tariffFixDate': json['tariffFixDate'],
+        'tariffLowerDate': json['tariffLowerDate'],
     };
 }
 export function ResponsePaidStorageInnerToJSON(value) {

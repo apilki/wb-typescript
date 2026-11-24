@@ -16,35 +16,35 @@
  */
 export interface SuccessTaskResponseDetailsInner {
     /**
-     * Артикул WB
-     * @type {number}
-     * @memberof SuccessTaskResponseDetailsInner
-     */
-    nmID?: number;
-    /**
-     * Сумма заказа
-     * @type {number}
-     * @memberof SuccessTaskResponseDetailsInner
-     */
-    sum?: number;
-    /**
      * Валюта заказа
      * @type {string}
      * @memberof SuccessTaskResponseDetailsInner
      */
-    currency?: string;
+    currency: string;
     /**
      * Начало отчётного периода
      * @type {string}
      * @memberof SuccessTaskResponseDetailsInner
      */
-    dateFrom?: string;
+    dateFrom: string;
     /**
      * Конец отчётного периода
      * @type {string}
      * @memberof SuccessTaskResponseDetailsInner
      */
-    dateTo?: string;
+    dateTo: string;
+    /**
+     * Артикул WB
+     * @type {number}
+     * @memberof SuccessTaskResponseDetailsInner
+     */
+    nmID: number;
+    /**
+     * Сумма заказа
+     * @type {number}
+     * @memberof SuccessTaskResponseDetailsInner
+     */
+    sum: number;
 }
 /**
  * Check if a given object implements the SuccessTaskResponseDetailsInner interface.

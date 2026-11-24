@@ -20,7 +20,7 @@ export interface GetTasksResponseData {
      * @type {string}
      * @memberof GetTasksResponseData
      */
-    id?: string;
+    id: string;
     /**
      * Статус задания:
      *   * `new` — новое
@@ -32,7 +32,7 @@ export interface GetTasksResponseData {
      * @type {string}
      * @memberof GetTasksResponseData
      */
-    status?: string;
+    status: string;
 }
 /**
  * Check if a given object implements the GetTasksResponseData interface.

@@ -22,6 +22,8 @@ const CreateTaskResponseData_1 = require("./CreateTaskResponseData");
  * Check if a given object implements the CreateTaskResponse interface.
  */
 function instanceOfCreateTaskResponse(value) {
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
     return true;
 }
 function CreateTaskResponseFromJSON(json) {
@@ -32,7 +34,7 @@ function CreateTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'data': json['data'] == null ? undefined : (0, CreateTaskResponseData_1.CreateTaskResponseDataFromJSON)(json['data']),
+        'data': (0, CreateTaskResponseData_1.CreateTaskResponseDataFromJSON)(json['data']),
     };
 }
 function CreateTaskResponseToJSON(value) {

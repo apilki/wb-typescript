@@ -22,6 +22,8 @@ const SuccessGoodsLabelingResponseReportInner_1 = require("./SuccessGoodsLabelin
  * Check if a given object implements the SuccessGoodsLabelingResponse interface.
  */
 function instanceOfSuccessGoodsLabelingResponse(value) {
+    if (!('report' in value) || value['report'] === undefined)
+        return false;
     return true;
 }
 function SuccessGoodsLabelingResponseFromJSON(json) {
@@ -32,7 +34,7 @@ function SuccessGoodsLabelingResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'report': json['report'] == null ? undefined : (json['report'].map(SuccessGoodsLabelingResponseReportInner_1.SuccessGoodsLabelingResponseReportInnerFromJSON)),
+        'report': (json['report'].map(SuccessGoodsLabelingResponseReportInner_1.SuccessGoodsLabelingResponseReportInnerFromJSON)),
     };
 }
 function SuccessGoodsLabelingResponseToJSON(value) {
@@ -40,6 +42,6 @@ function SuccessGoodsLabelingResponseToJSON(value) {
         return value;
     }
     return {
-        'report': value['report'] == null ? undefined : (value['report'].map(SuccessGoodsLabelingResponseReportInner_1.SuccessGoodsLabelingResponseReportInnerToJSON)),
+        'report': (value['report'].map(SuccessGoodsLabelingResponseReportInner_1.SuccessGoodsLabelingResponseReportInnerToJSON)),
     };
 }

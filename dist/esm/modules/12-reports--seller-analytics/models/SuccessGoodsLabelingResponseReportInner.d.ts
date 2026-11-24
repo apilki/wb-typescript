@@ -20,43 +20,43 @@ export interface SuccessGoodsLabelingResponseReportInner {
      * @type {number}
      * @memberof SuccessGoodsLabelingResponseReportInner
      */
-    amount?: number;
+    amount: number;
     /**
      * Дата
      * @type {Date}
      * @memberof SuccessGoodsLabelingResponseReportInner
      */
-    date?: Date;
+    date: Date;
     /**
      * Номер поставки
      * @type {number}
      * @memberof SuccessGoodsLabelingResponseReportInner
      */
-    incomeId?: number;
+    incomeId: number;
     /**
      * Артикул WB
      * @type {number}
      * @memberof SuccessGoodsLabelingResponseReportInner
      */
-    nmID?: number;
+    nmID: number;
     /**
      * URL фото товара
      * @type {Array<string>}
      * @memberof SuccessGoodsLabelingResponseReportInner
      */
-    photoUrls?: Array<string>;
+    photoUrls: Array<string>;
     /**
      * Штрихкод
      * @type {number}
      * @memberof SuccessGoodsLabelingResponseReportInner
      */
-    shkID?: number;
+    shkID: number;
     /**
      * Баркод из карточки товара
      * @type {string}
      * @memberof SuccessGoodsLabelingResponseReportInner
      */
-    sku?: string;
+    sku: string;
 }
 /**
  * Check if a given object implements the SuccessGoodsLabelingResponseReportInner interface.

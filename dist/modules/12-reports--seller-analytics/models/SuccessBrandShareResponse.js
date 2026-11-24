@@ -22,6 +22,8 @@ const SuccessBrandShareResponseReportInner_1 = require("./SuccessBrandShareRespo
  * Check if a given object implements the SuccessBrandShareResponse interface.
  */
 function instanceOfSuccessBrandShareResponse(value) {
+    if (!('report' in value) || value['report'] === undefined)
+        return false;
     return true;
 }
 function SuccessBrandShareResponseFromJSON(json) {
@@ -32,7 +34,7 @@ function SuccessBrandShareResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'report': json['report'] == null ? undefined : (json['report'].map(SuccessBrandShareResponseReportInner_1.SuccessBrandShareResponseReportInnerFromJSON)),
+        'report': (json['report'].map(SuccessBrandShareResponseReportInner_1.SuccessBrandShareResponseReportInnerFromJSON)),
     };
 }
 function SuccessBrandShareResponseToJSON(value) {
@@ -40,6 +42,6 @@ function SuccessBrandShareResponseToJSON(value) {
         return value;
     }
     return {
-        'report': value['report'] == null ? undefined : (value['report'].map(SuccessBrandShareResponseReportInner_1.SuccessBrandShareResponseReportInnerToJSON)),
+        'report': (value['report'].map(SuccessBrandShareResponseReportInner_1.SuccessBrandShareResponseReportInnerToJSON)),
     };
 }

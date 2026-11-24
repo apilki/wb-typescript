@@ -16,6 +16,8 @@ import { SuccessParentsResponseDataInnerFromJSON, SuccessParentsResponseDataInne
  * Check if a given object implements the SuccessParentsResponse interface.
  */
 export function instanceOfSuccessParentsResponse(value) {
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
     return true;
 }
 export function SuccessParentsResponseFromJSON(json) {
@@ -26,7 +28,7 @@ export function SuccessParentsResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'data': json['data'] == null ? undefined : (json['data'].map(SuccessParentsResponseDataInnerFromJSON)),
+        'data': (json['data'].map(SuccessParentsResponseDataInnerFromJSON)),
     };
 }
 export function SuccessParentsResponseToJSON(value) {
@@ -34,6 +36,6 @@ export function SuccessParentsResponseToJSON(value) {
         return value;
     }
     return {
-        'data': value['data'] == null ? undefined : (value['data'].map(SuccessParentsResponseDataInnerToJSON)),
+        'data': (value['data'].map(SuccessParentsResponseDataInnerToJSON)),
     };
 }

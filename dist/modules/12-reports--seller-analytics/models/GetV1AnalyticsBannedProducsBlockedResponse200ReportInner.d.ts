@@ -20,31 +20,31 @@ export interface GetV1AnalyticsBannedProducsBlockedResponse200ReportInner {
      * @type {string}
      * @memberof GetV1AnalyticsBannedProducsBlockedResponse200ReportInner
      */
-    brand?: string;
+    brand: string;
     /**
      * Артикул WB
      * @type {number}
      * @memberof GetV1AnalyticsBannedProducsBlockedResponse200ReportInner
      */
-    nmId?: number;
+    nmId: number;
     /**
      * Наименование товара
      * @type {string}
      * @memberof GetV1AnalyticsBannedProducsBlockedResponse200ReportInner
      */
-    title?: string;
+    title: string;
     /**
      * Артикул продавца
      * @type {string}
      * @memberof GetV1AnalyticsBannedProducsBlockedResponse200ReportInner
      */
-    vendorCode?: string;
+    vendorCode: string;
     /**
      * Причина блокировки
      * @type {string}
      * @memberof GetV1AnalyticsBannedProducsBlockedResponse200ReportInner
      */
-    reason?: string;
+    reason: string;
 }
 /**
  * Check if a given object implements the GetV1AnalyticsBannedProducsBlockedResponse200ReportInner interface.

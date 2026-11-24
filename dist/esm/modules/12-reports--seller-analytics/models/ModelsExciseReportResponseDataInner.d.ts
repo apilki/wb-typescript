@@ -16,17 +16,11 @@
  */
 export interface ModelsExciseReportResponseDataInner {
     /**
-     * Страна покупателя
+     * Баркод
      * @type {string}
      * @memberof ModelsExciseReportResponseDataInner
      */
-    name?: string;
-    /**
-     * Цена товара, с НДС
-     * @type {number}
-     * @memberof ModelsExciseReportResponseDataInner
-     */
-    price?: number;
+    barcode?: string;
     /**
      * Валюта
      * @type {string}
@@ -40,11 +34,29 @@ export interface ModelsExciseReportResponseDataInner {
      */
     excise_short?: string;
     /**
-     * Баркод
+     * Номер фискального документа (чека полного расчёта), если есть
+     * @type {number}
+     * @memberof ModelsExciseReportResponseDataInner
+     */
+    fiscal_doc_number?: number;
+    /**
+     * Номер фискального накопителя, если есть
      * @type {string}
      * @memberof ModelsExciseReportResponseDataInner
      */
-    barcode?: string;
+    fiscal_drive_number?: string;
+    /**
+     * Дата фискализации (дата в чеке), если есть, `ГГГГ-ММ-ДД`
+     * @type {string}
+     * @memberof ModelsExciseReportResponseDataInner
+     */
+    fiscal_dt?: string;
+    /**
+     * Страна покупателя
+     * @type {string}
+     * @memberof ModelsExciseReportResponseDataInner
+     */
+    name?: string;
     /**
      * Артикул WB
      * @type {number}
@@ -62,23 +74,11 @@ export interface ModelsExciseReportResponseDataInner {
      */
     operation_type_id?: number;
     /**
-     * Номер фискального документа (чека полного расчёта), если есть
+     * Цена товара, с НДС
      * @type {number}
      * @memberof ModelsExciseReportResponseDataInner
      */
-    fiscal_doc_number?: number;
-    /**
-     * Дата фискализации (дата в чеке), если есть, `ГГГГ-ММ-ДД`
-     * @type {string}
-     * @memberof ModelsExciseReportResponseDataInner
-     */
-    fiscal_dt?: string;
-    /**
-     * Номер фискального накопителя, если есть
-     * @type {string}
-     * @memberof ModelsExciseReportResponseDataInner
-     */
-    fiscal_drive_number?: string;
+    price?: number;
     /**
      * `Rid`
      *

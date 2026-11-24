@@ -22,6 +22,8 @@ const SuccessTaskResponseDetailsInner_1 = require("./SuccessTaskResponseDetailsI
  * Check if a given object implements the SuccessTaskResponse interface.
  */
 function instanceOfSuccessTaskResponse(value) {
+    if (!('details' in value) || value['details'] === undefined)
+        return false;
     return true;
 }
 function SuccessTaskResponseFromJSON(json) {
@@ -32,7 +34,7 @@ function SuccessTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'details': json['details'] == null ? undefined : (json['details'].map(SuccessTaskResponseDetailsInner_1.SuccessTaskResponseDetailsInnerFromJSON)),
+        'details': (json['details'].map(SuccessTaskResponseDetailsInner_1.SuccessTaskResponseDetailsInnerFromJSON)),
     };
 }
 function SuccessTaskResponseToJSON(value) {
@@ -40,6 +42,6 @@ function SuccessTaskResponseToJSON(value) {
         return value;
     }
     return {
-        'details': value['details'] == null ? undefined : (value['details'].map(SuccessTaskResponseDetailsInner_1.SuccessTaskResponseDetailsInnerToJSON)),
+        'details': (value['details'].map(SuccessTaskResponseDetailsInner_1.SuccessTaskResponseDetailsInnerToJSON)),
     };
 }

@@ -15,6 +15,16 @@
  * Check if a given object implements the GetV1AnalyticsBannedProducsBlockedResponse200ReportInner interface.
  */
 export function instanceOfGetV1AnalyticsBannedProducsBlockedResponse200ReportInner(value) {
+    if (!('brand' in value) || value['brand'] === undefined)
+        return false;
+    if (!('nmId' in value) || value['nmId'] === undefined)
+        return false;
+    if (!('title' in value) || value['title'] === undefined)
+        return false;
+    if (!('vendorCode' in value) || value['vendorCode'] === undefined)
+        return false;
+    if (!('reason' in value) || value['reason'] === undefined)
+        return false;
     return true;
 }
 export function GetV1AnalyticsBannedProducsBlockedResponse200ReportInnerFromJSON(json) {
@@ -25,11 +35,11 @@ export function GetV1AnalyticsBannedProducsBlockedResponse200ReportInnerFromJSON
         return json;
     }
     return {
-        'brand': json['brand'] == null ? undefined : json['brand'],
-        'nmId': json['nmId'] == null ? undefined : json['nmId'],
-        'title': json['title'] == null ? undefined : json['title'],
-        'vendorCode': json['vendorCode'] == null ? undefined : json['vendorCode'],
-        'reason': json['reason'] == null ? undefined : json['reason'],
+        'brand': json['brand'],
+        'nmId': json['nmId'],
+        'title': json['title'],
+        'vendorCode': json['vendorCode'],
+        'reason': json['reason'],
     };
 }
 export function GetV1AnalyticsBannedProducsBlockedResponse200ReportInnerToJSON(value) {

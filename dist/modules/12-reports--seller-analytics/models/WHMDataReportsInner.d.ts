@@ -20,49 +20,49 @@ export interface WHMDataReportsInner {
      * @type {number}
      * @memberof WHMDataReportsInner
      */
-    nmId?: number;
+    nmId: number;
     /**
      * Предмет
      * @type {string}
      * @memberof WHMDataReportsInner
      */
-    subjectName?: string;
+    subjectName: string;
     /**
      * ID замера
      * @type {number}
      * @memberof WHMDataReportsInner
      */
-    dimId?: number;
+    dimId: number;
     /**
      * Объём, л
      * @type {number}
      * @memberof WHMDataReportsInner
      */
-    volume?: number;
+    volume: number;
     /**
      * Ширина, см
      * @type {number}
      * @memberof WHMDataReportsInner
      */
-    width?: number;
+    width: number;
     /**
      * Длина, см
      * @type {number}
      * @memberof WHMDataReportsInner
      */
-    length?: number;
+    length: number;
     /**
      * Высота, см
      * @type {number}
      * @memberof WHMDataReportsInner
      */
-    height?: number;
+    height: number;
     /**
      * Фото замеров
      * @type {Array<string>}
      * @memberof WHMDataReportsInner
      */
-    photoUrls?: Array<string>;
+    photoUrls: Array<string>;
     /**
      * Дата и время
      * @type {Date}

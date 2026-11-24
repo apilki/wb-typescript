@@ -20,14 +20,13 @@ export interface GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehou
      * @type {string}
      * @memberof GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner
      */
-    warehouseName?: string;
+    warehouseName: string;
     /**
      * Количество, шт.
-     *
      * @type {number}
      * @memberof GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner
      */
-    quantity?: number;
+    quantity: number;
 }
 /**
  * Check if a given object implements the GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner interface.

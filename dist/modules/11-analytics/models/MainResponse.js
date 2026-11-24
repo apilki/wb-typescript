@@ -31,6 +31,8 @@ function instanceOfMainResponse(value) {
         return false;
     if (!('visibilityInfo' in value) || value['visibilityInfo'] === undefined)
         return false;
+    if (!('groups' in value) || value['groups'] === undefined)
+        return false;
     if (!('currency' in value) || value['currency'] === undefined)
         return false;
     return true;
@@ -46,7 +48,7 @@ function MainResponseFromJSONTyped(json, ignoreDiscriminator) {
         'commonInfo': (0, CommonInfo_1.CommonInfoFromJSON)(json['commonInfo']),
         'positionInfo': (0, PositionInfo_1.PositionInfoFromJSON)(json['positionInfo']),
         'visibilityInfo': (0, VisibilityInfo_1.VisibilityInfoFromJSON)(json['visibilityInfo']),
-        'groups': json['groups'] == null ? undefined : (json['groups'].map(TableGroupItem_1.TableGroupItemFromJSON)),
+        'groups': (json['groups'].map(TableGroupItem_1.TableGroupItemFromJSON)),
         'currency': json['currency'],
     };
 }
@@ -58,7 +60,7 @@ function MainResponseToJSON(value) {
         'commonInfo': (0, CommonInfo_1.CommonInfoToJSON)(value['commonInfo']),
         'positionInfo': (0, PositionInfo_1.PositionInfoToJSON)(value['positionInfo']),
         'visibilityInfo': (0, VisibilityInfo_1.VisibilityInfoToJSON)(value['visibilityInfo']),
-        'groups': value['groups'] == null ? undefined : (value['groups'].map(TableGroupItem_1.TableGroupItemToJSON)),
+        'groups': (value['groups'].map(TableGroupItem_1.TableGroupItemToJSON)),
         'currency': value['currency'],
     };
 }

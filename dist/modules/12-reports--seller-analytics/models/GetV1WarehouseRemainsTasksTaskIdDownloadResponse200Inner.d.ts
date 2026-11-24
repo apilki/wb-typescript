@@ -63,7 +63,7 @@ export interface GetV1WarehouseRemainsTasksTaskIdDownloadResponse200Inner {
      * @type {Array<GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner>}
      * @memberof GetV1WarehouseRemainsTasksTaskIdDownloadResponse200Inner
      */
-    warehouses?: Array<GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner>;
+    warehouses: Array<GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner>;
 }
 /**
  * Check if a given object implements the GetV1WarehouseRemainsTasksTaskIdDownloadResponse200Inner interface.

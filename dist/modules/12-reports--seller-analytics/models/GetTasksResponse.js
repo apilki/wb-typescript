@@ -22,6 +22,8 @@ const GetTasksResponseData_1 = require("./GetTasksResponseData");
  * Check if a given object implements the GetTasksResponse interface.
  */
 function instanceOfGetTasksResponse(value) {
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
     return true;
 }
 function GetTasksResponseFromJSON(json) {
@@ -32,7 +34,7 @@ function GetTasksResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'data': json['data'] == null ? undefined : (0, GetTasksResponseData_1.GetTasksResponseDataFromJSON)(json['data']),
+        'data': (0, GetTasksResponseData_1.GetTasksResponseDataFromJSON)(json['data']),
     };
 }
 function GetTasksResponseToJSON(value) {

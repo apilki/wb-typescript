@@ -20,13 +20,13 @@ export interface SuccessParentsResponseDataInner {
      * @type {number}
      * @memberof SuccessParentsResponseDataInner
      */
-    parentId?: number;
+    parentId: number;
     /**
      * Название родительской категории
      * @type {string}
      * @memberof SuccessParentsResponseDataInner
      */
-    parentName?: string;
+    parentName: string;
 }
 /**
  * Check if a given object implements the SuccessParentsResponseDataInner interface.

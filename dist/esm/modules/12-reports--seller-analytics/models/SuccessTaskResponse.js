@@ -16,6 +16,8 @@ import { SuccessTaskResponseDetailsInnerFromJSON, SuccessTaskResponseDetailsInne
  * Check if a given object implements the SuccessTaskResponse interface.
  */
 export function instanceOfSuccessTaskResponse(value) {
+    if (!('details' in value) || value['details'] === undefined)
+        return false;
     return true;
 }
 export function SuccessTaskResponseFromJSON(json) {
@@ -26,7 +28,7 @@ export function SuccessTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'details': json['details'] == null ? undefined : (json['details'].map(SuccessTaskResponseDetailsInnerFromJSON)),
+        'details': (json['details'].map(SuccessTaskResponseDetailsInnerFromJSON)),
     };
 }
 export function SuccessTaskResponseToJSON(value) {
@@ -34,6 +36,6 @@ export function SuccessTaskResponseToJSON(value) {
         return value;
     }
     return {
-        'details': value['details'] == null ? undefined : (value['details'].map(SuccessTaskResponseDetailsInnerToJSON)),
+        'details': (value['details'].map(SuccessTaskResponseDetailsInnerToJSON)),
     };
 }

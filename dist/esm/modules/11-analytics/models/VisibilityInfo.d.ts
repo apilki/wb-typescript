@@ -35,19 +35,19 @@ export interface VisibilityInfo {
      * @type {Array<VisibilityInfoByDayInner>}
      * @memberof VisibilityInfo
      */
-    byDay?: Array<VisibilityInfoByDayInner>;
+    byDay: Array<VisibilityInfoByDayInner>;
     /**
      * Данные для отрисовки графика в личном кабинете по видимости и переходам в карточки по неделям
      * @type {Array<VisibilityInfoByDayInner>}
      * @memberof VisibilityInfo
      */
-    byWeek?: Array<VisibilityInfoByDayInner>;
+    byWeek: Array<VisibilityInfoByDayInner>;
     /**
      * Данные для отрисовки графика в личном кабинете по видимости и переходам в карточки по месяцам
      * @type {Array<VisibilityInfoByDayInner>}
      * @memberof VisibilityInfo
      */
-    byMonth?: Array<VisibilityInfoByDayInner>;
+    byMonth: Array<VisibilityInfoByDayInner>;
 }
 /**
  * Check if a given object implements the VisibilityInfo interface.

@@ -15,6 +15,20 @@
  * Check if a given object implements the GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner interface.
  */
 export function instanceOfGetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner(value) {
+    if (!('count' in value) || value['count'] === undefined)
+        return false;
+    if (!('giCreateDate' in value) || value['giCreateDate'] === undefined)
+        return false;
+    if (!('incomeId' in value) || value['incomeId'] === undefined)
+        return false;
+    if (!('nmID' in value) || value['nmID'] === undefined)
+        return false;
+    if (!('shkCreateDate' in value) || value['shkCreateDate'] === undefined)
+        return false;
+    if (!('subjectName' in value) || value['subjectName'] === undefined)
+        return false;
+    if (!('total' in value) || value['total'] === undefined)
+        return false;
     return true;
 }
 export function GetV1AcceptanceReportTasksTaskIdDownloadResponse200InnerFromJSON(json) {
@@ -25,13 +39,13 @@ export function GetV1AcceptanceReportTasksTaskIdDownloadResponse200InnerFromJSON
         return json;
     }
     return {
-        'count': json['count'] == null ? undefined : json['count'],
-        'giCreateDate': json['giCreateDate'] == null ? undefined : (new Date(json['giCreateDate'])),
-        'incomeId': json['incomeId'] == null ? undefined : json['incomeId'],
-        'nmID': json['nmID'] == null ? undefined : json['nmID'],
-        'shkCreateDate': json['shkCreateDate'] == null ? undefined : (new Date(json['shkCreateDate'])),
-        'subjectName': json['subjectName'] == null ? undefined : json['subjectName'],
-        'total': json['total'] == null ? undefined : json['total'],
+        'count': json['count'],
+        'giCreateDate': (new Date(json['giCreateDate'])),
+        'incomeId': json['incomeId'],
+        'nmID': json['nmID'],
+        'shkCreateDate': (new Date(json['shkCreateDate'])),
+        'subjectName': json['subjectName'],
+        'total': json['total'],
     };
 }
 export function GetV1AcceptanceReportTasksTaskIdDownloadResponse200InnerToJSON(value) {
@@ -40,10 +54,10 @@ export function GetV1AcceptanceReportTasksTaskIdDownloadResponse200InnerToJSON(v
     }
     return {
         'count': value['count'],
-        'giCreateDate': value['giCreateDate'] == null ? undefined : ((value['giCreateDate']).toISOString().substring(0, 10)),
+        'giCreateDate': ((value['giCreateDate']).toISOString().substring(0, 10)),
         'incomeId': value['incomeId'],
         'nmID': value['nmID'],
-        'shkCreateDate': value['shkCreateDate'] == null ? undefined : ((value['shkCreateDate']).toISOString().substring(0, 10)),
+        'shkCreateDate': ((value['shkCreateDate']).toISOString().substring(0, 10)),
         'subjectName': value['subjectName'],
         'total': value['total'],
     };

@@ -21,6 +21,10 @@ exports.GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInnerT
  * Check if a given object implements the GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner interface.
  */
 function instanceOfGetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner(value) {
+    if (!('warehouseName' in value) || value['warehouseName'] === undefined)
+        return false;
+    if (!('quantity' in value) || value['quantity'] === undefined)
+        return false;
     return true;
 }
 function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInnerFromJSON(json) {
@@ -31,8 +35,8 @@ function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner
         return json;
     }
     return {
-        'warehouseName': json['warehouseName'] == null ? undefined : json['warehouseName'],
-        'quantity': json['quantity'] == null ? undefined : json['quantity'],
+        'warehouseName': json['warehouseName'],
+        'quantity': json['quantity'],
     };
 }
 function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInnerToJSON(value) {

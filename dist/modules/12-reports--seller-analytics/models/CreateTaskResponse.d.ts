@@ -21,7 +21,7 @@ export interface CreateTaskResponse {
      * @type {CreateTaskResponseData}
      * @memberof CreateTaskResponse
      */
-    data?: CreateTaskResponseData;
+    data: CreateTaskResponseData;
 }
 /**
  * Check if a given object implements the CreateTaskResponse interface.

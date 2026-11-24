@@ -22,6 +22,8 @@ const GetV1AnalyticsBannedProducsBlockedResponse200ReportInner_1 = require("./Ge
  * Check if a given object implements the GetV1AnalyticsBannedProducsBlockedResponse200 interface.
  */
 function instanceOfGetV1AnalyticsBannedProducsBlockedResponse200(value) {
+    if (!('report' in value) || value['report'] === undefined)
+        return false;
     return true;
 }
 function GetV1AnalyticsBannedProducsBlockedResponse200FromJSON(json) {
@@ -32,7 +34,7 @@ function GetV1AnalyticsBannedProducsBlockedResponse200FromJSONTyped(json, ignore
         return json;
     }
     return {
-        'report': json['report'] == null ? undefined : (json['report'].map(GetV1AnalyticsBannedProducsBlockedResponse200ReportInner_1.GetV1AnalyticsBannedProducsBlockedResponse200ReportInnerFromJSON)),
+        'report': (json['report'].map(GetV1AnalyticsBannedProducsBlockedResponse200ReportInner_1.GetV1AnalyticsBannedProducsBlockedResponse200ReportInnerFromJSON)),
     };
 }
 function GetV1AnalyticsBannedProducsBlockedResponse200ToJSON(value) {
@@ -40,6 +42,6 @@ function GetV1AnalyticsBannedProducsBlockedResponse200ToJSON(value) {
         return value;
     }
     return {
-        'report': value['report'] == null ? undefined : (value['report'].map(GetV1AnalyticsBannedProducsBlockedResponse200ReportInner_1.GetV1AnalyticsBannedProducsBlockedResponse200ReportInnerToJSON)),
+        'report': (value['report'].map(GetV1AnalyticsBannedProducsBlockedResponse200ReportInner_1.GetV1AnalyticsBannedProducsBlockedResponse200ReportInnerToJSON)),
     };
 }

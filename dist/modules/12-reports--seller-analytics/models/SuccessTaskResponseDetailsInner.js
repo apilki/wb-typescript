@@ -21,6 +21,16 @@ exports.SuccessTaskResponseDetailsInnerToJSON = SuccessTaskResponseDetailsInnerT
  * Check if a given object implements the SuccessTaskResponseDetailsInner interface.
  */
 function instanceOfSuccessTaskResponseDetailsInner(value) {
+    if (!('currency' in value) || value['currency'] === undefined)
+        return false;
+    if (!('dateFrom' in value) || value['dateFrom'] === undefined)
+        return false;
+    if (!('dateTo' in value) || value['dateTo'] === undefined)
+        return false;
+    if (!('nmID' in value) || value['nmID'] === undefined)
+        return false;
+    if (!('sum' in value) || value['sum'] === undefined)
+        return false;
     return true;
 }
 function SuccessTaskResponseDetailsInnerFromJSON(json) {
@@ -31,11 +41,11 @@ function SuccessTaskResponseDetailsInnerFromJSONTyped(json, ignoreDiscriminator)
         return json;
     }
     return {
-        'nmID': json['nmID'] == null ? undefined : json['nmID'],
-        'sum': json['sum'] == null ? undefined : json['sum'],
-        'currency': json['currency'] == null ? undefined : json['currency'],
-        'dateFrom': json['dateFrom'] == null ? undefined : json['dateFrom'],
-        'dateTo': json['dateTo'] == null ? undefined : json['dateTo'],
+        'currency': json['currency'],
+        'dateFrom': json['dateFrom'],
+        'dateTo': json['dateTo'],
+        'nmID': json['nmID'],
+        'sum': json['sum'],
     };
 }
 function SuccessTaskResponseDetailsInnerToJSON(value) {
@@ -43,10 +53,10 @@ function SuccessTaskResponseDetailsInnerToJSON(value) {
         return value;
     }
     return {
-        'nmID': value['nmID'],
-        'sum': value['sum'],
         'currency': value['currency'],
         'dateFrom': value['dateFrom'],
         'dateTo': value['dateTo'],
+        'nmID': value['nmID'],
+        'sum': value['sum'],
     };
 }

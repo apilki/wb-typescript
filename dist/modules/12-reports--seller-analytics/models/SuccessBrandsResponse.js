@@ -21,6 +21,8 @@ exports.SuccessBrandsResponseToJSON = SuccessBrandsResponseToJSON;
  * Check if a given object implements the SuccessBrandsResponse interface.
  */
 function instanceOfSuccessBrandsResponse(value) {
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
     return true;
 }
 function SuccessBrandsResponseFromJSON(json) {
@@ -31,7 +33,7 @@ function SuccessBrandsResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'data': json['data'] == null ? undefined : json['data'],
+        'data': json['data'],
     };
 }
 function SuccessBrandsResponseToJSON(value) {

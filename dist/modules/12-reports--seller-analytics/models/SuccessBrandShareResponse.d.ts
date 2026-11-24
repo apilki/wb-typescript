@@ -21,7 +21,7 @@ export interface SuccessBrandShareResponse {
      * @type {Array<SuccessBrandShareResponseReportInner>}
      * @memberof SuccessBrandShareResponse
      */
-    report?: Array<SuccessBrandShareResponseReportInner>;
+    report: Array<SuccessBrandShareResponseReportInner>;
 }
 /**
  * Check if a given object implements the SuccessBrandShareResponse interface.

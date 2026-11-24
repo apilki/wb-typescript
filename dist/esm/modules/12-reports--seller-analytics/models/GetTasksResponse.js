@@ -16,6 +16,8 @@ import { GetTasksResponseDataFromJSON, GetTasksResponseDataToJSON, } from './Get
  * Check if a given object implements the GetTasksResponse interface.
  */
 export function instanceOfGetTasksResponse(value) {
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
     return true;
 }
 export function GetTasksResponseFromJSON(json) {
@@ -26,7 +28,7 @@ export function GetTasksResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'data': json['data'] == null ? undefined : GetTasksResponseDataFromJSON(json['data']),
+        'data': GetTasksResponseDataFromJSON(json['data']),
     };
 }
 export function GetTasksResponseToJSON(value) {

@@ -21,7 +21,7 @@ export interface GetV1AnalyticsBannedProducsBlockedResponse200 {
      * @type {Array<GetV1AnalyticsBannedProducsBlockedResponse200ReportInner>}
      * @memberof GetV1AnalyticsBannedProducsBlockedResponse200
      */
-    report?: Array<GetV1AnalyticsBannedProducsBlockedResponse200ReportInner>;
+    report: Array<GetV1AnalyticsBannedProducsBlockedResponse200ReportInner>;
 }
 /**
  * Check if a given object implements the GetV1AnalyticsBannedProducsBlockedResponse200 interface.

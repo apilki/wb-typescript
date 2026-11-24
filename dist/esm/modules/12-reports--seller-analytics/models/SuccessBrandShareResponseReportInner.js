@@ -15,6 +15,14 @@
  * Check if a given object implements the SuccessBrandShareResponseReportInner interface.
  */
 export function instanceOfSuccessBrandShareResponseReportInner(value) {
+    if (!('applyDate' in value) || value['applyDate'] === undefined)
+        return false;
+    if (!('brandRating' in value) || value['brandRating'] === undefined)
+        return false;
+    if (!('pricePercent' in value) || value['pricePercent'] === undefined)
+        return false;
+    if (!('qtyPercent' in value) || value['qtyPercent'] === undefined)
+        return false;
     return true;
 }
 export function SuccessBrandShareResponseReportInnerFromJSON(json) {
@@ -25,10 +33,10 @@ export function SuccessBrandShareResponseReportInnerFromJSONTyped(json, ignoreDi
         return json;
     }
     return {
-        'applyDate': json['applyDate'] == null ? undefined : json['applyDate'],
-        'brandRating': json['brandRating'] == null ? undefined : json['brandRating'],
-        'pricePercent': json['pricePercent'] == null ? undefined : json['pricePercent'],
-        'qtyPercent': json['qtyPercent'] == null ? undefined : json['qtyPercent'],
+        'applyDate': json['applyDate'],
+        'brandRating': json['brandRating'],
+        'pricePercent': json['pricePercent'],
+        'qtyPercent': json['qtyPercent'],
     };
 }
 export function SuccessBrandShareResponseReportInnerToJSON(value) {

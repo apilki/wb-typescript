@@ -24,19 +24,11 @@ import { DistributionTableItemFeedbackCountFromJSON, DistributionTableItemFeedba
 export function instanceOfDistributionTableItem(value) {
     if (!('nmId' in value) || value['nmId'] === undefined)
         return false;
-    if (!('title' in value) || value['title'] === undefined)
-        return false;
     if (!('vendorCode' in value) || value['vendorCode'] === undefined)
         return false;
     if (!('subjectId' in value) || value['subjectId'] === undefined)
         return false;
     if (!('subjectName' in value) || value['subjectName'] === undefined)
-        return false;
-    if (!('brandName' in value) || value['brandName'] === undefined)
-        return false;
-    if (!('tagName' in value) || value['tagName'] === undefined)
-        return false;
-    if (!('tagId' in value) || value['tagId'] === undefined)
         return false;
     if (!('pinnedFeedback' in value) || value['pinnedFeedback'] === undefined)
         return false;
@@ -71,13 +63,13 @@ export function DistributionTableItemFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'nmId': json['nmId'],
-        'title': json['title'],
+        'title': json['title'] == null ? undefined : json['title'],
         'vendorCode': json['vendorCode'],
         'subjectId': json['subjectId'],
         'subjectName': json['subjectName'],
-        'brandName': json['brandName'],
-        'tagName': json['tagName'],
-        'tagId': json['tagId'],
+        'brandName': json['brandName'] == null ? undefined : json['brandName'],
+        'tagName': json['tagName'] == null ? undefined : json['tagName'],
+        'tagId': json['tagId'] == null ? undefined : json['tagId'],
         'pinnedFeedback': json['pinnedFeedback'],
         'rating': json['rating'],
         'feedbackRating': DistributionTableItemFeedbackRatingFromJSON(json['feedbackRating']),

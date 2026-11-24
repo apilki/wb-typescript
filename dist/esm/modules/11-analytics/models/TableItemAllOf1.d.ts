@@ -66,9 +66,7 @@ export interface TableItemAllOf1 {
      */
     isAdvertised?: boolean;
     /**
-     * Искали ли товар по подменному артикулу.<br>
-     * Поле будет в ответе при наличии в запросе `includeSubstitutedSKUs` и/или `includeSearchTexts`
-     *
+     * Искали ли товар по подменному артикулу
      * @type {boolean}
      * @memberof TableItemAllOf1
      */

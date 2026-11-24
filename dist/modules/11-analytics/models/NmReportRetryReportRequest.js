@@ -21,6 +21,8 @@ exports.NmReportRetryReportRequestToJSON = NmReportRetryReportRequestToJSON;
  * Check if a given object implements the NmReportRetryReportRequest interface.
  */
 function instanceOfNmReportRetryReportRequest(value) {
+    if (!('downloadId' in value) || value['downloadId'] === undefined)
+        return false;
     return true;
 }
 function NmReportRetryReportRequestFromJSON(json) {
@@ -31,7 +33,7 @@ function NmReportRetryReportRequestFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'downloadId': json['downloadId'] == null ? undefined : json['downloadId'],
+        'downloadId': json['downloadId'],
     };
 }
 function NmReportRetryReportRequestToJSON(value) {

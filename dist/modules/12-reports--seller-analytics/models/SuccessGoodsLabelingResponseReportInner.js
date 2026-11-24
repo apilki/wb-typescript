@@ -21,6 +21,20 @@ exports.SuccessGoodsLabelingResponseReportInnerToJSON = SuccessGoodsLabelingResp
  * Check if a given object implements the SuccessGoodsLabelingResponseReportInner interface.
  */
 function instanceOfSuccessGoodsLabelingResponseReportInner(value) {
+    if (!('amount' in value) || value['amount'] === undefined)
+        return false;
+    if (!('date' in value) || value['date'] === undefined)
+        return false;
+    if (!('incomeId' in value) || value['incomeId'] === undefined)
+        return false;
+    if (!('nmID' in value) || value['nmID'] === undefined)
+        return false;
+    if (!('photoUrls' in value) || value['photoUrls'] === undefined)
+        return false;
+    if (!('shkID' in value) || value['shkID'] === undefined)
+        return false;
+    if (!('sku' in value) || value['sku'] === undefined)
+        return false;
     return true;
 }
 function SuccessGoodsLabelingResponseReportInnerFromJSON(json) {
@@ -31,13 +45,13 @@ function SuccessGoodsLabelingResponseReportInnerFromJSONTyped(json, ignoreDiscri
         return json;
     }
     return {
-        'amount': json['amount'] == null ? undefined : json['amount'],
-        'date': json['date'] == null ? undefined : (new Date(json['date'])),
-        'incomeId': json['incomeId'] == null ? undefined : json['incomeId'],
-        'nmID': json['nmID'] == null ? undefined : json['nmID'],
-        'photoUrls': json['photoUrls'] == null ? undefined : json['photoUrls'],
-        'shkID': json['shkID'] == null ? undefined : json['shkID'],
-        'sku': json['sku'] == null ? undefined : json['sku'],
+        'amount': json['amount'],
+        'date': (new Date(json['date'])),
+        'incomeId': json['incomeId'],
+        'nmID': json['nmID'],
+        'photoUrls': json['photoUrls'],
+        'shkID': json['shkID'],
+        'sku': json['sku'],
     };
 }
 function SuccessGoodsLabelingResponseReportInnerToJSON(value) {
@@ -46,7 +60,7 @@ function SuccessGoodsLabelingResponseReportInnerToJSON(value) {
     }
     return {
         'amount': value['amount'],
-        'date': value['date'] == null ? undefined : ((value['date']).toISOString()),
+        'date': ((value['date']).toISOString()),
         'incomeId': value['incomeId'],
         'nmID': value['nmID'],
         'photoUrls': value['photoUrls'],

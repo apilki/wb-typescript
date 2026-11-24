@@ -21,6 +21,36 @@ exports.SuccessSubstIncorAttachResponseDataReportsInnerToJSON = SuccessSubstInco
  * Check if a given object implements the SuccessSubstIncorAttachResponseDataReportsInner interface.
  */
 function instanceOfSuccessSubstIncorAttachResponseDataReportsInner(value) {
+    if (!('dtBonus' in value) || value['dtBonus'] === undefined)
+        return false;
+    if (!('nmId' in value) || value['nmId'] === undefined)
+        return false;
+    if (!('oldShkId' in value) || value['oldShkId'] === undefined)
+        return false;
+    if (!('oldColor' in value) || value['oldColor'] === undefined)
+        return false;
+    if (!('oldSize' in value) || value['oldSize'] === undefined)
+        return false;
+    if (!('oldSku' in value) || value['oldSku'] === undefined)
+        return false;
+    if (!('oldVendorCode' in value) || value['oldVendorCode'] === undefined)
+        return false;
+    if (!('newShkId' in value) || value['newShkId'] === undefined)
+        return false;
+    if (!('newColor' in value) || value['newColor'] === undefined)
+        return false;
+    if (!('newSize' in value) || value['newSize'] === undefined)
+        return false;
+    if (!('newSku' in value) || value['newSku'] === undefined)
+        return false;
+    if (!('newVendorCode' in value) || value['newVendorCode'] === undefined)
+        return false;
+    if (!('bonusSumm' in value) || value['bonusSumm'] === undefined)
+        return false;
+    if (!('bonusType' in value) || value['bonusType'] === undefined)
+        return false;
+    if (!('photoUrls' in value) || value['photoUrls'] === undefined)
+        return false;
     return true;
 }
 function SuccessSubstIncorAttachResponseDataReportsInnerFromJSON(json) {
@@ -31,21 +61,21 @@ function SuccessSubstIncorAttachResponseDataReportsInnerFromJSONTyped(json, igno
         return json;
     }
     return {
-        'dtBonus': json['dtBonus'] == null ? undefined : (new Date(json['dtBonus'])),
-        'nmId': json['nmId'] == null ? undefined : json['nmId'],
-        'oldShkId': json['oldShkId'] == null ? undefined : json['oldShkId'],
-        'oldColor': json['oldColor'] == null ? undefined : json['oldColor'],
-        'oldSize': json['oldSize'] == null ? undefined : json['oldSize'],
-        'oldSku': json['oldSku'] == null ? undefined : json['oldSku'],
-        'oldVendorCode': json['oldVendorCode'] == null ? undefined : json['oldVendorCode'],
-        'newShkId': json['newShkId'] == null ? undefined : json['newShkId'],
-        'newColor': json['newColor'] == null ? undefined : json['newColor'],
-        'newSize': json['newSize'] == null ? undefined : json['newSize'],
-        'newSku': json['newSku'] == null ? undefined : json['newSku'],
-        'newVendorCode': json['newVendorCode'] == null ? undefined : json['newVendorCode'],
-        'bonusSumm': json['bonusSumm'] == null ? undefined : json['bonusSumm'],
-        'bonusType': json['bonusType'] == null ? undefined : json['bonusType'],
-        'photoUrls': json['photoUrls'] == null ? undefined : json['photoUrls'],
+        'dtBonus': (new Date(json['dtBonus'])),
+        'nmId': json['nmId'],
+        'oldShkId': json['oldShkId'],
+        'oldColor': json['oldColor'],
+        'oldSize': json['oldSize'],
+        'oldSku': json['oldSku'],
+        'oldVendorCode': json['oldVendorCode'],
+        'newShkId': json['newShkId'],
+        'newColor': json['newColor'],
+        'newSize': json['newSize'],
+        'newSku': json['newSku'],
+        'newVendorCode': json['newVendorCode'],
+        'bonusSumm': json['bonusSumm'],
+        'bonusType': json['bonusType'],
+        'photoUrls': json['photoUrls'],
     };
 }
 function SuccessSubstIncorAttachResponseDataReportsInnerToJSON(value) {
@@ -53,7 +83,7 @@ function SuccessSubstIncorAttachResponseDataReportsInnerToJSON(value) {
         return value;
     }
     return {
-        'dtBonus': value['dtBonus'] == null ? undefined : ((value['dtBonus']).toISOString()),
+        'dtBonus': ((value['dtBonus']).toISOString()),
         'nmId': value['nmId'],
         'oldShkId': value['oldShkId'],
         'oldColor': value['oldColor'],

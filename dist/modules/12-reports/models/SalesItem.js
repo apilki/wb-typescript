@@ -29,6 +29,62 @@ exports.SalesItemWarehouseTypeEnum = {
  * Check if a given object implements the SalesItem interface.
  */
 function instanceOfSalesItem(value) {
+    if (!('date' in value) || value['date'] === undefined)
+        return false;
+    if (!('lastChangeDate' in value) || value['lastChangeDate'] === undefined)
+        return false;
+    if (!('warehouseName' in value) || value['warehouseName'] === undefined)
+        return false;
+    if (!('warehouseType' in value) || value['warehouseType'] === undefined)
+        return false;
+    if (!('countryName' in value) || value['countryName'] === undefined)
+        return false;
+    if (!('oblastOkrugName' in value) || value['oblastOkrugName'] === undefined)
+        return false;
+    if (!('regionName' in value) || value['regionName'] === undefined)
+        return false;
+    if (!('supplierArticle' in value) || value['supplierArticle'] === undefined)
+        return false;
+    if (!('nmId' in value) || value['nmId'] === undefined)
+        return false;
+    if (!('barcode' in value) || value['barcode'] === undefined)
+        return false;
+    if (!('category' in value) || value['category'] === undefined)
+        return false;
+    if (!('subject' in value) || value['subject'] === undefined)
+        return false;
+    if (!('brand' in value) || value['brand'] === undefined)
+        return false;
+    if (!('techSize' in value) || value['techSize'] === undefined)
+        return false;
+    if (!('incomeID' in value) || value['incomeID'] === undefined)
+        return false;
+    if (!('isSupply' in value) || value['isSupply'] === undefined)
+        return false;
+    if (!('isRealization' in value) || value['isRealization'] === undefined)
+        return false;
+    if (!('totalPrice' in value) || value['totalPrice'] === undefined)
+        return false;
+    if (!('discountPercent' in value) || value['discountPercent'] === undefined)
+        return false;
+    if (!('spp' in value) || value['spp'] === undefined)
+        return false;
+    if (!('paymentSaleAmount' in value) || value['paymentSaleAmount'] === undefined)
+        return false;
+    if (!('forPay' in value) || value['forPay'] === undefined)
+        return false;
+    if (!('finishedPrice' in value) || value['finishedPrice'] === undefined)
+        return false;
+    if (!('priceWithDisc' in value) || value['priceWithDisc'] === undefined)
+        return false;
+    if (!('saleID' in value) || value['saleID'] === undefined)
+        return false;
+    if (!('sticker' in value) || value['sticker'] === undefined)
+        return false;
+    if (!('gNumber' in value) || value['gNumber'] === undefined)
+        return false;
+    if (!('srid' in value) || value['srid'] === undefined)
+        return false;
     return true;
 }
 function SalesItemFromJSON(json) {
@@ -39,34 +95,34 @@ function SalesItemFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'date': json['date'] == null ? undefined : json['date'],
-        'lastChangeDate': json['lastChangeDate'] == null ? undefined : json['lastChangeDate'],
-        'warehouseName': json['warehouseName'] == null ? undefined : json['warehouseName'],
-        'warehouseType': json['warehouseType'] == null ? undefined : json['warehouseType'],
-        'countryName': json['countryName'] == null ? undefined : json['countryName'],
-        'oblastOkrugName': json['oblastOkrugName'] == null ? undefined : json['oblastOkrugName'],
-        'regionName': json['regionName'] == null ? undefined : json['regionName'],
-        'supplierArticle': json['supplierArticle'] == null ? undefined : json['supplierArticle'],
-        'nmId': json['nmId'] == null ? undefined : json['nmId'],
-        'barcode': json['barcode'] == null ? undefined : json['barcode'],
-        'category': json['category'] == null ? undefined : json['category'],
-        'subject': json['subject'] == null ? undefined : json['subject'],
-        'brand': json['brand'] == null ? undefined : json['brand'],
-        'techSize': json['techSize'] == null ? undefined : json['techSize'],
-        'incomeID': json['incomeID'] == null ? undefined : json['incomeID'],
-        'isSupply': json['isSupply'] == null ? undefined : json['isSupply'],
-        'isRealization': json['isRealization'] == null ? undefined : json['isRealization'],
-        'totalPrice': json['totalPrice'] == null ? undefined : json['totalPrice'],
-        'discountPercent': json['discountPercent'] == null ? undefined : json['discountPercent'],
-        'spp': json['spp'] == null ? undefined : json['spp'],
-        'paymentSaleAmount': json['paymentSaleAmount'] == null ? undefined : json['paymentSaleAmount'],
-        'forPay': json['forPay'] == null ? undefined : json['forPay'],
-        'finishedPrice': json['finishedPrice'] == null ? undefined : json['finishedPrice'],
-        'priceWithDisc': json['priceWithDisc'] == null ? undefined : json['priceWithDisc'],
-        'saleID': json['saleID'] == null ? undefined : json['saleID'],
-        'sticker': json['sticker'] == null ? undefined : json['sticker'],
-        'gNumber': json['gNumber'] == null ? undefined : json['gNumber'],
-        'srid': json['srid'] == null ? undefined : json['srid'],
+        'date': json['date'],
+        'lastChangeDate': json['lastChangeDate'],
+        'warehouseName': json['warehouseName'],
+        'warehouseType': json['warehouseType'],
+        'countryName': json['countryName'],
+        'oblastOkrugName': json['oblastOkrugName'],
+        'regionName': json['regionName'],
+        'supplierArticle': json['supplierArticle'],
+        'nmId': json['nmId'],
+        'barcode': json['barcode'],
+        'category': json['category'],
+        'subject': json['subject'],
+        'brand': json['brand'],
+        'techSize': json['techSize'],
+        'incomeID': json['incomeID'],
+        'isSupply': json['isSupply'],
+        'isRealization': json['isRealization'],
+        'totalPrice': json['totalPrice'],
+        'discountPercent': json['discountPercent'],
+        'spp': json['spp'],
+        'paymentSaleAmount': json['paymentSaleAmount'],
+        'forPay': json['forPay'],
+        'finishedPrice': json['finishedPrice'],
+        'priceWithDisc': json['priceWithDisc'],
+        'saleID': json['saleID'],
+        'sticker': json['sticker'],
+        'gNumber': json['gNumber'],
+        'srid': json['srid'],
     };
 }
 function SalesItemToJSON(value) {

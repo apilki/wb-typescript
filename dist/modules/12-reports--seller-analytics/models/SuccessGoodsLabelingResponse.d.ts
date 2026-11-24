@@ -21,7 +21,7 @@ export interface SuccessGoodsLabelingResponse {
      * @type {Array<SuccessGoodsLabelingResponseReportInner>}
      * @memberof SuccessGoodsLabelingResponse
      */
-    report?: Array<SuccessGoodsLabelingResponseReportInner>;
+    report: Array<SuccessGoodsLabelingResponseReportInner>;
 }
 /**
  * Check if a given object implements the SuccessGoodsLabelingResponse interface.

@@ -21,6 +21,10 @@ exports.GetTasksResponseDataToJSON = GetTasksResponseDataToJSON;
  * Check if a given object implements the GetTasksResponseData interface.
  */
 function instanceOfGetTasksResponseData(value) {
+    if (!('id' in value) || value['id'] === undefined)
+        return false;
+    if (!('status' in value) || value['status'] === undefined)
+        return false;
     return true;
 }
 function GetTasksResponseDataFromJSON(json) {
@@ -31,8 +35,8 @@ function GetTasksResponseDataFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'id': json['id'] == null ? undefined : json['id'],
-        'status': json['status'] == null ? undefined : json['status'],
+        'id': json['id'],
+        'status': json['status'],
     };
 }
 function GetTasksResponseDataToJSON(value) {

@@ -28,6 +28,12 @@ function instanceOfVisibilityInfo(value) {
         return false;
     if (!('openCard' in value) || value['openCard'] === undefined)
         return false;
+    if (!('byDay' in value) || value['byDay'] === undefined)
+        return false;
+    if (!('byWeek' in value) || value['byWeek'] === undefined)
+        return false;
+    if (!('byMonth' in value) || value['byMonth'] === undefined)
+        return false;
     return true;
 }
 function VisibilityInfoFromJSON(json) {
@@ -40,9 +46,9 @@ function VisibilityInfoFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'visibility': (0, VisibilityInfoVisibility_1.VisibilityInfoVisibilityFromJSON)(json['visibility']),
         'openCard': (0, VisibilityInfoOpenCard_1.VisibilityInfoOpenCardFromJSON)(json['openCard']),
-        'byDay': json['byDay'] == null ? undefined : (json['byDay'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerFromJSON)),
-        'byWeek': json['byWeek'] == null ? undefined : (json['byWeek'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerFromJSON)),
-        'byMonth': json['byMonth'] == null ? undefined : (json['byMonth'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerFromJSON)),
+        'byDay': (json['byDay'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerFromJSON)),
+        'byWeek': (json['byWeek'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerFromJSON)),
+        'byMonth': (json['byMonth'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerFromJSON)),
     };
 }
 function VisibilityInfoToJSON(value) {
@@ -52,8 +58,8 @@ function VisibilityInfoToJSON(value) {
     return {
         'visibility': (0, VisibilityInfoVisibility_1.VisibilityInfoVisibilityToJSON)(value['visibility']),
         'openCard': (0, VisibilityInfoOpenCard_1.VisibilityInfoOpenCardToJSON)(value['openCard']),
-        'byDay': value['byDay'] == null ? undefined : (value['byDay'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerToJSON)),
-        'byWeek': value['byWeek'] == null ? undefined : (value['byWeek'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerToJSON)),
-        'byMonth': value['byMonth'] == null ? undefined : (value['byMonth'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerToJSON)),
+        'byDay': (value['byDay'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerToJSON)),
+        'byWeek': (value['byWeek'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerToJSON)),
+        'byMonth': (value['byMonth'].map(VisibilityInfoByDayInner_1.VisibilityInfoByDayInnerToJSON)),
     };
 }

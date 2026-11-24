@@ -15,6 +15,10 @@
  * Check if a given object implements the GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner interface.
  */
 export function instanceOfGetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInner(value) {
+    if (!('warehouseName' in value) || value['warehouseName'] === undefined)
+        return false;
+    if (!('quantity' in value) || value['quantity'] === undefined)
+        return false;
     return true;
 }
 export function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInnerFromJSON(json) {
@@ -25,8 +29,8 @@ export function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehous
         return json;
     }
     return {
-        'warehouseName': json['warehouseName'] == null ? undefined : json['warehouseName'],
-        'quantity': json['quantity'] == null ? undefined : json['quantity'],
+        'warehouseName': json['warehouseName'],
+        'quantity': json['quantity'],
     };
 }
 export function GetV1WarehouseRemainsTasksTaskIdDownloadResponse200InnerWarehousesInnerToJSON(value) {

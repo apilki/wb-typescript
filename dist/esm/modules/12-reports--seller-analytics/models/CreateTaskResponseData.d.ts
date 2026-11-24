@@ -20,7 +20,7 @@ export interface CreateTaskResponseData {
      * @type {string}
      * @memberof CreateTaskResponseData
      */
-    taskId?: string;
+    taskId: string;
 }
 /**
  * Check if a given object implements the CreateTaskResponseData interface.

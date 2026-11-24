@@ -20,7 +20,7 @@ export interface SuccessBrandsResponse {
      * @type {Array<string>}
      * @memberof SuccessBrandsResponse
      */
-    data?: Array<string>;
+    data: Array<string>;
 }
 /**
  * Check if a given object implements the SuccessBrandsResponse interface.

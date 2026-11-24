@@ -16,6 +16,8 @@ import { ModelsExciseReportResponseFromJSON, ModelsExciseReportResponseToJSON, }
  * Check if a given object implements the ExciseReportResponse interface.
  */
 export function instanceOfExciseReportResponse(value) {
+    if (!('response' in value) || value['response'] === undefined)
+        return false;
     return true;
 }
 export function ExciseReportResponseFromJSON(json) {
@@ -26,7 +28,7 @@ export function ExciseReportResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'response': json['response'] == null ? undefined : ModelsExciseReportResponseFromJSON(json['response']),
+        'response': ModelsExciseReportResponseFromJSON(json['response']),
     };
 }
 export function ExciseReportResponseToJSON(value) {

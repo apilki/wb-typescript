@@ -22,6 +22,8 @@ const SuccessParentsResponseDataInner_1 = require("./SuccessParentsResponseDataI
  * Check if a given object implements the SuccessParentsResponse interface.
  */
 function instanceOfSuccessParentsResponse(value) {
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
     return true;
 }
 function SuccessParentsResponseFromJSON(json) {
@@ -32,7 +34,7 @@ function SuccessParentsResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'data': json['data'] == null ? undefined : (json['data'].map(SuccessParentsResponseDataInner_1.SuccessParentsResponseDataInnerFromJSON)),
+        'data': (json['data'].map(SuccessParentsResponseDataInner_1.SuccessParentsResponseDataInnerFromJSON)),
     };
 }
 function SuccessParentsResponseToJSON(value) {
@@ -40,6 +42,6 @@ function SuccessParentsResponseToJSON(value) {
         return value;
     }
     return {
-        'data': value['data'] == null ? undefined : (value['data'].map(SuccessParentsResponseDataInner_1.SuccessParentsResponseDataInnerToJSON)),
+        'data': (value['data'].map(SuccessParentsResponseDataInner_1.SuccessParentsResponseDataInnerToJSON)),
     };
 }

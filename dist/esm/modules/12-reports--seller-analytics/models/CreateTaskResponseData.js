@@ -15,6 +15,8 @@
  * Check if a given object implements the CreateTaskResponseData interface.
  */
 export function instanceOfCreateTaskResponseData(value) {
+    if (!('taskId' in value) || value['taskId'] === undefined)
+        return false;
     return true;
 }
 export function CreateTaskResponseDataFromJSON(json) {
@@ -25,7 +27,7 @@ export function CreateTaskResponseDataFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'taskId': json['taskId'] == null ? undefined : json['taskId'],
+        'taskId': json['taskId'],
     };
 }
 export function CreateTaskResponseDataToJSON(value) {

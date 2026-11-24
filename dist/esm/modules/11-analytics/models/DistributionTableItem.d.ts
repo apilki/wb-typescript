@@ -33,7 +33,7 @@ export interface DistributionTableItem {
      * @type {string}
      * @memberof DistributionTableItem
      */
-    title: string;
+    title?: string;
     /**
      * Артикул продавца
      * @type {string}
@@ -57,19 +57,19 @@ export interface DistributionTableItem {
      * @type {string}
      * @memberof DistributionTableItem
      */
-    brandName: string;
+    brandName?: string;
     /**
      * Название ярлыка
      * @type {string}
      * @memberof DistributionTableItem
      */
-    tagName: string;
+    tagName?: string;
     /**
      * ID ярлыка
      * @type {number}
      * @memberof DistributionTableItem
      */
-    tagId: number;
+    tagId?: number;
     /**
      * Отзыв закреплён
      * @type {boolean}

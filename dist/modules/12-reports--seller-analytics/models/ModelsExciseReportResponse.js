@@ -22,6 +22,8 @@ const ModelsExciseReportResponseDataInner_1 = require("./ModelsExciseReportRespo
  * Check if a given object implements the ModelsExciseReportResponse interface.
  */
 function instanceOfModelsExciseReportResponse(value) {
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
     return true;
 }
 function ModelsExciseReportResponseFromJSON(json) {
@@ -32,7 +34,7 @@ function ModelsExciseReportResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'data': json['data'] == null ? undefined : (json['data'].map(ModelsExciseReportResponseDataInner_1.ModelsExciseReportResponseDataInnerFromJSON)),
+        'data': (json['data'].map(ModelsExciseReportResponseDataInner_1.ModelsExciseReportResponseDataInnerFromJSON)),
     };
 }
 function ModelsExciseReportResponseToJSON(value) {
@@ -40,6 +42,6 @@ function ModelsExciseReportResponseToJSON(value) {
         return value;
     }
     return {
-        'data': value['data'] == null ? undefined : (value['data'].map(ModelsExciseReportResponseDataInner_1.ModelsExciseReportResponseDataInnerToJSON)),
+        'data': (value['data'].map(ModelsExciseReportResponseDataInner_1.ModelsExciseReportResponseDataInnerToJSON)),
     };
 }

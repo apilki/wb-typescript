@@ -21,7 +21,7 @@ export interface ModelsExciseReportResponse {
      * @type {Array<ModelsExciseReportResponseDataInner>}
      * @memberof ModelsExciseReportResponse
      */
-    data?: Array<ModelsExciseReportResponseDataInner>;
+    data: Array<ModelsExciseReportResponseDataInner>;
 }
 /**
  * Check if a given object implements the ModelsExciseReportResponse interface.

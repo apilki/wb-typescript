@@ -22,6 +22,12 @@ export function instanceOfVisibilityInfo(value) {
         return false;
     if (!('openCard' in value) || value['openCard'] === undefined)
         return false;
+    if (!('byDay' in value) || value['byDay'] === undefined)
+        return false;
+    if (!('byWeek' in value) || value['byWeek'] === undefined)
+        return false;
+    if (!('byMonth' in value) || value['byMonth'] === undefined)
+        return false;
     return true;
 }
 export function VisibilityInfoFromJSON(json) {
@@ -34,9 +40,9 @@ export function VisibilityInfoFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'visibility': VisibilityInfoVisibilityFromJSON(json['visibility']),
         'openCard': VisibilityInfoOpenCardFromJSON(json['openCard']),
-        'byDay': json['byDay'] == null ? undefined : (json['byDay'].map(VisibilityInfoByDayInnerFromJSON)),
-        'byWeek': json['byWeek'] == null ? undefined : (json['byWeek'].map(VisibilityInfoByDayInnerFromJSON)),
-        'byMonth': json['byMonth'] == null ? undefined : (json['byMonth'].map(VisibilityInfoByDayInnerFromJSON)),
+        'byDay': (json['byDay'].map(VisibilityInfoByDayInnerFromJSON)),
+        'byWeek': (json['byWeek'].map(VisibilityInfoByDayInnerFromJSON)),
+        'byMonth': (json['byMonth'].map(VisibilityInfoByDayInnerFromJSON)),
     };
 }
 export function VisibilityInfoToJSON(value) {
@@ -46,8 +52,8 @@ export function VisibilityInfoToJSON(value) {
     return {
         'visibility': VisibilityInfoVisibilityToJSON(value['visibility']),
         'openCard': VisibilityInfoOpenCardToJSON(value['openCard']),
-        'byDay': value['byDay'] == null ? undefined : (value['byDay'].map(VisibilityInfoByDayInnerToJSON)),
-        'byWeek': value['byWeek'] == null ? undefined : (value['byWeek'].map(VisibilityInfoByDayInnerToJSON)),
-        'byMonth': value['byMonth'] == null ? undefined : (value['byMonth'].map(VisibilityInfoByDayInnerToJSON)),
+        'byDay': (value['byDay'].map(VisibilityInfoByDayInnerToJSON)),
+        'byWeek': (value['byWeek'].map(VisibilityInfoByDayInnerToJSON)),
+        'byMonth': (value['byMonth'].map(VisibilityInfoByDayInnerToJSON)),
     };
 }

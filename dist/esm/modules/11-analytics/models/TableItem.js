@@ -27,7 +27,11 @@ export function instanceOfTableItem(value) {
         return false;
     if (!('vendorCode' in value) || value['vendorCode'] === undefined)
         return false;
+    if (!('subjectName' in value) || value['subjectName'] === undefined)
+        return false;
     if (!('isAdvertised' in value) || value['isAdvertised'] === undefined)
+        return false;
+    if (!('isSubstitutedSKU' in value) || value['isSubstitutedSKU'] === undefined)
         return false;
     if (!('isCardRated' in value) || value['isCardRated'] === undefined)
         return false;
@@ -64,11 +68,11 @@ export function TableItemFromJSONTyped(json, ignoreDiscriminator) {
         'nmId': json['nmId'],
         'name': json['name'] == null ? undefined : json['name'],
         'vendorCode': json['vendorCode'],
-        'subjectName': json['subjectName'] == null ? undefined : json['subjectName'],
+        'subjectName': json['subjectName'],
         'brandName': json['brandName'] == null ? undefined : json['brandName'],
         'mainPhoto': json['mainPhoto'] == null ? undefined : json['mainPhoto'],
         'isAdvertised': json['isAdvertised'],
-        'isSubstitutedSKU': json['isSubstitutedSKU'] == null ? undefined : json['isSubstitutedSKU'],
+        'isSubstitutedSKU': json['isSubstitutedSKU'],
         'isCardRated': json['isCardRated'],
         'rating': json['rating'],
         'feedbackRating': json['feedbackRating'],

@@ -15,6 +15,10 @@
  * Check if a given object implements the SuccessParentsResponseDataInner interface.
  */
 export function instanceOfSuccessParentsResponseDataInner(value) {
+    if (!('parentId' in value) || value['parentId'] === undefined)
+        return false;
+    if (!('parentName' in value) || value['parentName'] === undefined)
+        return false;
     return true;
 }
 export function SuccessParentsResponseDataInnerFromJSON(json) {
@@ -25,8 +29,8 @@ export function SuccessParentsResponseDataInnerFromJSONTyped(json, ignoreDiscrim
         return json;
     }
     return {
-        'parentId': json['parentId'] == null ? undefined : json['parentId'],
-        'parentName': json['parentName'] == null ? undefined : json['parentName'],
+        'parentId': json['parentId'],
+        'parentName': json['parentName'],
     };
 }
 export function SuccessParentsResponseDataInnerToJSON(value) {

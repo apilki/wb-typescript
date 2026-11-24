@@ -16,6 +16,8 @@ import { CreateTaskResponseDataFromJSON, CreateTaskResponseDataToJSON, } from '.
  * Check if a given object implements the CreateTaskResponse interface.
  */
 export function instanceOfCreateTaskResponse(value) {
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
     return true;
 }
 export function CreateTaskResponseFromJSON(json) {
@@ -26,7 +28,7 @@ export function CreateTaskResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'data': json['data'] == null ? undefined : CreateTaskResponseDataFromJSON(json['data']),
+        'data': CreateTaskResponseDataFromJSON(json['data']),
     };
 }
 export function CreateTaskResponseToJSON(value) {

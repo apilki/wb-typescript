@@ -39,11 +39,10 @@ export interface MainResponse {
     visibilityInfo: VisibilityInfo;
     /**
      * Список элементов таблицы
-     *
      * @type {Array<TableGroupItem>}
      * @memberof MainResponse
      */
-    groups?: Array<TableGroupItem>;
+    groups: Array<TableGroupItem>;
     /**
      * Валюта отчёта
      * @type {string}

@@ -20,91 +20,91 @@ export interface SuccessSubstIncorAttachResponseDataReportsInner {
      * @type {Date}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    dtBonus?: Date;
+    dtBonus: Date;
     /**
      * Артикул WB
      * @type {number}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    nmId?: number;
+    nmId: number;
     /**
      * Старый штрихкод
      * @type {number}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    oldShkId?: number;
+    oldShkId: number;
     /**
      * Старый цвет
      * @type {string}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    oldColor?: string;
+    oldColor: string;
     /**
      * Старый размер
      * @type {string}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    oldSize?: string;
+    oldSize: string;
     /**
      * Старый баркод
      * @type {string}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    oldSku?: string;
+    oldSku: string;
     /**
      * Старый артикул продавца
      * @type {string}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    oldVendorCode?: string;
+    oldVendorCode: string;
     /**
      * Новый штрихкод
      * @type {number}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    newShkId?: number;
+    newShkId: number;
     /**
      * Новый цвет
      * @type {string}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    newColor?: string;
+    newColor: string;
     /**
      * Новый размер
      * @type {string}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    newSize?: string;
+    newSize: string;
     /**
      * Новый баркод
      * @type {string}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    newSku?: string;
+    newSku: string;
     /**
      * Новый артикул продавца
      * @type {string}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    newVendorCode?: string;
+    newVendorCode: string;
     /**
      * Сумма удержания
      * @type {number}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    bonusSumm?: number;
+    bonusSumm: number;
     /**
      * Причина удержания
      * @type {string}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    bonusType?: string;
+    bonusType: string;
     /**
      * Фото замеров
      * @type {Array<string>}
      * @memberof SuccessSubstIncorAttachResponseDataReportsInner
      */
-    photoUrls?: Array<string>;
+    photoUrls: Array<string>;
 }
 /**
  * Check if a given object implements the SuccessSubstIncorAttachResponseDataReportsInner interface.

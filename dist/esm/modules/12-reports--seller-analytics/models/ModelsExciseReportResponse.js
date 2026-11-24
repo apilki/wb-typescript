@@ -16,6 +16,8 @@ import { ModelsExciseReportResponseDataInnerFromJSON, ModelsExciseReportResponse
  * Check if a given object implements the ModelsExciseReportResponse interface.
  */
 export function instanceOfModelsExciseReportResponse(value) {
+    if (!('data' in value) || value['data'] === undefined)
+        return false;
     return true;
 }
 export function ModelsExciseReportResponseFromJSON(json) {
@@ -26,7 +28,7 @@ export function ModelsExciseReportResponseFromJSONTyped(json, ignoreDiscriminato
         return json;
     }
     return {
-        'data': json['data'] == null ? undefined : (json['data'].map(ModelsExciseReportResponseDataInnerFromJSON)),
+        'data': (json['data'].map(ModelsExciseReportResponseDataInnerFromJSON)),
     };
 }
 export function ModelsExciseReportResponseToJSON(value) {
@@ -34,6 +36,6 @@ export function ModelsExciseReportResponseToJSON(value) {
         return value;
     }
     return {
-        'data': value['data'] == null ? undefined : (value['data'].map(ModelsExciseReportResponseDataInnerToJSON)),
+        'data': (value['data'].map(ModelsExciseReportResponseDataInnerToJSON)),
     };
 }

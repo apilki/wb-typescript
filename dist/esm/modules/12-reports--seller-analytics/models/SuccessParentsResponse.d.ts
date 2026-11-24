@@ -21,7 +21,7 @@ export interface SuccessParentsResponse {
      * @type {Array<SuccessParentsResponseDataInner>}
      * @memberof SuccessParentsResponse
      */
-    data?: Array<SuccessParentsResponseDataInner>;
+    data: Array<SuccessParentsResponseDataInner>;
 }
 /**
  * Check if a given object implements the SuccessParentsResponse interface.

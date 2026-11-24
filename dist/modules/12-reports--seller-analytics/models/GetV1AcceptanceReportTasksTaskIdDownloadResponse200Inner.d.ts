@@ -20,43 +20,43 @@ export interface GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner {
      * @type {number}
      * @memberof GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner
      */
-    count?: number;
+    count: number;
     /**
      * Дата создания поставки
      * @type {Date}
      * @memberof GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner
      */
-    giCreateDate?: Date;
+    giCreateDate: Date;
     /**
      * Номер поставки
      * @type {number}
      * @memberof GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner
      */
-    incomeId?: number;
+    incomeId: number;
     /**
      * Артикул WB
      * @type {number}
      * @memberof GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner
      */
-    nmID?: number;
+    nmID: number;
     /**
      * Дата приёмки
      * @type {Date}
      * @memberof GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner
      */
-    shkCreateDate?: Date;
+    shkCreateDate: Date;
     /**
      * Предмет
      * @type {string}
      * @memberof GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner
      */
-    subjectName?: string;
+    subjectName: string;
     /**
      * Суммарная стоимость приёмки, ₽ с копейками
      * @type {number}
      * @memberof GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner
      */
-    total?: number;
+    total: number;
 }
 /**
  * Check if a given object implements the GetV1AcceptanceReportTasksTaskIdDownloadResponse200Inner interface.
