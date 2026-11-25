@@ -39,6 +39,7 @@ __exportStar(require("./Model409SupplyDeliverErrorData"), exports);
 __exportStar(require("./Model409SupplyDeliverErrorDataOrdersInner"), exports);
 __exportStar(require("./Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner"), exports);
 __exportStar(require("./OrderNew"), exports);
+__exportStar(require("./OrderNewAddress"), exports);
 __exportStar(require("./OrdersFbsError"), exports);
 __exportStar(require("./OrdersFbsOrder"), exports);
 __exportStar(require("./OrdersFbsOrderAddress"), exports);

@@ -11,7 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { OrdersFbsOrderAddressFromJSON, OrdersFbsOrderAddressToJSON, } from './OrdersFbsOrderAddress';
+import { OrderNewAddressFromJSON, OrderNewAddressToJSON, } from './OrderNewAddress';
 import { OrdersFbsOrderOptionsFromJSON, OrdersFbsOrderOptionsToJSON, } from './OrdersFbsOrderOptions';
 /**
  * @export
@@ -48,7 +48,7 @@ export function OrderNewFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'address': json['address'] == null ? undefined : OrdersFbsOrderAddressFromJSON(json['address']),
+        'address': json['address'] == null ? undefined : OrderNewAddressFromJSON(json['address']),
         'ddate': json['ddate'] == null ? undefined : json['ddate'],
         'sellerDate': json['sellerDate'] == null ? undefined : json['sellerDate'],
         'salePrice': json['salePrice'] == null ? undefined : json['salePrice'],
@@ -87,7 +87,7 @@ export function OrderNewToJSON(value) {
         return value;
     }
     return {
-        'address': OrdersFbsOrderAddressToJSON(value['address']),
+        'address': OrderNewAddressToJSON(value['address']),
         'ddate': value['ddate'],
         'sellerDate': value['sellerDate'],
         'salePrice': value['salePrice'],

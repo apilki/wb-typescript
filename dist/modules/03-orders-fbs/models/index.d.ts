@@ -21,6 +21,7 @@ export * from './Model409SupplyDeliverErrorData';
 export * from './Model409SupplyDeliverErrorDataOrdersInner';
 export * from './Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner';
 export * from './OrderNew';
+export * from './OrderNewAddress';
 export * from './OrdersFbsError';
 export * from './OrdersFbsOrder';
 export * from './OrdersFbsOrderAddress';

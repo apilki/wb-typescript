@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { OrdersFbsOrderAddress } from './OrdersFbsOrderAddress';
+import type { OrderNewAddress } from './OrderNewAddress';
 import type { OrdersFbsOrderOptions } from './OrdersFbsOrderOptions';
 /**
  *
@@ -19,10 +19,10 @@ import type { OrdersFbsOrderOptions } from './OrdersFbsOrderOptions';
 export interface OrderNew {
     /**
      *
-     * @type {OrdersFbsOrderAddress}
+     * @type {OrderNewAddress}
      * @memberof OrderNew
      */
-    address?: OrdersFbsOrderAddress | null;
+    address?: OrderNewAddress | null;
     /**
      * Планируемая дата доставки заказа покупателю.<br>
      * Поле отображается для сборочных заданий со сверхгабаритными товарами `СГТ`, `cargoType: 2`

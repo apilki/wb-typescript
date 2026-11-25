@@ -18,7 +18,7 @@ exports.instanceOfOrderNew = instanceOfOrderNew;
 exports.OrderNewFromJSON = OrderNewFromJSON;
 exports.OrderNewFromJSONTyped = OrderNewFromJSONTyped;
 exports.OrderNewToJSON = OrderNewToJSON;
-const OrdersFbsOrderAddress_1 = require("./OrdersFbsOrderAddress");
+const OrderNewAddress_1 = require("./OrderNewAddress");
 const OrdersFbsOrderOptions_1 = require("./OrdersFbsOrderOptions");
 /**
  * @export
@@ -55,7 +55,7 @@ function OrderNewFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'address': json['address'] == null ? undefined : (0, OrdersFbsOrderAddress_1.OrdersFbsOrderAddressFromJSON)(json['address']),
+        'address': json['address'] == null ? undefined : (0, OrderNewAddress_1.OrderNewAddressFromJSON)(json['address']),
         'ddate': json['ddate'] == null ? undefined : json['ddate'],
         'sellerDate': json['sellerDate'] == null ? undefined : json['sellerDate'],
         'salePrice': json['salePrice'] == null ? undefined : json['salePrice'],
@@ -94,7 +94,7 @@ function OrderNewToJSON(value) {
         return value;
     }
     return {
-        'address': (0, OrdersFbsOrderAddress_1.OrdersFbsOrderAddressToJSON)(value['address']),
+        'address': (0, OrderNewAddress_1.OrderNewAddressToJSON)(value['address']),
         'ddate': value['ddate'],
         'sellerDate': value['sellerDate'],
         'salePrice': value['salePrice'],

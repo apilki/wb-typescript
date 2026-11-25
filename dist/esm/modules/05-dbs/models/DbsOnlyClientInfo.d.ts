@@ -70,7 +70,7 @@ export interface DbsOnlyClientInfo {
     orderID: number;
     /**
      * Добавочный код. <br>
-     * Пустое значение `""` указывает, что код ещё не назначен
+     * Значение `0` указывает, что код ещё не назначен
      *
      * @type {number}
      * @memberof DbsOnlyClientInfo

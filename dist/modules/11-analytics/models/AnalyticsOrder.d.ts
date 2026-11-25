@@ -46,7 +46,7 @@ export interface AnalyticsOrder {
      */
     updatedAt: Date;
     /**
-     * [Статус заказа](https://seller.wildberries.ru/instructions/ru/ru/material/order-feed-report#a92fa9b0-86ab-4990-b905-33f6c38b385c):
+     * [Статус заказа](https://seller.wildberries.ru/instructions/material/order-feed-report#a92fa9b0-86ab-4990-b905-33f6c38b385c):
      *   - `created` — оформлен
      *   - `buyout` — продан
      *   - `cancel` — отменён
@@ -58,7 +58,7 @@ export interface AnalyticsOrder {
      */
     status: AnalyticsOrderStatusEnum;
     /**
-     * [Тип отмены](https://seller.wildberries.ru/instructions/ru/ru/material/order-feed-report#a92fa9b0-86ab-4990-b905-33f6c38b385c) (при `"status":"cancel"`):
+     * [Тип отмены](https://seller.wildberries.ru/instructions/material/order-feed-report#a92fa9b0-86ab-4990-b905-33f6c38b385c) (при `"status":"cancel"`):
      *   - `app` — отказ до получения
      *   - `receipt` — отказ при получении
      *   - `expire` — истёк срок получения
@@ -69,13 +69,13 @@ export interface AnalyticsOrder {
      */
     cancelType?: AnalyticsOrderCancelTypeEnum;
     /**
-     * Название склада. [На данный момент](/release-notes?id=570) для складов WB может быть только `Склад WB`
+     * Название склада. Для складов WB в России может быть только `Склад WB РФ` или `Склад WB СГТ РФ`
      * @type {string}
      * @memberof AnalyticsOrder
      */
     warehouseName: string;
     /**
-     * Федеральный округ склада. Если склад не в России, возвращается страна. [На данный момент](/release-notes?id=570) для складов WB может быть только `""`
+     * Регион отгрузки. Если склад принадлежит WB или продавцу не в России, возвращается страна
      * @type {string}
      * @memberof AnalyticsOrder
      */
