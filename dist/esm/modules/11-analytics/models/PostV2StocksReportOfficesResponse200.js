@@ -11,7 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { TableShippingOfficeResponseFromJSON, TableShippingOfficeResponseToJSON, } from './TableShippingOfficeResponse';
+import { TableDispatchOfficeResponseFromJSON, TableDispatchOfficeResponseToJSON, } from './TableDispatchOfficeResponse';
 /**
  * Check if a given object implements the PostV2StocksReportOfficesResponse200 interface.
  */
@@ -28,7 +28,7 @@ export function PostV2StocksReportOfficesResponse200FromJSONTyped(json, ignoreDi
         return json;
     }
     return {
-        'data': TableShippingOfficeResponseFromJSON(json['data']),
+        'data': TableDispatchOfficeResponseFromJSON(json['data']),
     };
 }
 export function PostV2StocksReportOfficesResponse200ToJSON(value) {
@@ -36,6 +36,6 @@ export function PostV2StocksReportOfficesResponse200ToJSON(value) {
         return value;
     }
     return {
-        'data': TableShippingOfficeResponseToJSON(value['data']),
+        'data': TableDispatchOfficeResponseToJSON(value['data']),
     };
 }

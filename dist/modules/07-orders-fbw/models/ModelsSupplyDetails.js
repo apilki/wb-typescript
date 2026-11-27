@@ -70,6 +70,7 @@ function ModelsSupplyDetailsFromJSONTyped(json, ignoreDiscriminator) {
         'depersonalizedQuantity': json['depersonalizedQuantity'] == null ? undefined : json['depersonalizedQuantity'],
         'discrepancies': json['discrepancies'] == null ? undefined : json['discrepancies'],
         'isBoxOnPallet': json['isBoxOnPallet'] == null ? undefined : json['isBoxOnPallet'],
+        'correctedQuantity': json['correctedQuantity'] == null ? undefined : json['correctedQuantity'],
     };
 }
 function ModelsSupplyDetailsToJSON(value) {
@@ -104,5 +105,6 @@ function ModelsSupplyDetailsToJSON(value) {
         'depersonalizedQuantity': value['depersonalizedQuantity'],
         'discrepancies': value['discrepancies'],
         'isBoxOnPallet': value['isBoxOnPallet'],
+        'correctedQuantity': value['correctedQuantity'],
     };
 }

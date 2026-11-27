@@ -39,7 +39,7 @@ export interface Supply {
      * @type {boolean}
      * @memberof Supply
      */
-    isPickupPointShipmentAllowed?: boolean;
+    isPickupPointDispatchAllowed?: boolean;
     /**
      * Флаг закрытия поставки:
      *   - `true` — закрыта

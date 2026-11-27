@@ -101,8 +101,8 @@ class IstoriyaOstatkovApi extends runtime.BaseAPI {
      * Данные по складам
      */
     async postV2StocksReportOfficesRaw(requestParameters, initOverrides) {
-        if (requestParameters['tableShippingOfficeRequest'] == null) {
-            throw new runtime.RequiredError('tableShippingOfficeRequest', 'Required parameter "tableShippingOfficeRequest" was null or undefined when calling postV2StocksReportOffices().');
+        if (requestParameters['tableDispatchOfficeRequest'] == null) {
+            throw new runtime.RequiredError('tableDispatchOfficeRequest', 'Required parameter "tableDispatchOfficeRequest" was null or undefined when calling postV2StocksReportOffices().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -115,7 +115,7 @@ class IstoriyaOstatkovApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.TableShippingOfficeRequestToJSON)(requestParameters['tableShippingOfficeRequest']),
+            body: (0, index_1.TableDispatchOfficeRequestToJSON)(requestParameters['tableDispatchOfficeRequest']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.PostV2StocksReportOfficesResponse200FromJSON)(jsonValue));
     }
@@ -123,8 +123,8 @@ class IstoriyaOstatkovApi extends runtime.BaseAPI {
      * Метод формирует набор данных об остатках по складам. <br><br> Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с `\"regionName\":\"Свой склад\"` или `\"regionName\":\"Свой склад СГТ\"` и `\"offices\":[]`.<br><br>  Данные отчёта обновляются 1 раз в 2 часа.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос | </div>
      * Данные по складам
      */
-    async postV2StocksReportOffices(tableShippingOfficeRequest, initOverrides) {
-        const response = await this.postV2StocksReportOfficesRaw({ tableShippingOfficeRequest: tableShippingOfficeRequest }, initOverrides);
+    async postV2StocksReportOffices(tableDispatchOfficeRequest, initOverrides) {
+        const response = await this.postV2StocksReportOfficesRaw({ tableDispatchOfficeRequest: tableDispatchOfficeRequest }, initOverrides);
         return await response.value();
     }
     /**

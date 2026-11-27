@@ -203,6 +203,14 @@ export interface ModelsSupplyDetails {
      * @memberof ModelsSupplyDetails
      */
     isBoxOnPallet?: boolean;
+    /**
+     * Количество товаров по Акту корректировки, которое не входит в `acceptedQuantity`.<br>
+     * Возвращается, если есть расхождения, зафиксированные при приёмке поставки
+     *
+     * @type {number}
+     * @memberof ModelsSupplyDetails
+     */
+    correctedQuantity?: number;
 }
 /**
  * @export

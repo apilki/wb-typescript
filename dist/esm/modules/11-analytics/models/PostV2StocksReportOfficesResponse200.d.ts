@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { TableShippingOfficeResponse } from './TableShippingOfficeResponse';
+import type { TableDispatchOfficeResponse } from './TableDispatchOfficeResponse';
 /**
  *
  * @export
@@ -18,10 +18,10 @@ import type { TableShippingOfficeResponse } from './TableShippingOfficeResponse'
 export interface PostV2StocksReportOfficesResponse200 {
     /**
      *
-     * @type {TableShippingOfficeResponse}
+     * @type {TableDispatchOfficeResponse}
      * @memberof PostV2StocksReportOfficesResponse200
      */
-    data: TableShippingOfficeResponse;
+    data: TableDispatchOfficeResponse;
 }
 /**
  * Check if a given object implements the PostV2StocksReportOfficesResponse200 interface.

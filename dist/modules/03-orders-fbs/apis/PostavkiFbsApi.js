@@ -112,7 +112,7 @@ class PostavkiFbsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.SupplyShippingPointsResponseFromJSON)(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.SupplyDispatchPointsResponseFromJSON)(jsonValue));
     }
     /**
      * Метод возвращает доступные пункты отгрузки для указанной поставки. <br>  Предназначен для продавцов из РФ. Используйте данные этого метода, чтобы устанавливать [параметры отгрузки поставок](/openapi/orders-fbs#tag/fbsSupplies/operation/patchV3FbsSuppliesShippingMethod).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>
@@ -303,7 +303,7 @@ class PostavkiFbsApi extends runtime.BaseAPI {
             query: queryParameters,
             body: (0, index_1.PatchV3FbsSuppliesShippingMethodRequestToJSON)(requestParameters['patchV3FbsSuppliesShippingMethodRequest']),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.UpdateSuppliesShippingMethodResponseFromJSON)(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.UpdateSuppliesDispatchMethodResponseFromJSON)(jsonValue));
     }
     /**
      * Метод устанавливает способ доставки, дату и пункт отгрузки у поставок.<br><br>    Параметры отгрузки нужно указать до передачи поставки в доставку. Вы можете обновлять параметры отгрузки до сканирования поставки и её коробов в пункте отгрузки. Когда поставка будет отсканирована, метод начнёт возвращать ошибку `409`.<br><br>  В запросе можно указать максимум 100 поставок. Результат обработки возвращается для каждой поставки отдельно.<br><br>  Доступно только для продавцов из РФ.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца для методов <strong>сборочных заданий, поставок, пропусков и настроек автовозврата FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодами ответов <code>4XX</code> учитывается как 10 запросов  </div>

@@ -51,7 +51,7 @@ export function SupplyFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'id': json['id'] == null ? undefined : json['id'],
         'isB2b': json['isB2b'] == null ? undefined : json['isB2b'],
-        'isPickupPointShipmentAllowed': json['isPickupPointShipmentAllowed'] == null ? undefined : json['isPickupPointShipmentAllowed'],
+        'isPickupPointDispatchAllowed': json['isPickupPointDispatchAllowed'] == null ? undefined : json['isPickupPointDispatchAllowed'],
         'done': json['done'] == null ? undefined : json['done'],
         'createdAt': json['createdAt'] == null ? undefined : (new Date(json['createdAt'])),
         'closedAt': json['closedAt'] == null ? undefined : (new Date(json['closedAt'])),
@@ -75,7 +75,7 @@ export function SupplyToJSON(value) {
     return {
         'id': value['id'],
         'isB2b': value['isB2b'],
-        'isPickupPointShipmentAllowed': value['isPickupPointShipmentAllowed'],
+        'isPickupPointDispatchAllowed': value['isPickupPointDispatchAllowed'],
         'done': value['done'],
         'createdAt': value['createdAt'] == null ? undefined : ((value['createdAt']).toISOString()),
         'closedAt': value['closedAt'] == null ? undefined : (value['closedAt'].toISOString()),

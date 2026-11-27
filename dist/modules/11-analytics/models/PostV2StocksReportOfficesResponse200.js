@@ -17,7 +17,7 @@ exports.instanceOfPostV2StocksReportOfficesResponse200 = instanceOfPostV2StocksR
 exports.PostV2StocksReportOfficesResponse200FromJSON = PostV2StocksReportOfficesResponse200FromJSON;
 exports.PostV2StocksReportOfficesResponse200FromJSONTyped = PostV2StocksReportOfficesResponse200FromJSONTyped;
 exports.PostV2StocksReportOfficesResponse200ToJSON = PostV2StocksReportOfficesResponse200ToJSON;
-const TableShippingOfficeResponse_1 = require("./TableShippingOfficeResponse");
+const TableDispatchOfficeResponse_1 = require("./TableDispatchOfficeResponse");
 /**
  * Check if a given object implements the PostV2StocksReportOfficesResponse200 interface.
  */
@@ -34,7 +34,7 @@ function PostV2StocksReportOfficesResponse200FromJSONTyped(json, ignoreDiscrimin
         return json;
     }
     return {
-        'data': (0, TableShippingOfficeResponse_1.TableShippingOfficeResponseFromJSON)(json['data']),
+        'data': (0, TableDispatchOfficeResponse_1.TableDispatchOfficeResponseFromJSON)(json['data']),
     };
 }
 function PostV2StocksReportOfficesResponse200ToJSON(value) {
@@ -42,6 +42,6 @@ function PostV2StocksReportOfficesResponse200ToJSON(value) {
         return value;
     }
     return {
-        'data': (0, TableShippingOfficeResponse_1.TableShippingOfficeResponseToJSON)(value['data']),
+        'data': (0, TableDispatchOfficeResponse_1.TableDispatchOfficeResponseToJSON)(value['data']),
     };
 }

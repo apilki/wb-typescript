@@ -85,7 +85,7 @@ function OrderNewFromJSONTyped(json, ignoreDiscriminator) {
         'cargoType': json['cargoType'] == null ? undefined : json['cargoType'],
         'crossBorderType': json['crossBorderType'] == null ? undefined : json['crossBorderType'],
         'isZeroOrder': json['isZeroOrder'] == null ? undefined : json['isZeroOrder'],
-        'isPickupPointShipmentAllowed': json['isPickupPointShipmentAllowed'] == null ? undefined : json['isPickupPointShipmentAllowed'],
+        'isPickupPointDispatchAllowed': json['isPickupPointDispatchAllowed'] == null ? undefined : json['isPickupPointDispatchAllowed'],
         'options': json['options'] == null ? undefined : (0, OrdersFbsOrderOptions_1.OrdersFbsOrderOptionsFromJSON)(json['options']),
     };
 }
@@ -124,7 +124,7 @@ function OrderNewToJSON(value) {
         'cargoType': value['cargoType'],
         'crossBorderType': value['crossBorderType'],
         'isZeroOrder': value['isZeroOrder'],
-        'isPickupPointShipmentAllowed': value['isPickupPointShipmentAllowed'],
+        'isPickupPointDispatchAllowed': value['isPickupPointDispatchAllowed'],
         'options': (0, OrdersFbsOrderOptions_1.OrdersFbsOrderOptionsToJSON)(value['options']),
     };
 }

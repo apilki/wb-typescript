@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { InventoryRequest, PostV1StocksReportSellerWarehousesResponse200, PostV1StocksReportWbWarehousesResponse200, PostV2StocksReportOfficesResponse200, PostV2StocksReportProductsGroupsResponse200, PostV2StocksReportProductsProductsResponse200, PostV2StocksReportProductsSizesResponse200, TableGroupRequestSt, TableItemRequest, TableShippingOfficeRequest, TableSizeRequest } from '../models/index';
+import type { InventoryRequest, PostV1StocksReportSellerWarehousesResponse200, PostV1StocksReportWbWarehousesResponse200, PostV2StocksReportOfficesResponse200, PostV2StocksReportProductsGroupsResponse200, PostV2StocksReportProductsProductsResponse200, PostV2StocksReportProductsSizesResponse200, TableDispatchOfficeRequest, TableGroupRequestSt, TableItemRequest, TableSizeRequest } from '../models/index';
 export interface IstoriyaOstatkovApiPostV1StocksReportSellerWarehousesRequest {
     inventoryRequest: InventoryRequest;
 }
@@ -18,7 +18,7 @@ export interface IstoriyaOstatkovApiPostV1StocksReportWbWarehousesRequest {
     inventoryRequest: InventoryRequest;
 }
 export interface IstoriyaOstatkovApiPostV2StocksReportOfficesRequest {
-    tableShippingOfficeRequest: TableShippingOfficeRequest;
+    tableDispatchOfficeRequest: TableDispatchOfficeRequest;
 }
 export interface IstoriyaOstatkovApiPostV2StocksReportProductsGroupsRequest {
     tableGroupRequestSt: TableGroupRequestSt;
@@ -62,7 +62,7 @@ export declare class IstoriyaOstatkovApi extends runtime.BaseAPI {
      * Метод формирует набор данных об остатках по складам. <br><br> Данные по складам продавца приходят в агрегированном виде — без детализации по конкретным складам — эти записи будут с `\"regionName\":\"Свой склад\"` или `\"regionName\":\"Свой склад СГТ\"` и `\"offices\":[]`.<br><br>  Данные отчёта обновляются 1 раз в 2 часа.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос | </div>
      * Данные по складам
      */
-    postV2StocksReportOffices(tableShippingOfficeRequest: TableShippingOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PostV2StocksReportOfficesResponse200>;
+    postV2StocksReportOffices(tableDispatchOfficeRequest: TableDispatchOfficeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PostV2StocksReportOfficesResponse200>;
     /**
      * Метод формирует набор данных об остатках по группам товаров. <br><br> Группа товаров описывается кортежем `subjectID, brandName, tagID`.<br><br>  Данные отчёта обновляются 1 раз в 2 часа.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/introduction/Limity-zaprosov\">Лимит запросов</a> на один профиль продавца:   | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Сервисный | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый с секретом | 1 мин | 3 запроса | 20 сек | 3 запроса | | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос | </div>
      * Данные по группам

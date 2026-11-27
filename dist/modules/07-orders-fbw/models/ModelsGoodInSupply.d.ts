@@ -93,6 +93,14 @@ export interface ModelsGoodInSupply {
      * @memberof ModelsGoodInSupply
      */
     unloadingQuantity?: number | null;
+    /**
+     * Количество товара по Акту корректировки, которое не входит в `acceptedQuantity`.<br>
+     * Возвращается, если по товару есть расхождения, зафиксированные при приёмке
+     *
+     * @type {number}
+     * @memberof ModelsGoodInSupply
+     */
+    correctedQuantity?: number;
 }
 /**
  * Check if a given object implements the ModelsGoodInSupply interface.

@@ -237,7 +237,7 @@ export interface OrderNew {
      * @type {boolean}
      * @memberof OrderNew
      */
-    isPickupPointShipmentAllowed?: boolean;
+    isPickupPointDispatchAllowed?: boolean;
     /**
      *
      * @type {OrdersFbsOrderOptions}

@@ -37,6 +37,7 @@ export function ModelsGoodInSupplyFromJSONTyped(json, ignoreDiscriminator) {
         'readyForSaleQuantity': json['readyForSaleQuantity'] == null ? undefined : json['readyForSaleQuantity'],
         'acceptedQuantity': json['acceptedQuantity'] == null ? undefined : json['acceptedQuantity'],
         'unloadingQuantity': json['unloadingQuantity'] == null ? undefined : json['unloadingQuantity'],
+        'correctedQuantity': json['correctedQuantity'] == null ? undefined : json['correctedQuantity'],
     };
 }
 export function ModelsGoodInSupplyToJSON(value) {
@@ -56,5 +57,6 @@ export function ModelsGoodInSupplyToJSON(value) {
         'readyForSaleQuantity': value['readyForSaleQuantity'],
         'acceptedQuantity': value['acceptedQuantity'],
         'unloadingQuantity': value['unloadingQuantity'],
+        'correctedQuantity': value['correctedQuantity'],
     };
 }
